@@ -19,17 +19,7 @@ class CategoryTagContoller extends Controller
         $category = category::with('parent')->get();
         return view('pages.form-category',compact('category'));
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+ 
     /**
      * Store a newly created resource in storage.
      *
@@ -41,21 +31,9 @@ class CategoryTagContoller extends Controller
         $data = $request->all();
         category::create($data);
 
-        return redirect()->back()->with('success','Successfully Added');
-
-        
+        return redirect()->back()->with('success','Successfully Added');        
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(category $category)
-    {
-        echo 'show';
-    }
-
+   
     /**
      * Show the form for editing the specified resource.
      *
@@ -76,9 +54,13 @@ class CategoryTagContoller extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, category $category,$id)
     {
-      
+            $category = category::findOrFail($id);
+            $data = $request->all();
+            $category->update($data);
+            
+            return redirect()->route('cateTag.index')->with('update','Updated Successfully');
     }
 
     /**
@@ -93,5 +75,28 @@ class CategoryTagContoller extends Controller
         $category->delete();
         return redirect()->back()->with('delete','Deleted Successfully');
     }
+
+
+       /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    // public function create()
+    // {
+    //     //
+    // }
+
+     /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\category  $category
+     * @return \Illuminate\Http\Response
+     */
+    // public function show(category $category)
+    // {
+    //     echo 'show';
+    // }
+
 
 }

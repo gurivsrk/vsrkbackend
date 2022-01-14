@@ -29,6 +29,8 @@
 .fileinput-preview img{
     width: 100%;
     padding: 25px;
+    height: 210px;
+    object-fit: contain;
 }
 .fileinput .fa{
     position: absolute;
@@ -55,4 +57,8 @@
     background: #007070;
     color: #fff !important;
     line-height: 45px;
+}
+
+.error {
+    font-weight: 500;
 }

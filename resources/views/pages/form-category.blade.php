@@ -16,7 +16,10 @@
                 <div class="row">
                     <div class="col-md-4">
                        <form class="p-4" method="post" action="{{ (empty($cateUpdate))?route('cateTag.store'):route('cateTag.update',$cateUpdate->id)}}">
-                        <h4 class="card-title mb-4">Add Category/Tag</h4>
+                       @if(!empty($cateUpdate))
+                        @method('put')
+                       @endif
+                       <h4 class="card-title mb-4">Add Category/Tag</h4>
                             @csrf
                                 <div class="{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="">{{ __('Name') }}</label>
@@ -52,7 +55,7 @@
                                 <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                 
                                   <label class="form-check-label">
-                                      <input class="form-check-input" type="radio" name="for" id="cateFor1" value="Form" aria-required="true" required>
+                                      <input class="form-check-input" type="radio" name="for" id="cateFor1" value="Form" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
                                       For Forms
                                       <span class="circle">
                                           <span class="check"></span>
@@ -61,7 +64,7 @@
                               </div>
                               <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label">
-                                      <input class="form-check-input" type="radio" name="for" id="cateFor2" value="other" aria-required="true" required>
+                                      <input class="form-check-input" type="radio" name="for" id="cateFor2" value="other"  {{(@$cateUpdate->for ==='other' )?"checked" : " "}} aria-required="true" required>
                                       For Blog or Other
                                       <span class="circle">
                                           <span class="check"></span>
@@ -91,14 +94,13 @@
                     </thead>
                   <tbody>
                     @foreach($category as $key=>$cate)
-                  
                       <tr>
                           <td>{{++$key}}</td>
                           <td>{{ @$cate->name}}  </td>
                           <td>{{ @$cate->type }} </td>
                           <td> {{ (!empty($cate->parent->name))?$cate->parent->name:"-"; }} </td>
                           <td> {{ @$cate->for }} </td>
-                          <td class="td-actions text-right">
+                          <td class="td-actions text-center">
                           <a rel="tooltip" class="btn btn-success btn-link" href="{{route('cateTag.edit',$cate->id)}}"> <i class="material-icons">edit</i> </a>
                           <form action="{{ route('cateTag.destroy',$cate->id) }}" method="POST" onsubmit="return confirm('Are you sure ?');" style="display: inline-block;">
                               @method('delete') 
@@ -122,19 +124,4 @@
   </div>
 </div>
 
-
-
 @endsection
-
-@push('js')
-@if(Session::has('success'))
-    <script>
-        md.showNotification('top','right','success', "{{ Session::get('success') }}" )
-    </script>
-@endif
-@if(Session::has('delete'))
-    <script>
-        md.showNotification('top','right','danger', "{{ Session::get('delete') }}" )
-    </script>
-@endif
-@endpush

@@ -57,7 +57,7 @@
         </div>
       </li>
       <li class="nav-item{{@$activePage == 'team' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('team') }}">
+        <a class="nav-link" href="{{ route('team.index') }}">
           <i class="material-icons">groups</i>
           <p>{{ __('Team') }}</p>
         </a>

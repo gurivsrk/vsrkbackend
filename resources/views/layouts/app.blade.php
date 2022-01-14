@@ -16,7 +16,6 @@
     <link href="{{ asset('admin') }}/css/theme-dashboard.css?v=2.1.1" rel="stylesheet" />
     <link href="{{ asset('admin') }}/css/custom.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -70,9 +69,26 @@
         <script src="{{ asset('admin') }}/js/plugins/bootstrap-notify.js"></script>
         <!-- Control Center for theme Dashboard: parallax effects, scripts for the example pages etc -->
         <script src="{{ asset('admin') }}/js/theme-dashboard.js?v=2.1.1" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+        <!------ Additional ----------->
+        <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
         <!------ global functions ------>
-        <script>
+        
+           @if(Session::has('success'))
+                <script>
+                    md.showNotification('top','right','success', "{{ Session::get('success') }}" )
+                </script>
+            @endif
+            @if(Session::has('delete'))
+                <script>
+                    md.showNotification('top','right','danger', "{{ Session::get('delete') }}" )
+                </script>
+            @endif
+            @if(Session::has('update'))
+                <script>
+                    md.showNotification('top','right','warning', "{{ Session::get('update') }}" )
+                </script>
+            @endif
+            <script>
             // $(document).ready(function(){
             //     $('.deleteBtn').click(function() {
             //         if(confirm('Are you sure to delete ?')){

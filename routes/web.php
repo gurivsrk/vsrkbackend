@@ -34,20 +34,21 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('media/addMedia',  'App\Http\Controllers\imageController@addMedia')->name('storeMedia');
 	Route::post('media/deleteMedia',  'App\Http\Controllers\imageController@deleteMedia')->name('deleteMedia');
 	
-	///blog
+	/// Blog
 	Route::get('vsrk-admin/all-blogs',  'App\Http\Controllers\blogController@index')->name('all-blogs');
 
 	/// Categories And Tags
 	Route::resource('vsrk-admin/cateTag',  'App\Http\Controllers\CategoryTagContoller');
 
+	/// Team
+	Route::resource('vsrk-admin/team', 'App\Http\Controllers\TeamController');
+	
 	Route::get('vsrk-admin/all-forms', function () {
 		return view('pages.all-form');
 	})->name('all-forms');
 
 
-	Route::get('vsrk-admin/team', function () {
-		return view('pages.team');
-	})->name('team');
+	
 	
 	Route::get('typography', function () {
 		return view('pages.typography');

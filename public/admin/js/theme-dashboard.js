@@ -728,6 +728,9 @@ $(document).ready(function(){
   /// initialize Data table
   $('.table-sort').DataTable();
 
+  /// Ck editor
+  CKEDITOR.replaceClass="ckeditor";
+
   ///// File images close function
   $('#vsrkInputImg span').click(()=>{
     setTimeout(()=>{

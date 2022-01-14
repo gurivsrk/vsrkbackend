@@ -13,9 +13,9 @@
             <div class="card-body table-responsive">
                 <!--- Add Form --->
                     <div class="row  justify-content-center">
-                    <div id="addTeamSection" class="col-md-10 vsrkAddForms">
+                    <div id="addTeamSection" class="col-md-10 vsrkAddForms {{ $errors->any() ? 'd-block' : '' }}">
                         <div class="close">X</div>
-                        <form method="post"  id="add-team-member" action="{{route('storeMedia')}}" enctype="multipart/form-data">
+                        <form method="post"  id="add-team-member" action="{{route('team.store')}}" enctype="multipart/form-data">
                         <h4 class="card-title mb-4">Add Team Member</h4>
                             @csrf
                             <div class="col-md-4 p-0">
@@ -29,7 +29,10 @@
                                         <input type="file" name="profileImg" />
                                         </span>
                                     </div>
-                                </div>    
+                                </div> 
+                                @if ($errors->has('profileImg'))
+                                        <span id="profileImg-error" class="error text-danger" for="input-profileImg">{{ $errors->first('profileImg') }}</span>
+                                    @endif   
                             </div>
                             <div class="row">
                                 <div class="col-md-6{{ $errors->has('name') ? ' has-danger' : '' }}">
@@ -39,17 +42,17 @@
                                         <span id="name-error" class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                                     @endif
                                 </div>
-                                <div class="col-md-6{{ $errors->has('desgination') ? ' has-danger' : '' }}">
-                                    <label class="">{{ __('desgination') }}</label>
-                                    <input class="form-control{{ $errors->has('desgination') ? ' is-invalid' : '' }}" name="desgination" id="input-desgination" type="text" placeholder="{{ __('Desgination') }}" value="{{ old('name', auth()->user()->name) }}" required="true" aria-required="true"/>
-                                    @if ($errors->has('desgination'))
-                                        <span id="desgination-error" class="error text-danger" for="input-desgination">{{ $errors->first('desgination') }}</span>
+                                <div class="col-md-6{{ $errors->has('designation') ? ' has-danger' : '' }}">
+                                    <label class="">{{ __('designation') }}</label>
+                                    <input class="form-control{{ $errors->has('designation') ? ' is-invalid' : '' }}" name="designation" id="input-designation" type="text" placeholder="{{ __('designation') }}" value="{{ old('name', auth()->user()->name) }}" required="true" aria-required="true"/>
+                                    @if ($errors->has('designation'))
+                                        <span id="designation-error" class="error text-danger" for="input-designation">{{ $errors->first('designation') }}</span>
                                     @endif
                                 </div>
                             </div>
                             <div class="{{ $errors->has('descritption') ? ' has-danger' : '' }}">
                                 <label class="">{{ __('descritption') }}</label>
-                                <textarea class="form-control{{ $errors->has('descritption') ? ' is-invalid' : '' }}"  rows="5"  name="descritption" id="input-descritption" placeholder="{{ __('descritption') }}" required="true" aria-required="true"></textarea>
+                                <textarea class="form-control{{ $errors->has('descritption') ? ' is-invalid' : '' }} ckeditor"  rows="5"  name="descritption" id="input-descritption" placeholder="{{ __('descritption') }}" required="true" aria-required="true"></textarea>
                                 @if ($errors->has('descritption'))
                                     <span id="name-descritption" class="error text-danger" for="input-descritption">{{ $errors->first('descritption') }}</span>
                                 @endif
