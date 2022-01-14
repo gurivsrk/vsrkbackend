@@ -1,0 +1,58 @@
+.vsrk-icon, .vsrk-icon:focus{
+    display: inline-block;
+    color: #fff;
+    padding: 0 0 0 5px;
+    transition: 0.5s all
+}
+.vsrk-icon:hover{
+    color: #292929
+}
+.vsrk-icon-delete:hover{
+    color: #e53935
+}
+.vsrk-logo-admin{
+    padding: 0 20px
+}
+.custom-select{
+    background-image: url(../img/up-down-arrow.png) !important;
+    border-bottom: 1px solid #d2d2d2;
+    background-size: 9px;
+    background-position: right;
+    background-position-y: -22px;
+}
+.custom-select:focus,.custom-select:hover{
+    background-size: 9px;
+    background-position: right;
+    background-position-y: -22px;
+    background-position-y: 15px;
+}
+.fileinput-preview img{
+    width: 100%;
+    padding: 25px;
+}
+.fileinput .fa{
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    right: 0;
+    font-size: 22px;
+    color: #000;
+    display: none;
+}
+.vsrkAddForms{
+    border: 2px dashed;
+    padding: 25px;
+    margin: 10px 0;
+    box-shadow: 1px 1px 58px -29px;
+    display: none;
+}
+
+.table-sort tr.even {
+    background: azure;
+}
+
+.table-sort thead{
+    background: #007070;
+    color: #fff !important;
+    line-height: 45px;
+}
