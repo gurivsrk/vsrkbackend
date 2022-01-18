@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Http\Requests\storeCategoryRequest;
-
+use Illuminate\Support\Facades\Storage;
 
 class CategoryTagContoller extends Controller
 {
@@ -29,6 +29,10 @@ class CategoryTagContoller extends Controller
     public function store(storeCategoryRequest $request)
     {
         $data = $request->all();
+        if($request->file('logo')){
+            $imgname = addMedia($request->file('logo'),'logos');
+            $data['logo'] = $imgname; 
+        }    
         category::create($data);
 
         return redirect()->back()->with('success','Successfully Added');        
@@ -58,6 +62,17 @@ class CategoryTagContoller extends Controller
     {
             $category = category::findOrFail($id);
             $data = $request->all();
+            if($request->file('logo')){
+                $image = pathinfo($category->logo,PATHINFO_BASENAME);
+                //echo$image;
+                if(Storage::delete('public/logos/'.$image)){
+                    $imgname = addMedia($request->file('logo'),'logos');
+                    $data['logo'] = $imgname;
+                }
+                else {
+                    return redirect()->back()->with('delete','Fail to delete');
+                }
+            }
             $category->update($data);
             
             return redirect()->route('cateTag.index')->with('update','Updated Successfully');
@@ -72,8 +87,15 @@ class CategoryTagContoller extends Controller
     public function destroy(category $category,$id)
     {
         $category = category::findOrFail($id);
-        $category->delete();
-        return redirect()->back()->with('delete','Deleted Successfully');
+        $image = pathinfo($category->logo,PATHINFO_BASENAME);
+        if(Storage::delete('public/logos/'.$image)){
+            $category->delete();
+        }
+        else {
+            return redirect()->back()->with('delete','Fail to delete');
+        }
+       
+        return redirect()->back()->with('success','Deleted Successfully');
     }
 
 

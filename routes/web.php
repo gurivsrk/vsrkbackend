@@ -19,9 +19,6 @@ Route::group(['as' => 'Frontend.', 'namespace' => 'Frontend'], function () {
 });
 
 
-
-
-
 //////// Admin group
 
 Auth::routes();
@@ -35,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('media/deleteMedia',  'App\Http\Controllers\imageController@deleteMedia')->name('deleteMedia');
 	
 	/// Blog
-	Route::get('vsrk-admin/all-blogs',  'App\Http\Controllers\blogController@index')->name('all-blogs');
+	Route::resource('vsrk-admin/all-blogs',  'App\Http\Controllers\blogController');
 
 	/// Categories And Tags
 	Route::resource('vsrk-admin/cateTag',  'App\Http\Controllers\CategoryTagContoller');

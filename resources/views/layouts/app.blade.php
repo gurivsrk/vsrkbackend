@@ -16,6 +16,7 @@
     <link href="{{ asset('admin') }}/css/theme-dashboard.css?v=2.1.1" rel="stylesheet" />
     <link href="{{ asset('admin') }}/css/custom.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -71,21 +72,22 @@
         <script src="{{ asset('admin') }}/js/theme-dashboard.js?v=2.1.1" type="text/javascript"></script>
         <!------ Additional ----------->
         <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
         <!------ global functions ------>
         
            @if(Session::has('success'))
                 <script>
-                    md.showNotification('top','right','success', "{{ Session::get('success') }}" )
+                    md.showNotification('top','right','success', 'check_circle',"{{ Session::get('success') }}" )
                 </script>
             @endif
             @if(Session::has('delete'))
                 <script>
-                    md.showNotification('top','right','danger', "{{ Session::get('delete') }}" )
+                    md.showNotification('top','right','danger', 'error',  "{{ Session::get('delete') }}" )
                 </script>
             @endif
             @if(Session::has('update'))
                 <script>
-                    md.showNotification('top','right','warning', "{{ Session::get('update') }}" )
+                    md.showNotification('top','right','warning', 'sync_alt', "{{ Session::get('update') }}" )
                 </script>
             @endif
             <script>

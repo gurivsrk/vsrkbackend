@@ -17,7 +17,7 @@ class team extends Model
     protected $fillable = [
         'name',
         'profileImg',
-        'designation ',
+        'designation',
         'descritption'
     ];
 }

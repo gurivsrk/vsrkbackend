@@ -19,14 +19,14 @@
         </a>
       </li>
       </li>
-      <li class="nav-item{{@$activePage == 'media' ? ' active' : '' }}">
+      <li class="nav-item{{@$activePage == 'career' ? ' active' : '' }}">
         <a class="nav-link" href="#">
-          <i class="material-icons">perm_media</i>
-            <p>{{ __('Media') }}</p>
+          <i class="material-icons">work_outline</i>
+            <p>{{ __('career') }}</p>
         </a>
       </li>
       <li class="nav-item{{@$activePage == 'blogs' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('all-blogs') }}">
+        <a class="nav-link" href="{{ route('all-blogs.index') }}">
           <i class="material-icons">history_edu</i>
             <p>{{ __('Blogs') }}</p>
         </a>
@@ -91,6 +91,12 @@
             </li>
           </ul>
         </div>
+      </li>
+      <li class="nav-item{{@$activePage == 'media' ? ' active' : '' }}">
+        <a class="nav-link" href="#">
+          <i class="material-icons">perm_media</i>
+            <p>{{ __('Media') }}</p>
+        </a>
       </li>
       <li class="nav-item{{@$activePage == 'icons' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('icons') }}">

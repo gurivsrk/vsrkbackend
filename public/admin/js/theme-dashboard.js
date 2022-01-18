@@ -152,13 +152,13 @@ md = {
     }
   },
 
-  showNotification: function(from, align, type, msg) {
+  showNotification: function(from, align, type, icon, msg) {
     //type = ['', 'info', 'danger', 'success', 'warning', 'rose', 'primary'];
 
     color = Math.floor((Math.random() * 6) + 1);
 
     $.notify({
-      icon: "add_alert",
+      icon: icon,
       message: msg
 
     }, {
@@ -726,10 +726,15 @@ function debounce(func, wait, immediate) {
 $(document).ready(function(){
   
   /// initialize Data table
-  $('.table-sort').DataTable();
+  $('.table-sort').DataTable()
+  
+  /// initialize select2 
+  $('.vsrk-select').select2({
+    placeholder: 'Select an option',
+  })
 
   /// Ck editor
-  CKEDITOR.replaceClass="ckeditor";
+  CKEDITOR.replaceClass="ckeditor"
 
   ///// File images close function
   $('#vsrkInputImg span').click(()=>{
@@ -756,6 +761,19 @@ $(document).ready(function(){
       $(this).parent().slideUp()
   })
 
+  ////// Jquery select show/hide 
+  $('.vsrk-jquery-radio').click(function(){
+    var $thiss = $(this)
+    if($thiss.val() === "Form"){
+      $('#'+$thiss.data('attr')).find('select').removeAttr('disabled');
+      $('#'+$thiss.data('attr')).slideDown();
+    }
+    else{
+      $('#'+$thiss.data('attr')).find('select').attr('disabled','true');
+       $('#'+$thiss.data('attr')).slideUp();
+    }
+  })
+  
   
 
 

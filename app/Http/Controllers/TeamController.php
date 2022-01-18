@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\team;
 use App\Http\Requests\StoreteamRequest;
 use App\Http\Requests\UpdateteamRequest;
-
+use Illuminate\Support\Facades\Storage;
 class TeamController extends Controller
 {
     /**
@@ -15,17 +15,9 @@ class TeamController extends Controller
      */
     public function index()
     {
-        return view('pages.team');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $type = "index-team";
+        $item = team::orderBy('id','desc')->get();
+        return view('pages.team',compact(['item','type']));
     }
 
     /**
@@ -36,24 +28,15 @@ class TeamController extends Controller
      */
     public function store(StoreteamRequest $request)
     {
-        $imgname = addMedia($request->file('profileImg'),'profile_photos');
-        $request->merge(['profileImg',$imgname]);
+        //die($request->file('profileImgT'));
+        $imgname = addMedia($request->file('profileImgT'),'profile_photos');
+        $request->merge(['profileImg'=>$imgname]);
         $data = $request->all();
         team::create($data);
         
         return redirect()->back()->with('success','Successfully Added');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\team  $team
-     * @return \Illuminate\Http\Response
-     */
-    public function show(team $team)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -63,7 +46,9 @@ class TeamController extends Controller
      */
     public function edit(team $team)
     {
-        //
+       $type = "edit-team";
+       $item = team::orderBy('id','desc')->get();
+       return view('pages.team',compact(['type','team','item']));
     }
 
     /**
@@ -75,7 +60,20 @@ class TeamController extends Controller
      */
     public function update(UpdateteamRequest $request, team $team)
     {
-        //
+        if($request->file('profileImgT')){
+            $image = pathinfo($team->profileImg,PATHINFO_BASENAME);
+            //echo$image;
+            if(Storage::delete('public/profile_photos/'.$image)){
+                $imgname = addMedia($request->file('profileImgT'),'profile_photos');
+                $request->merge(['profileImg'=>$imgname]);
+            }
+            else {
+                return redirect()->back()->with('delete','Fail to delete');
+            }           
+        }
+        $data = $request->all();
+        $team->update($data);
+        return redirect()->route('team.index')->with('update','Updated Successfully');
     }
 
     /**
@@ -86,6 +84,37 @@ class TeamController extends Controller
      */
     public function destroy(team $team)
     {
-        //
+        $image = pathinfo($team->profileImg,PATHINFO_BASENAME);
+       if(Storage::delete('public/profile_photos/'.$image)){
+            $team->delete();
+            return redirect()->back()->with('success','Successfully Deleted Member');
+       }
+       else{
+           //die('fail');
+            return redirect()->back()->with('delete','Fail to Delete Member');
+       }
     }
+
+    // /**
+    //  * Show the form for creating a new resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create()
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  \App\Models\team  $team
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show(team $team)
+    // {
+    //     //
+    // }
+
 }
+

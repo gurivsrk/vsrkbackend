@@ -18,12 +18,7 @@ class imageController extends Controller
       }
   
       public function deleteMedia(request $request){
-          if(Storage::delete('sliderImgs/'.$request->img)){
-              echo "done";
-          }
-          else{
-              echo "Fail";
-          }
+          
   
       }
 }

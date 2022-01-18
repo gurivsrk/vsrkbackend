@@ -15,7 +15,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                       <form class="p-4" method="post" action="{{ (empty($cateUpdate))?route('cateTag.store'):route('cateTag.update',$cateUpdate->id)}}">
+                       <form class="p-4" method="post" action="{{ (empty($cateUpdate))?route('cateTag.store'):route('cateTag.update',$cateUpdate->id)}}" enctype="multipart/form-data">
                        @if(!empty($cateUpdate))
                         @method('put')
                        @endif
@@ -39,23 +39,11 @@
                                 @if ($errors->has('type'))
                                         <span id="type-error" class="error text-danger" for="input-type">{{ $errors->first('type') }}</span>
                                     @endif
-                                <div class="">
-                                    <label class="">{{ __('Parent') }}</label>
-                                   <select name="parent_id" class="form-control custom-select">
-                                        <option hidden value="">Please Select One</option>
-                                        @if(!empty($cateUpdate))
-                                          <option value="">Remove Parent</option>
-                                        @endif
-                                        @foreach($category as $key=>$cate)
-                                          <option value="{{ @$cate->id }}" {{(@$cateUpdate->parent_id === @$cate->id )?"selected" : " "}}>{{ @$cate->name }}</option>
-                                        @endforeach
-                                   </select>
-                                </div>
-                                <label class="mt-4">Category for ?</label>
+                                    <label class="mt-4">Category for ?</label>
                                 <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                 
                                   <label class="form-check-label">
-                                      <input class="form-check-input" type="radio" name="for" id="cateFor1" value="Form" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor1" value="Form" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
                                       For Forms
                                       <span class="circle">
                                           <span class="check"></span>
@@ -64,13 +52,48 @@
                               </div>
                               <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label">
-                                      <input class="form-check-input" type="radio" name="for" id="cateFor2" value="other"  {{(@$cateUpdate->for ==='other' )?"checked" : " "}} aria-required="true" required>
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor2" value="other"  {{(@$cateUpdate->for ==='other' )?"checked" : " "}} aria-required="true" required>
                                       For Blog or Other
                                       <span class="circle">
                                           <span class="check"></span>
                                       </span>
                                   </label>
                               </div>
+                                <div id="select-parent" style="{{ (!empty($cateUpdate))?'':'display: none;'}}">
+                                    <label class="">{{ __('Parent') }}</label>
+                                   <select name="parent_id" class="form-control custom-select" {{ (!empty($cateUpdate))?"":"disabled=true"}} >
+                                        <option hidden value="">Please Select One</option>
+                                        @if(!empty($cateUpdate->parent))
+                                          <option value="">Remove Parent</option>
+                                        @endif
+                                        @foreach($category as $key=>$cate)
+                                          @if(@$cate->name !== @$cateUpdate->name)
+                                            <option value="{{ @$cate->id }}" {{(@$cateUpdate->parent_id === @$cate->id )?"selected" : " "}}>{{ @$cate->name }}</option>
+                                          @endif
+                                        @endforeach
+                                   </select>
+                                    <div class="col p-0">
+                                        <label class="">{{ __('Category Logo') }}</label>
+                                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                                            <div class="fileinput-preview fileinput-exists thumbnail img-raised">
+                                            @if(!empty($cateUpdate))
+                                                <img src="{{asset(@$cateUpdate->logo)}}">
+                                            @endif
+                                            </div>
+                                                <a href="#pablo" class="fileinput-exists" data-dismiss="fileinput">
+                                                <i class="fa fa-times"></i></a>
+                                            <div id="vsrkInputImg"> 
+                                                <span class="btn btn-raised btn-file">
+                                                  <input type="file" name="logo">
+                                                </span>
+                                            </div>
+                                        </div> 
+                                        @if ($errors->has('logo'))
+                                                <span id="logo-error" class="error text-danger" for="input-logo">{{ $errors->first('logo') }}</span>
+                                            @endif   
+                                    </div>
+                                </div>
+                               
                               @if ($errors->has('for'))
                                         <span id="for-error" class="error text-danger" for="input-for">{{ $errors->first('for') }}</span>
                                     @endif
@@ -84,11 +107,12 @@
                 <table class="table table-sort">
                   <thead >
                         <tr>
-                          <th> Sno.</th>
+                          <th>Sno.</th>
+                          <th>Logo</th>
                           <th>Name</th>
-                          <th> Type </th>
-                          <th> Parent </th>
-                          <th> For </th>
+                          <th>Type</th>
+                          <th>Parent</th>
+                          <th>For</th>
                           <th class="text-center">Actions</th>
                       </tr>
                     </thead>
@@ -96,10 +120,15 @@
                     @foreach($category as $key=>$cate)
                       <tr>
                           <td>{{++$key}}</td>
-                          <td>{{ @$cate->name}}  </td>
-                          <td>{{ @$cate->type }} </td>
-                          <td> {{ (!empty($cate->parent->name))?$cate->parent->name:"-"; }} </td>
-                          <td> {{ @$cate->for }} </td>
+                          @if(@$cate->logo)
+                            <td><img src="{{asset($cate->logo)}}" width="60px"></td>
+                          @else
+                            <td>-</td>
+                          @endif
+                          <td>{{ @$cate->name}}</td>
+                          <td>{{ @$cate->type }}</td>
+                          <td> {{ (!empty($cate->parent->name))?$cate->parent->name:"-"; }}</td>
+                          <td> {{ @$cate->for }}</td>
                           <td class="td-actions text-center">
                           <a rel="tooltip" class="btn btn-success btn-link" href="{{route('cateTag.edit',$cate->id)}}"> <i class="material-icons">edit</i> </a>
                           <form action="{{ route('cateTag.destroy',$cate->id) }}" method="POST" onsubmit="return confirm('Are you sure ?');" style="display: inline-block;">

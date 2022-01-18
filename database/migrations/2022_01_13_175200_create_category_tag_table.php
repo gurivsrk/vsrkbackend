@@ -15,10 +15,11 @@ class CreateCategoryTagTable extends Migration
     {
         Schema::create('category_tag', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
+            $table->string('name',100);
+            $table->string('logo',300)->nullable();
             $table->enum('type', ['category', 'tag']);
             $table->bigInteger('parent_id')->nullable();
-            $table->text('for');
+            $table->string('for',20);
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

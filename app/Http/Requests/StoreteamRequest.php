@@ -24,7 +24,7 @@ class StoreteamRequest extends FormRequest
     public function rules()
     {
         return [
-            'profileImg'=>'required|max:4120|mimes:jpeg,png,jpg,bmp',
+            'profileImgT'=>'required|max:4120|mimes:jpeg,png,jpg,bmp',
             'name'=>'required',
             'designation'=>'required',
             'descritption'=>'required'

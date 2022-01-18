@@ -11,6 +11,6 @@ if(!function_exists('addMedia')){
         $img_name = $file->getClientOriginalName();
         $filename = date('his') . '-' . $img_name;
         $img_name = $file->storePubliclyAs($loc, $filename,'public');
-        return $img_name;
+        return '/storage/'.$img_name;
     }
 }
