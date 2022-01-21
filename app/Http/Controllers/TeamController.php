@@ -16,7 +16,7 @@ class TeamController extends Controller
     public function index()
     {
         $type = "index-team";
-        $item = team::orderBy('id','desc')->get();
+        $item = team::orderBy('order_id')->get();
         return view('pages.team',compact(['item','type']));
     }
 
@@ -47,7 +47,7 @@ class TeamController extends Controller
     public function edit(team $team)
     {
        $type = "edit-team";
-       $item = team::orderBy('id','desc')->get();
+       $item = team::orderBy('order_id')->get();
        return view('pages.team',compact(['type','team','item']));
     }
 
@@ -60,16 +60,9 @@ class TeamController extends Controller
      */
     public function update(UpdateteamRequest $request, team $team)
     {
-        if($request->file('profileImgT')){
-            $image = pathinfo($team->profileImg,PATHINFO_BASENAME);
-            //echo$image;
-            if(Storage::delete('public/profile_photos/'.$image)){
-                $imgname = addMedia($request->file('profileImgT'),'profile_photos');
-                $request->merge(['profileImg'=>$imgname]);
-            }
-            else {
-                return redirect()->back()->with('delete','Fail to delete');
-            }           
+        if($request->hasFile('profileImgT')){
+            $imgname =  updateMedia($team->profileImg, $request->file('profileImgT'),'profile_photos');
+            $request->merge(['profileImg'=>$imgname]);
         }
         $data = $request->all();
         $team->update($data);
@@ -94,27 +87,6 @@ class TeamController extends Controller
             return redirect()->back()->with('delete','Fail to Delete Member');
        }
     }
-
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  *
-    //  * @param  \App\Models\team  $team
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function show(team $team)
-    // {
-    //     //
-    // }
 
 }
 

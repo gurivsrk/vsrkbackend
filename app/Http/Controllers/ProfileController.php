@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
+
     /**
      * Show the form for editing the profile.
      *
@@ -18,6 +19,20 @@ class ProfileController extends Controller
         return view('profile.edit');
     }
 
+
+    /**
+     * Show the form for editing the profile.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function editO()
+    {
+  
+        return view('profile.edit');
+    }
+  
+
+    
     /**
      * Update the profile
      *

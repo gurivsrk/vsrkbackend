@@ -25,7 +25,6 @@ class category extends Model
     public function parent(){
 
         return $this->belongsTo($this,'parent_id','id');
-        
     }
     
 }

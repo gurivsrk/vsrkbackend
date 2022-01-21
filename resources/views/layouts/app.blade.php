@@ -73,6 +73,12 @@
         <!------ Additional ----------->
         <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+            <script>
+                $( function() {
+                    $( "#sortable" ).sortable();
+                } );
+            </script>
         <!------ global functions ------>
         
            @if(Session::has('success'))

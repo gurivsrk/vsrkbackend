@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Carbon\Carbon;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,8 +13,6 @@ class blogs extends Model
 
         protected $table = "blog";
 
-        protected $primaryKey = "id";
-
         protected $fillable = [
             'blogImage',
             'title',
@@ -22,5 +21,6 @@ class blogs extends Model
             'post_status',
             'descritption'
         ];
+
 
 }

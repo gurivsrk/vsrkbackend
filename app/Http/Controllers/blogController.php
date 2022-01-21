@@ -53,9 +53,8 @@ class blogController extends Controller
      */
     public function edit(blogs $blogs,$id)
     {
-        //die($id);
-        $blogs = blogs::findOrFail($id);
         $type = "edit-blog";
+        $blogs = blogs::findOrFail($id);
         $item = blogs::orderBy('id','desc')->paginate(10);
         $catetag = category::where('for','other')->get();
         return view('pages.all-blogs',compact(['catetag','type','blogs','item']));
@@ -74,16 +73,8 @@ class blogController extends Controller
        
         $data = $request->all();
 
-        if($request->file('blogImage')){
-            $image = pathinfo($blogs->blogImage,PATHINFO_BASENAME);
-            //echo$image;
-            if(Storage::delete('public/blog_images/'.$image)){
-                $imgname = addMedia($request->file('blogImage'),'blog_images');
-                $data['blogImage'] = $imgname;
-            }
-            else {
-                return redirect()->back()->with('delete','Fail to delete');
-            }
+        if($request->hasFile('blogImage')){  
+           $data['blogImage'] =  updateMedia( $blogs->blogImage, $request->file('blogImage'),'blog_images');
         }
         
         $blogs->update($data);

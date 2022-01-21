@@ -19,12 +19,6 @@
         </a>
       </li>
       </li>
-      <li class="nav-item{{@$activePage == 'career' ? ' active' : '' }}">
-        <a class="nav-link" href="#">
-          <i class="material-icons">work_outline</i>
-            <p>{{ __('career') }}</p>
-        </a>
-      </li>
       <li class="nav-item{{@$activePage == 'blogs' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('all-blogs.index') }}">
           <i class="material-icons">history_edu</i>
@@ -42,15 +36,15 @@
         <div class="collapse  {{ ($activePage == 'FormTable' ||@$activePage == 'allForm') ? 'show' : '' }}" id="MFForms">
           <ul class="nav">
             <li class="nav-item{{@$activePage == 'FormTable' ? ' active' : '' }}">
-            <a class="nav-link" href="{{ route('all-forms') }}">
+            <a class="nav-link" href="{{ route('forms.index') }}">
               <i class="material-icons">content_paste</i>
-                <p>{{ __('MF Forms') }}</p>
+              <span class="sidebar-normal">{{ __('MF Forms') }}</span>
               </a>
             </li>
             <li class="nav-item{{@$activePage == 'allForm' ? ' active' : '' }}">
-            <a class="nav-link" href="{{ route('all-forms') }}">
+            <a class="nav-link" href="{{ route('forms.index') }}">
               <i class="material-icons">content_paste</i>
-                <p>{{ __('All Other Forms') }}</p>
+              <span class="sidebar-normal">{{ __('All Other Forms') }}</span>
               </a>
             </li>
           </ul>
@@ -62,31 +56,26 @@
           <p>{{ __('Team') }}</p>
         </a>
       </li>
-      <li class="nav-item{{@$activePage == 'form-category' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('cateTag.index') }}">
-              <i class="material-icons">category</i>
-                <p> {{ __('Categories/ Tags') }} </p>
-              </a>
-            </li>
-      <li class="nav-item {{ ($activePage == 'profile' ||@$activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link collapsed" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
+      <li class="nav-item{{@$activePage == 'addEditVacany' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('career.index')}}">
+          <i class="material-icons">group_add</i>
+            <p>{{ __('Add/Edit Vacany') }}</p>
+        </a>
+      </li>
+     
+      <li class="nav-item {{ ($activePage == 'career' ||@$activePage == 'career') ? ' active' : '' }}">
+        <a class="nav-link {{ ($activePage == 'career' ||@$activePage == 'career') ? '' : 'collapsed' }}"  data-toggle="collapse" href="#allPages" aria-expanded="false">
           <i><span class="material-icons">pages</span></i>
-          <p>{{ __('All Static Pages') }}
+          <p>{{ __('All Pages') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse" id="laravelExample">
+        <div class="collapse {{ ($activePage == 'career' ||@$activePage == 'career') ? 'show' : '' }}" id="allPages">
           <ul class="nav">
-            <li class="nav-item{{@$activePage == 'profile' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('profile.edit') }}">
-                <span class="sidebar-mini"> UP </span>
-                <span class="sidebar-normal">{{ __('User profile') }} </span>
-              </a>
-            </li>
-            <li class="nav-item{{@$activePage == 'user-management' ? ' active' : '' }}">
-              <a class="nav-link" href="{{ route('user.index') }}">
-                <span class="sidebar-mini"> UM </span>
-                <span class="sidebar-normal"> {{ __('User Management') }} </span>
+            <li class="nav-item{{@$activePage == 'career' ? ' active' : '' }}">
+              <a class="nav-link" href="{{route('staticPages.edit','career')}}">
+                <i class="material-icons">work_outline</i>
+                <span class="sidebar-normal">{{ __('career') }} </span>
               </a>
             </li>
           </ul>
@@ -98,26 +87,21 @@
             <p>{{ __('Media') }}</p>
         </a>
       </li>
-      <li class="nav-item{{@$activePage == 'icons' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('icons') }}">
-          <i class="material-icons">bubble_chart</i>
-          <p>{{ __('Icons') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{@$activePage == 'map' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('map') }}">
-          <i class="material-icons">location_ons</i>
-            <p>{{ __('Maps') }}</p>
-        </a>
-      </li>
+      <li class="nav-item{{@$activePage == 'form-category' ? ' active' : '' }}">
+              <a class="nav-link" href="{{ route('cateTag.index') }}">
+              <i class="material-icons">category</i>
+                <p> {{ __('Categories/ Tags') }} </p>
+              </a>
+            </li>
+    
       <li class="nav-item {{ ($activePage == 'profile' ||@$activePage == 'user-management') ? ' active' : '' }}">
-        <a class="nav-link collapsed" data-toggle="collapse" href="#laravelExample" aria-expanded="false">
+        <a class="nav-link {{ ($activePage == 'profile' ||@$activePage == 'user-management') ? '' : 'collapsed' }}" data-toggle="collapse" href="#user-management" aria-expanded="false">
           <i><img style="width:25px" src="{{ asset('admin') }}/img/laravel.svg"></i>
           <p>{{ __('User Section') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse" id="laravelExample">
+        <div class="collapse {{ ($activePage == 'profile' ||@$activePage == 'user-management') ? ' show' : '' }}" id="user-management">
           <ul class="nav">
             <li class="nav-item{{@$activePage == 'profile' ? ' active' : '' }}">
               <a class="nav-link" href="{{ route('profile.edit') }}">
@@ -135,18 +119,6 @@
         </div>
       </li>
         
-      <li class="nav-item{{@$activePage == 'typography' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('typography') }}">
-          <i class="material-icons">library_books</i>
-            <p>{{ __('Typography') }}</p>
-        </a>
-      </li>
-      <li class="nav-item{{@$activePage == 'notifications' ? ' active' : '' }}">
-        <a class="nav-link" href="{{ route('notifications') }}">
-          <i class="material-icons">notifications</i>
-          <p>{{ __('Notifications') }}</p>
-        </a>
-      </li>
       
     </ul>
   </div>

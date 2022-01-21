@@ -774,7 +774,18 @@ $(document).ready(function(){
     }
   })
   
-  
+  ////// Change Views
+
+  $('.reOrderBtn').click(function(){
+    if($(this).data('id') == 1){
+        $('#normal-view').hide()
+        $('#rearrange-order').show()
+    }
+    else{
+        $('#normal-view').show()
+        $('#rearrange-order').hide()
+    }
+});
 
 
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,9 @@ class storeCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            "name" => "required",
+            "name" => ['required',
+                Rule::unique('category_tag')->where('type',$this->type)
+            ],
             "type" => "required",
             "for" => "required",
         ];

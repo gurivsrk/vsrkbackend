@@ -27,9 +27,9 @@ Route::get('/vsrk-admin', 'App\Http\Controllers\HomeController@index')->name('vs
 
 Route::group(['middleware' => 'auth'], function () {
 
-	///Image Functions
-	Route::post('media/addMedia',  'App\Http\Controllers\imageController@addMedia')->name('storeMedia');
-	Route::post('media/deleteMedia',  'App\Http\Controllers\imageController@deleteMedia')->name('deleteMedia');
+	///Other Common Functions
+	Route::post('vsrk-admin/change-order',  'App\Http\Controllers\imageController@changeF')->name('vsrk-admin.changeOrder');
+	Route::post('vsrk-admin/get-category',  'App\Http\Controllers\imageController@getCategoryF')->name('getCategory');
 	
 	/// Blog
 	Route::resource('vsrk-admin/all-blogs',  'App\Http\Controllers\blogController');
@@ -40,40 +40,22 @@ Route::group(['middleware' => 'auth'], function () {
 	/// Team
 	Route::resource('vsrk-admin/team', 'App\Http\Controllers\TeamController');
 	
-	Route::get('vsrk-admin/all-forms', function () {
-		return view('pages.all-form');
-	})->name('all-forms');
+	///// Form
+	Route::resource('vsrk-admin/forms', 'App\Http\Controllers\FormController');
+	
+	///// Career
+	Route::resource('vsrk-admin/career', 'App\Http\Controllers\CareerContoller');
 
-
+	///// Static Pages
+	Route::resource('vsrk-admin/staticPages', 'App\Http\Controllers\staticPagesContoller')->only([
+		'edit','update'
+	]);
 	
 	
-	Route::get('typography', function () {
-		return view('pages.typography');
-	})->name('typography');
-
-	Route::get('icons', function () {
-		return view('pages.icons');
-	})->name('icons');
-
-	Route::get('map', function () {
-		return view('pages.map');
-	})->name('map');
-
-	Route::get('notifications', function () {
-		return view('pages.notifications');
-	})->name('notifications');
-
-	Route::get('rtl-support', function () {
-		return view('pages.language');
-	})->name('language');
-
-	Route::get('upgrade', function () {
-		return view('pages.upgrade');
-	})->name('upgrade');
-
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+	Route::resource('vsrk-admin/user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+	Route::get('vsrk-admin/profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
+	Route::get('vsrk-admin/profile/{userId}/edit', 'App\Http\Controllers\ProfileController@editO')->name('profile.otherEdit');
+	Route::put('vsrk-admin/profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
+	Route::put('vsrk-admin/profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 

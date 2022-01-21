@@ -2,22 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\team;
 use Illuminate\Http\Request;
 
 class imageController extends Controller
 {
-    public function addMedia(request $request){
-        dd($request);
-        // $img = $request->file('file');
-        // $img_name = $img->getClientOriginalName();
-        // $filename = date('his').'-'.$img_name;
-        // $img_name = $img->storePubliclyAs('sliderImgs',$filename );
-        // return response()->json([
-        //       'name' => $filename,
-        //   ]);
+    public function changeF(request $request){
+        $order = 0;
+        if($request->type == "team-order"){
+            foreach($request->ids as $id){
+                team::where('id',$id)->update(array('order_id'=> ++$order));             
+            }
+        }
+        else{
+          return false;
+        }
+          return true;
       }
   
-      public function deleteMedia(request $request){
+      public function getCategoryF(request $request){
           
   
       }

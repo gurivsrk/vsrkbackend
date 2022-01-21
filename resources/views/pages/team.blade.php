@@ -70,17 +70,21 @@
                             </div>
                             
                             <div class="form-group">
-                                <input class="btn btn-success" name="Submit" id="input-profileImg" type="submit" value="Submit"/>
+                            <input class="btn {{(@$type == 'edit-team')?'btn-warning':'btn-success'}} " name="Submit" type="submit" value="{{(@$type == 'edit-team')?'Update':'Submit'}}"/>
                             </div>
                         </form>
                     </div>
                     </div>
                 <!---- End Add Form ---->
-                    <div class="row">
-                    <div  class="col-12 text-right ">
-                        <button data-attr="addTeamSection" class="btn btn-sm btn-info addBtn">Add New Team Member<div class="ripple-container"></div></button>
-                    </div>
-                        @include('partials.blogType',compact('item','type'))
+                    <div id="normal-view" class="row">
+                        <div  class="col-12 text-right ">
+                            <button class="btn btn-sm btn-danger reOrderBtn" data-id="1">Re-order Team Member<div class="ripple-container"></div></button>
+                            <button data-attr="addTeamSection" class="btn btn-sm btn-info addBtn">Add New Team Member<div class="ripple-container"></div></button>
+                        </div>
+                            @include('partials.blogType',compact('item','type'))
+                        </div>
+                    <div id="rearrange-order" class="col-md-12" style="display: none;">
+                        @include('partials.listTypeSort',compact('item','type'))
                     </div>
                 </div>
           </div>
@@ -94,5 +98,39 @@
   </div>
 @endsection
 @push('js')
+    <script>
+        $(document).ready(function(){
+            $('#saveOrderBtn').click(()=>{
+                if(confirm('Are you sure to change order') == true){
+                    var ids = [];
+                $('#sortable tr').each(function(){
+                    ids.push($(this).data('id'));
+                });
+                $.ajax({
+                    headers: {'X-CSRF-TOKEN': "{{ csrf_token() }}"},
+                    method: 'POST',
+                    url: "{{route('vsrk-admin.changeOrder')}}",
+                    data: {ids: ids, type:'team-order'},
+                    success: function(result){
+                       if(result == true){
+                            md.showNotification('top','right','success', 'check_circle',"Successfully Updated Order" )
+                            setInterval(()=>{
+                                location.reload();
+                            },1000)
+                       }
+                       else{
+                        md.showNotification('top','right','danger', 'error',"Fail to Update Order" )
+                       }
+                    }
+                })
+                }
+                
+            })
+        })
 
+
+
+
+        
+    </script>
 @endpush

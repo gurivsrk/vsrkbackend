@@ -25,7 +25,7 @@
                             @else
                                 <div class="close">X</div>
                             @endif      
-                        <form method="post"  id="add-team-member" action="{{(@$type != 'edit-blog')?route('all-blogs.store'):route('all-blogs.update',$blogs->id)}}" enctype="multipart/form-data">
+                        <form method="post"  id="Add-Blog" action="{{(@$type != 'edit-blog')?route('all-blogs.store'):route('all-blogs.update',$blogs->id)}}" enctype="multipart/form-data">
                         @if(@$type =='edit-blog')
                                 @method('put')
                             @endif
@@ -120,7 +120,7 @@
                             </div>
                             
                             <div class="form-group">
-                                <input class="btn btn-success" name="Submit" id="input-profileImg" type="submit" value="Submit"/>
+                            <input class="btn {{(@$type== 'edit-blog')?'btn-warning':'btn-success'}} " name="Submit" type="submit" value="{{(@$type== 'edit-blog')?'Update':'Submit'}}"/>
                             </div>
                         </form>
                     </div>
@@ -151,10 +151,5 @@
 @endsection
 
 @push('js')
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-    });
-  </script>
+
 @endpush

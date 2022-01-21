@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTeamTable extends Migration
+class CreateFormTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateTeamTable extends Migration
      */
     public function up()
     {
-        Schema::create('team', function (Blueprint $table) {
+        Schema::create('form', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->string('profileImg',300);
-            $table->string('designation',50);
-            $table->text('descritption');
-            $table->int('order_id',10); 
+            $table->string('form_name',100);
+            $table->string('form',200);
+            $table->string('form_link',200)->nullable();
+            $table->string('category_id',10);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -32,6 +31,6 @@ class CreateTeamTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('team');
+        Schema::dropIfExists('form');
     }
 }

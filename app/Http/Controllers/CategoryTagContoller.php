@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Http\Requests\storeCategoryRequest;
+use App\Http\Requests\UpdateCategoryRequest;
 use Illuminate\Support\Facades\Storage;
 
 class CategoryTagContoller extends Controller
@@ -29,13 +30,15 @@ class CategoryTagContoller extends Controller
     public function store(storeCategoryRequest $request)
     {
         $data = $request->all();
-        if($request->file('logo')){
-            $imgname = addMedia($request->file('logo'),'logos');
-            $data['logo'] = $imgname; 
-        }    
-        category::create($data);
+      
+            if($request->file('logo')){
+                $imgname = addMedia($request->file('logo'),'logos');
+                $data['logo'] = $imgname; 
+            }    
+            category::create($data);
 
-        return redirect()->back()->with('success','Successfully Added');        
+            return redirect()->back()->with('success','Successfully Added');
+       
     }
    
     /**
@@ -46,9 +49,10 @@ class CategoryTagContoller extends Controller
      */
     public function edit(category $category,$id)
     {
+        $type = 'edit-catetag';
         $category = category::with('parent')->get();
         $cateUpdate = category::findOrFail($id);
-        return view('pages.form-category',compact(['cateUpdate','category']));
+        return view('pages.form-category',compact(['cateUpdate','category','type']));
     }
 
     /**
@@ -58,20 +62,12 @@ class CategoryTagContoller extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category,$id)
+    public function update(UpdateCategoryRequest $request, category $category,$id)
     {
             $category = category::findOrFail($id);
             $data = $request->all();
-            if($request->file('logo')){
-                $image = pathinfo($category->logo,PATHINFO_BASENAME);
-                //echo$image;
-                if(Storage::delete('public/logos/'.$image)){
-                    $imgname = addMedia($request->file('logo'),'logos');
-                    $data['logo'] = $imgname;
-                }
-                else {
-                    return redirect()->back()->with('delete','Fail to delete');
-                }
+            if($request->hasFile('logo')){
+                $data['logo'] =  updateMedia( $category->logo ,$request->file('logo'),'logos');
             }
             $category->update($data);
             
@@ -87,38 +83,21 @@ class CategoryTagContoller extends Controller
     public function destroy(category $category,$id)
     {
         $category = category::findOrFail($id);
-        $image = pathinfo($category->logo,PATHINFO_BASENAME);
-        if(Storage::delete('public/logos/'.$image)){
+
+        if(empty($category->logo)){
             $category->delete();
         }
-        else {
-            return redirect()->back()->with('delete','Fail to delete');
+        else{
+            $image = pathinfo($category->logo,PATHINFO_BASENAME);
+            if(Storage::delete('public/logos/'.$image)){
+                $category->delete();
+            }
+            else {
+                return redirect()->back()->with('delete','Fail to delete');
+            }
+    
         }
-       
         return redirect()->back()->with('success','Deleted Successfully');
     }
-
-
-       /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    // public function create()
-    // {
-    //     //
-    // }
-
-     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\category  $category
-     * @return \Illuminate\Http\Response
-     */
-    // public function show(category $category)
-    // {
-    //     echo 'show';
-    // }
-
 
 }
