@@ -2752,7 +2752,9 @@ input[type=number] {
 
 .partner-area .partner-item img {
   width: auto;
-  filter: grayscale(0.5);
+  filter: grayscale(0.75);
+  transition: 0.5s;
+  cursor: pointer;
 }
 .partner-area .partner-item img:hover {
   width: auto;
