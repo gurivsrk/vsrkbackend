@@ -1341,7 +1341,7 @@ img {
   Why Vsrk CSS
 =================================================*/
 #why-vsrk{
-  background: #faebd68c url(../img/resource/Asset_2.png) no-repeat top;
+  background: url(../img/resource/Asset_2.png) no-repeat top;
   background-size: cover;
 }
 
