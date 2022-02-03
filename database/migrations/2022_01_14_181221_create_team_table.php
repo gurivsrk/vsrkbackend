@@ -19,7 +19,7 @@ class CreateTeamTable extends Migration
             $table->string('profileImg',300);
             $table->string('designation',50);
             $table->text('descritption');
-            $table->int('order_id',10); 
+            $table->integer('order_id'); 
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,4 +1,4 @@
-<div id="seo-section">
+<div id="seo-section" class="seotype-section">
     <h5 class="card-title mb-5">Seo Section:</h5>
     <div class="form-group">
         <label>{{__('Seo Title')}}</label>

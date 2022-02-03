@@ -17,7 +17,7 @@ class CategoryTagContoller extends Controller
      */
     public function index()
     {
-        $category = category::with('parent')->get();
+        $category = category::all();
         return view('pages.form-category',compact('category'));
     }
  
@@ -50,7 +50,7 @@ class CategoryTagContoller extends Controller
     public function edit(category $category,$id)
     {
         $type = 'edit-catetag';
-        $category = category::with('parent')->get();
+        $category = category::all();
         $cateUpdate = category::findOrFail($id);
         return view('pages.form-category',compact(['cateUpdate','category','type']));
     }

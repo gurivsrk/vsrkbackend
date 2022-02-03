@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\category;
+use App\Models\faqs;
 use App\Models\staticPages;
+
 use App\Http\Requests\UpdatestaticPagesRequest;
 
 
@@ -18,8 +21,9 @@ class staticPagesContoller extends Controller
     public function edit(staticPages $staticPages,$id)
     {
         $data = $staticPages->getAllFields($id);
+        $faqs = faqs::all();
 
-        return view('pages.'.$id,compact(['data']));
+        return view('pages.'.$id,compact(['data','faqs']));
     }
 
     /**

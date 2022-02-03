@@ -15,7 +15,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="{{ route('vsrkAdmin') }}">
             <i class="material-icons">dashboard</i>
             <p class="d-lg-none d-md-block">
@@ -38,7 +38,7 @@
             <a class="dropdown-item" href="#">{{ __('Another Notification') }}</a>
             <a class="dropdown-item" href="#">{{ __('Another One') }}</a>
           </div>
-        </li>
+        </li> -->
         <li class="nav-item dropdown">
           <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="material-icons">person</i>

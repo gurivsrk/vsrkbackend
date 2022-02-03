@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\team;
+
 use App\Http\Requests\StoreteamRequest;
 use App\Http\Requests\UpdateteamRequest;
 use Illuminate\Support\Facades\Storage;
 class TeamController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +21,6 @@ class TeamController extends Controller
         $item = team::orderBy('order_id')->get();
         return view('pages.team',compact(['item','type']));
     }
-
     /**
      * Store a newly created resource in storage.
      *

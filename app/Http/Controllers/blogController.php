@@ -18,8 +18,8 @@ class blogController extends Controller
     public function index()
     {
         $type = "index-blog";
-        $item = blogs::orderBy('id','desc')->paginate(10);
-        $catetag = category::where('for','other')->get();
+        $item = blogs::reverse()->paginate(10);
+        $catetag = category::where('for','other')->orwhere('for','all')->get();
         return view('pages.all-blogs',compact(['catetag','item','type']));
     }
 
@@ -55,8 +55,8 @@ class blogController extends Controller
     {
         $type = "edit-blog";
         $blogs = blogs::findOrFail($id);
-        $item = blogs::orderBy('id','desc')->paginate(10);
-        $catetag = category::where('for','other')->get();
+        $item = blogs::reverse()->paginate(10);
+        $catetag = category::where('for','other')->orwhere('for','all')->get();
         return view('pages.all-blogs',compact(['catetag','type','blogs','item']));
     }
 
@@ -100,26 +100,5 @@ class blogController extends Controller
             return redirect()->back()->with('delete','Fail to Delete Blog');
        }
     }
-
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create()
-    // {
-    //     //
-    // }
-
-    // // /**
-    // //  * Display the specified resource.
-    // //  *
-    // //  * @param  \App\Models\blogs  $blogs
-    // //  * @return \Illuminate\Http\Response
-    // //  */
-    // public function show(blogs $blogs)
-    // {
-    //     echo $blogs.'sas';
-    // }
-
+    
 }

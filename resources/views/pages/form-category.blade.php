@@ -42,6 +42,15 @@
                                     <label class="mt-4">Category for ?</label>
                                 <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label text-dark">
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor1" value="all" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
+                                      For All
+                                      <span class="circle">
+                                          <span class="check"></span>
+                                      </span>
+                                  </label>
+                              </div>
+                                <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
+                                  <label class="form-check-label text-dark">
                                       <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor1" value="Form" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
                                       For Forms
                                       <span class="circle">
@@ -51,7 +60,7 @@
                               </div>
                               <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label text-dark">
-                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor1" value="Career" {{(@$cateUpdate->for ==='Career' )?"checked" : " "}}  aria-required="true" required>
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor2" value="Career" {{(@$cateUpdate->for ==='Career' )?"checked" : " "}}  aria-required="true" required>
                                       For Career
                                       <span class="circle">
                                           <span class="check"></span>
@@ -60,7 +69,16 @@
                               </div>
                               <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label text-dark">
-                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor2" value="other"  {{(@$cateUpdate->for ==='other' )?"checked" : " "}} aria-required="true" required>
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor3" value="faqs" {{(@$cateUpdate->for ==='faqs' )?"checked" : " "}}  aria-required="true" required>
+                                      For Faqs
+                                      <span class="circle">
+                                          <span class="check"></span>
+                                      </span>
+                                  </label>
+                              </div>
+                              <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
+                                  <label class="form-check-label text-dark">
+                                      <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor4" value="other"  {{(@$cateUpdate->for ==='other' )?"checked" : " "}} aria-required="true" required>
                                       For Blog or Other
                                       <span class="circle">
                                           <span class="check"></span>

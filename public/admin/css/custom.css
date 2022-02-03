@@ -1,3 +1,7 @@
+.justify-content-evenly{
+    justify-content: space-evenly !important;
+}
+
 .vsrk-icon, .vsrk-icon:focus{
     display: inline-block;
     color: #fff;
@@ -68,7 +72,9 @@
     color: #fff !important;
     line-height: 45px;
 }
-
+td p {
+    margin: 0;
+}
 .error {
     font-weight: 500;
 }
@@ -89,11 +95,11 @@
     border-radius: 25px;
     margin: 30px 20px;
 }
-#seo-section {
+.seotype-section {
     background: #fff8f0;
     padding: 20px;
 }
-#seo-section .card-title{
+.seotype-section .card-title{
     background: #50bfa7;
     color: #fff;
     font-weight: 500;
@@ -122,4 +128,9 @@
 .select2-container .select2-selection--multiple .select2-selection__rendered, .select2-container .select2-selection--single .select2-selection__rendered{
     line-height: 30px;
 }
-
+.select2-container--default .select2-selection--multiple{
+    background-color: transparent !important;
+}
+.card-body p{
+    text-align: justify;
+}

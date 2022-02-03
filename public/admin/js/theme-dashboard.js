@@ -764,7 +764,7 @@ $(document).ready(function(){
   ////// Jquery select show/hide 
   $('.vsrk-jquery-radio').click(function(){
     var $thiss = $(this)
-    if($thiss.val() === "Form"){
+    if($thiss.val() === "Form" || $thiss.val() === "all"){
       $('#'+$thiss.data('attr')).find('select').removeAttr('disabled');
       $('#'+$thiss.data('attr')).slideDown();
     }

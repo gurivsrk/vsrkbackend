@@ -62,20 +62,43 @@
             <p>{{ __('Add/Edit Vacany') }}</p>
         </a>
       </li>
-     
-      <li class="nav-item {{ ($activePage == 'career' ||@$activePage == 'career') ? ' active' : '' }}">
-        <a class="nav-link {{ ($activePage == 'career' ||@$activePage == 'career') ? '' : 'collapsed' }}"  data-toggle="collapse" href="#allPages" aria-expanded="false">
+      <li class="nav-item{{@$activePage == 'testimonials' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('testimonial.index')}}">
+          <i class="material-icons">sms</i>
+            <p>{{ __('Testimonials') }}</p>
+        </a>
+      </li>
+      <li class="nav-item{{@$activePage == 'faqs' ? ' active' : '' }}">
+        <a class="nav-link" href="{{route('faqs.index')}}">
+          <i class="material-icons">quiz</i>
+            <p>{{ __('FAQ\'s') }}</p>
+        </a>
+      </li>
+      <li class="nav-item {{ ($activePage == 'career' ||@$activePage == 'GD' ||@$activePage == 'home') ? ' active' : '' }}">
+        <a class="nav-link {{ ($activePage == 'career' ||@$activePage == 'GD' ||@$activePage == 'home') ? '' : 'collapsed' }}"  data-toggle="collapse" href="#allPages" aria-expanded="false">
           <i><span class="material-icons">pages</span></i>
           <p>{{ __('All Pages') }}
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse {{ ($activePage == 'career' ||@$activePage == 'career') ? 'show' : '' }}" id="allPages">
+        <div class="collapse {{ ($activePage == 'career' ||@$activePage == 'GD' ||@$activePage == 'home') ? 'show' : '' }}" id="allPages">
           <ul class="nav">
+            <li class="nav-item{{@$activePage == 'GD' ? ' active' : '' }}">
+              <a class="nav-link" href="{{route('staticPages.edit','GD')}}">
+                <i class="material-icons">info</i>
+                <span class="sidebar-normal">{{ __('General Details') }} </span>
+              </a>
+            </li>
+            <li class="nav-item{{@$activePage == 'home' ? ' active' : '' }}">
+              <a class="nav-link" href="{{route('staticPages.edit','home')}}">
+                <i class="material-icons">home</i>
+                <span class="sidebar-normal">{{ __('Home') }} </span>
+              </a>
+            </li>
             <li class="nav-item{{@$activePage == 'career' ? ' active' : '' }}">
               <a class="nav-link" href="{{route('staticPages.edit','career')}}">
                 <i class="material-icons">work_outline</i>
-                <span class="sidebar-normal">{{ __('career') }} </span>
+                <span class="sidebar-normal">{{ __('Career') }} </span>
               </a>
             </li>
           </ul>

@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 ///// Frontend Group 
-Route::group(['as' => 'Frontend.', 'namespace' => 'Frontend'], function () {
-	Route::get('/', [App\Http\Controllers\web\homeController::class, 'index'])->name('index');
+Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
+	 Route::get('/', [App\Http\Controllers\frontend\homeController::class, 'index'])->name('index');
+	
 });
 
 
@@ -40,6 +41,10 @@ Route::group(['middleware' => 'auth'], function () {
 	/// Team
 	Route::resource('vsrk-admin/team', 'App\Http\Controllers\TeamController');
 	
+	/// testimonials
+	Route::resource('vsrk-admin/testimonial', 'App\Http\Controllers\testimonialController');
+
+	
 	///// Form
 	Route::resource('vsrk-admin/forms', 'App\Http\Controllers\FormController');
 	
@@ -50,6 +55,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('vsrk-admin/staticPages', 'App\Http\Controllers\staticPagesContoller')->only([
 		'edit','update'
 	]);
+	
+	///// Faqs
+	Route::resource('vsrk-admin/faqs', 'App\Http\Controllers\faqsController');
 	
 	
 	Route::resource('vsrk-admin/user', 'App\Http\Controllers\UserController', ['except' => ['show']]);

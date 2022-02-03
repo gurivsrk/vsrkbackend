@@ -18,8 +18,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        $form = forms::with('categoryName')->get();
-        $catetag = category::where('for','Form')->get();
+        $form = forms::all();
+        $catetag = category::where('for','Form')->orwhere('for','all')->get();
         return view('pages.all-form',compact(['catetag','form']));
     }
 
@@ -53,8 +53,8 @@ class FormController extends Controller
     {
         $type = 'edit-form';
         $formItem = forms::find($id);
-        $form = forms::with('categoryName')->get();
-        $catetag = category::where('for','Form')->get();
+        $form = forms::all();
+        $catetag = category::where('for','Form')->orwhere('for','all')->get();
         return view('pages.all-form',compact(['catetag','form','formItem','type']));
     }
 

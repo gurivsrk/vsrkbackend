@@ -22,5 +22,12 @@ class blogs extends Model
             'descritption'
         ];
 
+        public function scopeReverse($query){
+            return $query->orderBy('id','desc');
+        }
+        
+        public function getBlogDateAttribute(){
+            return date('d-M-Y h:i:sa', strtotime($this->created_at));
+        }
 
 }

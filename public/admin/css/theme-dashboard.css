@@ -12352,8 +12352,9 @@ fieldset[disabled][disabled] .has-rose .form-control,
 }
 
 .bmd-form-group label {
-  color: #AAAAAA;
+  color: #2d2d2d;
 }
+
 
 .bmd-form-group .radio label,
 .bmd-form-group label.radio-inline,
@@ -16083,7 +16084,7 @@ a .material-icons {
 label {
   font-size: 14px;
   line-height: 1.42857;
-  color: #AAAAAA;
+  color: #2d2d2d;
   font-weight: 400;
 }
 

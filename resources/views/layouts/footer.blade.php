@@ -5,7 +5,7 @@
         <script>
             document.write(new Date().getFullYear())
         </script>Made with <i class="material-icons">favorite</i> by
-        <a href="#" target="_blank"> VSRK Capital </a>
+        <a href="#" class="text-warning" target="_blank"> VSRK Capital </a>
         </div>
     </div>
 </footer>
