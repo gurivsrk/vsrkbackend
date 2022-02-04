@@ -254,7 +254,7 @@
             <div class="container">
                 <div class="section-title">
                     <span class="subtitle">OUR Team</span>
-                    <h2>Meet Awesome People</h2>
+                    <h2>Meet Our Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                 </div>
                 <div class="team-slider owl-carousel">
