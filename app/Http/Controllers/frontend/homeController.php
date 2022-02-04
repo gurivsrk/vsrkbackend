@@ -19,7 +19,7 @@ class homeController extends Controller
     public function index(){
 
         $team = team::orderBy('order_id')->get()->take(4);
-        $blogs = blogs::reverse()->get()->take(4);
+        $blogs = blogs::reverse()->get()->take(3);
         $testimonials = testimonials::reverse()->get();
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
 
