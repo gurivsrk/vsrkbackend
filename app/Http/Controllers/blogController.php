@@ -56,7 +56,7 @@ class blogController extends Controller
         $type = "edit-blog";
         $blogs = blogs::findOrFail($id);
         $item = blogs::reverse()->paginate(10);
-        $catetag = category::where('for','other')->orwhere('for','all')->get();
+        $catetag = category::inRandomOrder()->where('for','other')->orwhere('for','all')->get();
         return view('pages.all-blogs',compact(['catetag','type','blogs','item']));
     }
 
