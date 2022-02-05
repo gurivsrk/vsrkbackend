@@ -95,18 +95,18 @@
                                     <a href="#" class="nav-link dropdown-toggle">About us</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="about.html" class="nav-link"> Corporate Profile </a>
+                                            <a href="#" class="nav-link"> Corporate Profile </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="team.html" class="nav-link"> Expertise: Our People </a>
+                                            <a href="#" class="nav-link"> Expertise: Our People </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="testimonials.html" class="nav-link">
+                                            <a href="#" class="nav-link">
                                                 MD's Desk
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="coming-soon.html" class="nav-link">
+                                            <a href="#" class="nav-link">
                                                 Letter to the Investors
                                             </a>
                                         </li>
@@ -116,18 +116,18 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="sign-in.html" class="nav-link"> Registrars </a>
+                                            <a href="#" class="nav-link"> Registrars </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="sign-up.html" class="nav-link"> Career at VSRK </a>
+                                            <a href="#" class="nav-link"> Career at VSRK </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="terms-condition.html" class="nav-link">
+                                            <a href="#" class="nav-link">
                                                 Fund Houses
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="privacy-policy.html" class="nav-link">
+                                            <a href="#" class="nav-link">
                                                 Media
                                             </a>
                                         </li>
@@ -137,47 +137,143 @@
                                     <a href="#" class="nav-link dropdown-toggle">Investment Solutions</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="blog-grid.html" class="nav-link">Blog grid</a>
+                                            <a href="#" class="nav-link">Mutual Fund Investments</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="blog-details.html" class="nav-link">blog details</a>
+                                            <a href="#" class="nav-link">Insurance Consulting</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Stock Market</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Corporate Deposites</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">PMS</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">AIF</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Structured Products</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Pre IPO</a>
                                         </li>
                                     </ul>
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Plan with Us</a>
+                                    <a href="#" class="nav-link dropdown-toggle">Plan with Us</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Life Goals Calculator</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Financial Calculators</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">SIP STEP-UP Calculator</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">SIP+Lumpsum Calculator</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Taxation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">STP Calculator</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">SWP Calculator</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">SIP Performance</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Sys. Ivmnt. Planner</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Ways to Invest</a>
+                                    <a href="#" class="nav-link dropdown-toggle">Ways to Invest</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Online</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Offline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Mobile Application</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Web Portal</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Whatsapp</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Learn with Expert</a>
+                                    <a href="#" class="nav-link dropdown-toggle">Learn with Expert</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">MF Tools</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">SIP Calculator Online</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">MF Guide (mysths)</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Knowledge Series</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Jargons Simplified</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">F.A.Q.s</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Tips & Articles</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">Investor Corner</a>
+                                    <a href="#" class="nav-link dropdown-toggle">Investor Corner</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Customer Services</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">New Login/ SignIn</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Invest Online</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Email Subscription</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Know Your Customer</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Downloadable Forms</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Complaint Redressel Form</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Electronic Payouts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Redeem/ Start SIP</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
-                            <!-- <div class="search-item">
-                                <div class="search-btn">
-                                    <i class="open-btn envy envy-magnify-glass"></i>
-                                    <i class="close-btn envy envy-close"></i>
-                                </div>
-                                <div class="search-overlay search-popup">
-                                    <form class="search-form">
-                                        <input class="search-input" name="search" placeholder="Search" type="text" />
-                                        <button class="btn btn-solid" type="submit">
-                                            <i class="envy envy-magnify-glass"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="cta-btn">
-                                <a href="sign-in.html" class="btn btn-solid">
-                                    <i class="envy envy-user"></i>
-                                    log in
-                                </a>
-                            </div> -->
                         </div>
                     </div>
                 </nav>
