@@ -354,7 +354,11 @@ jQuery(function($) {
        
     });
    
-   
+    $('.team-outer-box').click(function(){
+        if(!($(this).hasClass('active'))){
+          $(this).addClass('active').siblings().removeClass('active')
+        }
+    })
    
     
 

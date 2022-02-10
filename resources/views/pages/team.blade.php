@@ -25,6 +25,12 @@
                             @endif
                         <h4 class="card-title mb-4">Add Team Member</h4>
                             @csrf
+                            @foreach($item as $id)
+                                @if($loop->last)    
+                                    @php $lastId = $id->order_id; @endphp
+                                    <input type="hidden" name="order_id" value="{{ ++$lastId }}">
+                                @endif
+                            @endforeach
                             <div class="col-md-4 p-0">
                                 <label class="">{{ __('Profile Image') }}</label>
                                 <div class="fileinput fileinput-new" data-provides="fileinput">

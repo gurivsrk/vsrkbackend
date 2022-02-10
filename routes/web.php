@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 ///// Frontend Group 
 Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	 Route::get('/', [App\Http\Controllers\frontend\homeController::class, 'index'])->name('index');
+	 Route::get('/about-us/corporate-profile', [App\Http\Controllers\frontend\homeController::class, 'about'])->name('about');
+	 Route::get('/about-us/our-people', [App\Http\Controllers\frontend\homeController::class, 'our_team'])->name('people');
 	
 });
 
@@ -58,7 +60,6 @@ Route::group(['middleware' => 'auth'], function () {
 	
 	///// Faqs
 	Route::resource('vsrk-admin/faqs', 'App\Http\Controllers\faqsController');
-	
 	
 	Route::resource('vsrk-admin/user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
 	Route::get('vsrk-admin/profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);

@@ -83,22 +83,22 @@
             <div class="main-nav">
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="container">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="{{route('frontend.index')}}">
                             <img src="{{asset(@$gd->website_logo)}}" alt="logo" width="300"/>
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">Home</a>
+                                    <a href="{{route('frontend.index')}}" class="nav-link {{!empty($activeClass)?(($activeClass=='index')?'active':''):''}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">About us</a>
+                                    <a href="javascript:void(0)" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='about_us')?'active':''):''}}">About us</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> Corporate Profile </a>
+                                            <a href="{{route('frontend.about')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='corporate')?'active':''):''}}" > Corporate Profile </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link"> Expertise: Our People </a>
+                                            <a href="{{route('frontend.people')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='our_people')?'active':''):''}}"> Expertise: Our People </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
@@ -225,7 +225,7 @@
                                             <a href="#" class="nav-link">SIP Calculator Online</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">MF Guide (mysths)</a>
+                                            <a href="#" class="nav-link">MF Guide (myths)</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Knowledge Series</a>
@@ -396,6 +396,10 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-m-12">
+                        <p>*Whether you are a first-time investor or a seasoned campaigner, planning is always the first step towards your investment journey. By using our smart tools such as – Retirement Tool, Systematic Investment Planner, SWP Calculator and Return Value Calculator. You can plan your investments well and create wealth in the long-run.</p>
+                        <p><b>Disclaimer</b>: Mutual Fund Investment Planning - This content is for information purposes only and is not an offer to sell or a solicitation to buy any mutual fund units/securities.These views alone are not sufficient and should not be used for the development or implementation of an investment strategy. It should not be construed as investment advice to any party. All opinions and estimates included here constitute our view as of this date and are subject to change without notice. Neither SBI Mutual Fund / SBI Funds Management Private Limited / SBI Mutual Fund Trustee Company Private Limited, nor any person connected with it, accepts any liability arising from the use of this information. The recipient of this material should rely on their investigations and unlike the traditional investment avenues like PPF, NSC, Bank Fixed Deposit, investment in mutual funds is subject to market risks. Hence, the performance of these asset classes is not strictly comparable. In view of the individual circumstances and risk profile, each investor is advised to consult their investment/tax adviser(s) before any investment decision.</p>
                     </div>
                 </div>
             </div>

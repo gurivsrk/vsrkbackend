@@ -18,6 +18,7 @@ class team extends Model
         'name',
         'profileImg',
         'designation',
-        'descritption'
+        'descritption',
+        'order_id'
     ];
 }

@@ -1,4 +1,4 @@
-@extends('layouts.frontend.frontend')
+@extends('layouts.frontend.frontend',['activeClass' => 'index',])
 @section('frontend_content')
         <!-- start home banner area -->
         <div id="home" class="home-banner-area banner">
@@ -6,7 +6,7 @@
                 <div class="item">
                     <div class="container">
                         <div class="banner-content">
-                            <h1>Top Mutual Fund Product List</h1>
+                            <h2>Put your hard earned in Research-backed mutual fund riders.</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
                             </p>
@@ -19,7 +19,7 @@
                 <div class="item">
                     <div class="container">
                         <div class="banner-content">
-                            <h1>I have got some money</h1>
+                        <h2>Refurbish quality portfolio with mutual fund</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.
                             </p>
@@ -32,7 +32,20 @@
                 <div class="item">
                     <div class="container">
                         <div class="banner-content">
-                            <h1>I have a financial goal</h1>
+                        <h2> Build abundance (wealth) with mutual funds</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consecteturdo eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                            </p>
+                            <div class="cta-btn">
+                                <a href="#" class="btn btn-solid">Try free</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="banner-content">
+                        <h2>   Invest in valuable mutual funds Via VSRK Baskets</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consecteturdo eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
                             </p>
@@ -96,35 +109,45 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-sm-12 pb-30">
                         <div class="section-title">
-                            <span class="subtitle">about us</span>
-                            <h2>Main Heading</h2>
+                            <span class="subtitle">About</span>
+                            <h2>VSRK Capital Pvt. Ltd.</h2>
                         </div>
                         <div class="about-text-blc">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type </p>
-                            <p>Risus commodo viverra maecenas accumsan lacus vel facilisis.!</p>
+                            <p>VSRK Capital Private Limited was incorporated on 8th November 2013 with the name of VSRK Wealth Creator Pvt. Ltd. has been performing its rituals of enhancing the wealth of its huge client base with its expert personnel and knowledge of both traditional and modern Financial Products under Investment Advisory Services to ensure a smooth and amazing satisfaction. </p>
+                            <p>Under the guidance of Lt. Shri R.K. Agrawal, who served as the President with utmost responsibility. He boosted the strength & potential of the company by many folds by amalgamating the clients and AUM of M/S Agrawal Investments Consultants. His Vision to build-up a team of exuberant, enterprising and dynamic professionals, certified by the AMFI, NISM and IRDA, working collectively towards a common goal of offering the best for its clients.</p>
+                            <p>We are a boutique Company, of independent financial advisers, that offers financial planning and portfolio investment management advice to a variety of clients whether HNIs, Corporate houses or other consulting firms under one umbrella. We stand a class apart known for our dynamic work commitments. We have placed ourselves as the creator and multiplier of proactive investment solutions that adds opulence to the investor’s portfolios. Our aim is to assist in achieving individual and family financial goals. We make use of all updated technology to provide the market information before time to make the right decision at the right time to suit investment needs.</p>
                         </div>
                         <div class="row">
+                        <h4>Awards & Achievements</h4>
+                        <p>Under the charismatic leadership of R.K. Agarwal, the company has been felicitated with numerous awards. </p>
+                        <p>Some of the most prestigious awards for our accomplishments are listed below:</p>
                             <div class="col-lg-12">
                                 <div class="about-feature-blc">
                                     <i class="envy envy-quality blue"></i>
                                     <div class="about-feature-content">
-                                        <h6>Achievement 1</h6>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has</p>
+                                        <p>We were No.1 Pan India in Distribution of UTI Mutual Fund products in IFA Category for the year 2009-2010</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
                                 <div class="about-feature-blc">
-                                    <i class="envy envy-quality red"></i>
+                                    <i class="envy envy-quality orange"></i>
                                     <div class="about-feature-content">
-                                        <h6>Achievement 2</h6>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has</p>
+                                        <p>We are the Platinum Club Members (Highest category) in Reliance Mutual fund, UTI Mutual Fund, ICICI Mutual Fund & HSBC Mutual Fund.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="about-feature-blc">
+                                    <i class="envy envy-quality green"></i>
+                                    <div class="about-feature-content">
+                                        <p>We were No. 1 Pan India in IFA Category in HDFC–MIP Long Term Scheme for the year 2009- 2010.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="cta-btn">
-                            <a href="about.html" class="btn btn-solid">
+                            <a href="{{route('frontend.about')}}" class="btn btn-solid">
                                 Read more
                                 <i class="envy envy-right-arrow"></i>
                             </a>
@@ -145,9 +168,6 @@
                                 <div class="grid-img-inner">
                                     <img src="{{asset('frontend/img/about/about_4.png')}}" class="image-responsive" alt="office_image" />
                                 </div>
-                            </div>
-                            <div class="logo-overlay">
-                                <img src="{{asset('frontend/img/logos/vsrk circle.png')}}" alt="logo_without_slogan" />
                             </div>
                             <div class="shape">
                                 <img src="{{asset('frontend/img/resource/shape_4.png')}}" alt="shape" class="shape-inner" />
@@ -258,23 +278,16 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                 </div>
                 <div class="team-slider owl-carousel">
-                    @foreach($team as $person)
+                    @foreach($team as $key=>$person)
                     <div class="team-item">
                         <div class="team-image">
                             <img src="{{asset($person->profileImg)}}" alt="team-member" />
                         </div>
                         <div class="team-content">
                             <h5>
-                                <a href="#">{{$person->name}}</a>
+                                <a href="{{route('frontend.people')}}#{{++$key}}">{{$person->name}}</a>
                             </h5>
                             <p class="mb-2">{{$person->designation}}</p>
-                           
-                            <div class="social-link">
-                                <a href="#" class="read-more">read more</a>
-                               <!--  <a href="#" class="bg-success" target="_blank"><i class="fab fa-tumblr"></i></a>
-                                <a href="#" class="bg-danger" target="_blank"><i class="fab fa-youtube"></i></a>
-                                <a href="#" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
-                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -357,85 +370,10 @@
         </section>
         <!-- end graph section -->
 
-        <!-- start testimonial section  -->
-        <section id="testimonial" class="testimonial-section testimonial ptb-100 bg-light">
-            <div class="container">
-                <div class="section-title">
-                    <span class="subtitle">TESTIMONIALS</span>
-                    <h2>What People Say About Us</h2>
-                    <p>Does any industry face a more complex audience journey and marketing sales process than B2B technology. Does any industry face a more complex audience.</p>
-                </div>
-                <div class="tesimonial-grid">
-                    
-                <div class="dot active">
-                        <img src="{{asset('frontend/img/clients/client_1.png')}}" alt="client-1" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_2.png')}}" alt="client-2" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_3.png')}}" alt="client-3" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_4.png')}}" alt="client-4" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_5.png')}}" alt="client-5" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_6.png')}}" alt="client-6" />
-                    </div>
-                  
-                    <div class="testimonial-slider owl-carousel">
-                        @foreach($testimonials as $testimonial)
-                            <div class="slider-item">
-                                <div class="qoute-icon">
-                                    <img src="{{asset('frontend/img/resource/quotation.png')}}" alt="quotation" />
-                                </div>
-                                <div class="inner-text" style=" {{ (Str::length($testimonial->descritption) > 350)?'font-size:13px' :'' }} ">
-                                    {!! $testimonial->descritption !!}
-                                </div>
-                                <div class="client">
-                                    <div class="client-img">
-                                        <img src="{{asset($testimonial->profileImg)}}" alt="{{$testimonial->name}}" />
-                                    </div>
-                                    <div class="client-info">
-                                        <h6>{{$testimonial->name}}</h6>
-                                        <span>{{$testimonial->designation}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    <div class="overlay-img">
-                        <img src="{{asset('frontend/img/background/Testimonial_bg.png')}}" alt="Testimonial_bg" />
-                    </div>
-                </div>
-                <!-- tesimonial-grid -->
-            </div>
-            <div class="shape">
-                <img src="{{asset('frontend/img/resource/shape_6.png')}}" alt="shape" class="shape-inner" />
-                <img src="{{asset('frontend/img/resource/Ellipse_1.png')}}" alt="shape" class="shape-inner" />
-                <img src="{{asset('frontend/img/resource/Rectangle_1.png')}}" alt="shape" class="shape-inner" />
-                <img src="{{asset('frontend/img/resource/Ellipse_1.png')}}" alt="shape" class="shape-inner" />
-                <img src="{{asset('frontend/img/resource/Rectangle_1.png')}}" alt="shape" class="shape-inner" />
-                <img src="{{asset('frontend/img/resource/shape_2.png')}}" alt="shape" class="shape-inner" />
-            </div>
-        </section>
-        <!-- testimonial section end  -->
-         <!-- Start Partner Area -->
-         <div class="partner-area ptb-30">
-            <div class="container">
-                <div class="partner-slider owl-carousel">
-                @foreach($brand_logo as $logo)
-                        <div class="partner-item">
-                            <img src="{{asset($logo->logo)}}" alt="{{$logo->name}}" /> 
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <!-- end partner area -->
+
+        @include('partials.frontend.testimonial',compact('testimonials'))
+
+        @include('partials.frontend.client',compact('brand_logo'))
         <!--start blog section-->
         <section id="blog" class="blog-section pt-100 pb-70">
             <div class="container">
@@ -478,47 +416,8 @@
         </section>
         <!--end blog section-->
 
-        
+        @include('partials.frontend.app-section')
 
-        <!-- start app-section section -->
-        <section class="app-section ptb-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12 col-md-12">
-                        <div class="app-section-content">
-                            <div class="app-section-title">
-                                <h2>Invest anywhere,<br>anytime.</h2>
-                                <p>Don't worry about which device to use. Because we're in every one of them</p>
-                            </div> 
-                        </div>
-                        <div class="row mt-4">
-                            <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <i class="envy envy-shield"></i>
-                                <h5>Secure</h5>
-                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                            </div>
-                            <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <i class="envy envy-cpu"></i>
-                                <h5>Fast & Reliable</h5>
-                                <p>There are many variations of passages of Lorem Ipsum available</p>
-                            </div>
-                            <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <a href="#" target="_blank" class="btn btn-android btn-solid"><i class="fab fa-google-play"></i> Android App <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                            <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <a href="#" target="_blank" class="btn btn-ios btn-solid"><i class="fab fa-app-store-ios"></i> iOS App <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 col-md-12 pb-30">
-                        <div class="app-section-image text-end">
-                            <img src="{{asset('frontend/img/banner/app_banner.png')}}" alt="app illustration" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- end app-section section -->
         <!-- start faq section -->
         <section class="faq-section ptb-100 bg-thin">
             <div class="container">
