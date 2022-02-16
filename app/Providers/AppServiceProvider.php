@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $gd = staticPages::getAllFields('GD');
-        View::share('gd', $gd);
+        // $gd = staticPages::getAllFields('GD');
+        // View::share('gd', $gd);
     }
 }
