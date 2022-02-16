@@ -18,12 +18,10 @@
                 <span class="shape3"></span>
                 <span class="shape4"></span>
             </div>
-        </div>
-        <!-- end page title area -->
-
+            
         <!--start corporate section-->
-        <section id="corporate_profile" class="about-section ptb-100 bg-white">
-            <div class="container">
+        <section id="corporate_profile" class="about-section ptb-50 bg-white">
+            <div class="container pt-100">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-sm-12 pb-30">
                         <div class="section-title">
@@ -329,6 +327,9 @@
                 </div>
             </div>
         </section>
+        </div>
+        <!-- end page title area -->
+
         @include('partials.frontend.client',compact('brand_logo'))
         <!--end about section-->
 

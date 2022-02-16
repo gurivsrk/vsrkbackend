@@ -19,7 +19,7 @@ class CareerContoller extends Controller
      */
     public function index()
     {
-        $category = category::where('for','career')->orwhere('for','all')->get();
+        $category = category::where('for','career')->get();
         $vacany = career::all();
         return view('pages.vacancy',compact(['vacany','category']));
     }
@@ -49,7 +49,7 @@ class CareerContoller extends Controller
     {
 
         $type = "edit-vacancy";
-        $category = category::where('for','career')->orwhere('for','all')->get();
+        $category = category::where('for','career')->get();
         $vacany = career::all();
 
         return view('pages.vacancy',compact(['vacany','category','type','career']));

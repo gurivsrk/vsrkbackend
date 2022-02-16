@@ -270,34 +270,47 @@
         <!--end service section-->
 
         <!-- start team section-->
-        <section class="team-section ptb-100">
+
+        <section id="team-member" class="page-section ptb-100 bg-white">
             <div class="container">
                 <div class="section-title">
                     <span class="subtitle">OUR Team</span>
                     <h2>Meet Our Team</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
                 </div>
-                <div class="team-slider owl-carousel">
-                    @foreach($team as $key=>$person)
-                    <div class="team-item">
-                        <div class="team-image">
-                            <img src="{{asset($person->profileImg)}}" alt="team-member" />
-                        </div>
-                        <div class="team-content">
-                            <h5>
-                                <a href="{{route('frontend.people')}}#{{++$key}}">{{$person->name}}</a>
-                            </h5>
-                            <p class="mb-2">{{$person->designation}}</p>
-                        </div>
-                    </div>
-                    @endforeach
+                <div class="row align-items-center justify-content-center">
+                    @foreach($team as $key => $member)
+                    <div id="{{++$key}}" class="team-outer-box">
+                        <a href="#{{$key}}">
+                            <div class="faq-item team-member ">
+                                <div class="vsrk-left-img">
+                                    <img src="{{asset($member->profileImg)}}" alt="vsrk Service excellence" >
+                                </div>
+                                <div class="vsrk-right-text">
+                                    <h4>{{$member->name}}</h4>
+                                    <span>{{$member->designation}}</span>
+                                    <div class="spacer"></div>
+                                    <p>{!! $member->descritption  !!}</p>
+                                </div>
+                            </div>
+                        </a>
+                     </div>
+                   @endforeach
+                </div>
+                <div class="cta-btn float-right">
+                    <a href="{{route('frontend.people')}}" class="btn btn-solid">
+                         Meet Other Members
+                        <i class="envy envy-right-arrow"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
         <!-- end team section -->
 
         <!-- start graph section -->
-        <section class="graph-section pb-100">
+        <section class="graph-section ptb-100">
             <div class="container">
                 <div class="section-title">
                     <span class="subtitle">Calculator</span>

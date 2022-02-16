@@ -15,9 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 ///// Frontend Group 
 Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
+
 	 Route::get('/', [App\Http\Controllers\frontend\homeController::class, 'index'])->name('index');
-	 Route::get('/about-us/corporate-profile', [App\Http\Controllers\frontend\homeController::class, 'about'])->name('about');
-	 Route::get('/about-us/our-people', [App\Http\Controllers\frontend\homeController::class, 'our_team'])->name('people');
+	 	
+	 /// about us
+	Route::get('/about-us/corporate-profile', [App\Http\Controllers\frontend\homeController::class, 'about'])->name('about');
+	Route::get('/about-us/our-people', [App\Http\Controllers\frontend\homeController::class, 'our_team'])->name('people');
+	Route::get('/about-us/md-desk', [App\Http\Controllers\frontend\homeController::class, 'mddesk'])->name('mddesk');
+	Route::get('/about-us/letter-to-investors', [App\Http\Controllers\frontend\homeController::class, 'letter'])->name('letter');
+	Route::get('/about-us/registrars', [App\Http\Controllers\frontend\homeController::class, 'registrars'])->name('registrars');
+	Route::get('/about-us/career', [App\Http\Controllers\frontend\homeController::class, 'career'])->name('career');
+
+	/// Investment Solution
+	Route::get('/inverstment-solution/mutual-funds', [App\Http\Controllers\frontend\homeController::class, 'mutual_funds'])->name('mutual_funds');
+	Route::get('/inverstment-solution/insurance', [App\Http\Controllers\frontend\homeController::class, 'insurance'])->name('insurance');
 	
 });
 

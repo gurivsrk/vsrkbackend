@@ -18,12 +18,10 @@
                 <span class="shape3"></span>
                 <span class="shape4"></span>
             </div>
-        </div>
-        <!-- end page title area -->
-
-        <!--start corporate section-->
-        <section id="corporate_profile" class="about-section pt-100 bg-white">
-            <div class="container">
+            
+        <!--start Our People section-->
+        <section id="corporate_profile" class="about-section pt-50 bg-white">
+            <div class="container pt-100">
                 <div class="row align-items-center">
                     <div class="col-sm-12 pb-30">
                         <div class="section-title">
@@ -34,9 +32,9 @@
                 </div>
             </div>
         </section>
-        <!--end corporate section-->
+        <!--end Our People section-->
 
-        <!--start Assistance section-->
+        <!--start team section-->
         <section id="team-member" class="page-section pb-50 bg-white">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
@@ -77,8 +75,10 @@
                    @endforeach
                 </div>
             </div>
+        </div>
         </section>
-        <!--end Assistance section-->
+        <!-- end team title area -->
+
         @include('partials.frontend.app-section')
         @include('partials.frontend.client',compact('brand_logo'))
        

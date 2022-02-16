@@ -6,7 +6,19 @@
     $("#contactForm").validator().on("submit", function (event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
-            formError();
+            formError($(this).attr('id'));
+            submitMSG(false, "Did you fill in the form properly?");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+            submitForm();
+        }
+    });
+    
+    $("#jobPost").validator().on("submit", function (event) {
+        if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            formError($(this).attr('id'));
             submitMSG(false, "Did you fill in the form properly?");
         } else {
             // everything looks good!
@@ -40,13 +52,13 @@
         });
     }
 
-    function formSuccess(){
-        $("#contactForm")[0].reset();
+    function formSuccess($this){
+        $('#'+$this)[0].reset();
         submitMSG(true, "Message Submitted!")
     }
 
     function formError(){
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $('#'+$this).removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $(this).removeClass();
         });
     }

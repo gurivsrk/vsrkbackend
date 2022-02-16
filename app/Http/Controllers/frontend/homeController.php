@@ -7,6 +7,7 @@ use App\Models\team;
 use App\Models\blogs;
 use App\Models\category;
 use App\Models\faqs;
+use App\Models\career;
 use App\Models\testimonials;
 
 use App\Http\Controllers\Controller;
@@ -29,6 +30,7 @@ class homeController extends Controller
         return view('frontend.index',compact(['team','blogs','testimonials','brand_logo','faqs']));
     }
 
+ ////// ABOUT
     public function about(){
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
         return view('frontend.about_us',compact(['brand_logo']));
@@ -39,5 +41,41 @@ class homeController extends Controller
         $team = team::select(['name','profileImg','designation','descritption'])->orderBy('order_id')->get();
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
         return view('frontend.our_people',compact(['team','brand_logo']));
+    }
+
+    public function mddesk(){
+        $team = team::select(['profileImg','name'])->where('name','Swapnil Aggarwal')->first();
+        $testimonials = testimonials::select(['name','profileImg','designation','descritption'])->reverse()->get();
+        return view('frontend.md_desk',compact(['team','testimonials']));
+    }
+
+    public function letter(){
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.letter',compact(['brand_logo']));
+    }
+
+    public function registrars(){
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.registrars',compact(['brand_logo']));
+    }
+    
+    public function career(){
+
+        $category = category::select('id','name')->where('for','career')->get();
+        $vacany = career::select('vacany_name','num_of_post','category_id','descritption','post_status')->get();
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.career',compact(['category','vacany','brand_logo']));
+    }
+
+    public function mutual_funds(){
+
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.mutual_funds',compact(['brand_logo']));
+    }
+
+    public function insurance(){
+
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.insurance',compact(['brand_logo']));
     }
 }

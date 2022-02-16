@@ -1,35 +1,3 @@
-/*
-*******************************************
-*******************************************
-
-** - Default CSS
-** - Section Title CSS
-** - Navbar Area CSS
-** - Banner Area CSS
-** - Page Title Area CSS
-** - About Area CSS
-** - Services Area CSS
-** - Testimonial Area CSS
-** - Projects Area CSS
-** - Clients Area CSS
-** - Partner Area CSS
-** - Blog Area CSS
-** - Blog Details Area CSS
-** - Team Area CSS
-** - FAQ Area CSS
-** - Projects Details CSS
-** - Sign-In-Up CSS
-** - Error Area CSS
-** - Contact Area CSS
-** - Services Details Area CSS
-** - Works Area CSS
-** - Footer Area CSS
-** - Copy Right Area CSS
-** - Go Top CSS
-** - Preloader Area CSS
-** - Animation Area CSS
-
-*/
 /*================================================
   Default CSS
 =================================================*/
@@ -43,7 +11,7 @@
 body {
   font-family: "Poppins", sans-serif;
   color: #6a6377;
-  background: #f5f5f5;
+  background: #fff;
   font-size: 1em;
 }
 
@@ -143,6 +111,10 @@ h6 {
 .btn-text-only {
   padding: 0;
   background: transparent;
+}
+
+.float-right{
+  float:right !important;
 }
 
 .btn-text-only:hover {
@@ -491,7 +463,7 @@ img {
   background: #00a2f3;
 }
 
-.section-title h2 {
+.section-title h2, .h2-heading{
   text-transform: capitalize;
   font-size: 40px;
   color: #332f3b;
@@ -899,7 +871,6 @@ img {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  padding-bottom: 120px;
   padding-top: 210px;
 }
 
@@ -908,13 +879,13 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 450px;
   content: "";
   background: url("../img/background/page_title_bg.png");
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 1;
   filter: hue-rotate(321deg);
 }
 
@@ -973,6 +944,8 @@ img {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .page-title-area .page-title-content h1 {
@@ -1297,7 +1270,7 @@ img {
   margin-top: 15px;
 }
 
-.about-section .cta-btn .btn-solid:hover {
+.btn-solid:hover {
   border: 1px solid #3cafdc;
   color: #3cafdc;
 }
@@ -1631,67 +1604,63 @@ img {
   width: 100%;
 }
 
+.page-section.gallery-section .gallery-item .gallery-content{
+  height: 14%;
+  bottom: 0;
+}
 .gallery-section .gallery-item .gallery-content {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
   left: 0;
   opacity: 0;
   padding: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: flex-end;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
 .gallery-section .gallery-item .gallery-content h3 {
   font-size: 22px;
-  -webkit-transform: translateY(50px);
   transform: translateY(50px);
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
-
-.gallery-section .gallery-item .gallery-content h3 a {
-  color: #fff;
+.page-section .owl-item .gallery-image {
+  background: aliceblue;
+  padding: 30px;
+  height: 585px;
+  max-height: 100%;
+}
+.page-section .owl-item:nth-child(2) .gallery-image {
+  background: rgb(252, 240, 255);
+}
+.page-section .owl-item:nth-child(3) .gallery-image {
+  background: rgb(240, 255, 247);
+}
+.page-section .owl-item:nth-child(4) .gallery-image {
+  background: rgb(255, 243, 240);
+}
+.page-section .owl-item:nth-child(5) .gallery-image {
+  background: #fefff0;
 }
 
 .gallery-section .gallery-item:hover .gallery-content {
   opacity: 1;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(20%, rgba(90, 73, 248, 0.7)), to(rgba(107, 91, 249, 0.5)));
-  background: linear-gradient(0deg, rgba(90, 73, 248, 0.7) 20%, rgba(107, 91, 249, 0.5) 100%);
+  background: linear-gradient(0deg, rgb(159 158 158 / 65%) 20%, rgb(161 161 161 / 50%) 100%);
 }
 
 .gallery-section .gallery-item:hover .gallery-content h3 {
-  -webkit-transform: translateY(0);
   transform: translateY(0);
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
@@ -1848,10 +1817,25 @@ img {
   background: #a4c639;
   box-shadow: 0 0 40px 40px #a4c639 inset;
 }
+.app-section .btn-android:hover{
+  color: #a4c639;
+  background:rgba(0,0,0,0);
+  border: 1px solid #a4c639;
+  box-shadow: none;
+}
 .app-section .btn-ios{
   background: #0A84FF;
   box-shadow: 0 0 40px 40px #0A84FF inset;
 }
+.app-section .btn-ios:hover{
+  color: #0A84FF;
+  background:rgba(0,0,0,0);
+  box-shadow: none;
+  border: 1px solid #0A84FF;
+}
+
+
+
 /*================================================
   Newsletter Style Two Area CSS
 =================================================*/
@@ -3304,12 +3288,12 @@ input[type=number] {
   padding-bottom: 60px;
 }
 
-#contactForm .help-block ul li {
+.help-block ul li {
   font-size: 12px;
   color: red;
 }
 
-#contactForm .text-danger {
+.text-danger {
   font-size: 18px !important;
   margin-top: 16px;
 }
@@ -3971,6 +3955,9 @@ input[type=number] {
 .owl-carousel .owl-nav.disabled + .owl-dots {
   margin-top: 120px;
 }
+.gallery-section .owl-carousel .owl-nav.disabled + .owl-dots {
+  margin-top: 20px;
+}
 
 .owl-carousel .owl-dots {
   text-align: center;
@@ -4321,6 +4308,7 @@ input[type=number] {
   border-left: 0vw solid transparent;
 }
 
+
 .assistance-style{
   background: url(../img/resource/mesh2.png) no-repeat right bottom;
   background-size: contain;
@@ -4354,7 +4342,7 @@ input[type=number] {
   opacity: 0;
   transition: 0.5s all ease-in;
 }
-#team-member .vsrk-right-text, .team-member h4::before, #team-member .active .vsrk-left-img::after{
+#team-member .vsrk-right-text, .team-member h4::before, #team-member .active .vsrk-left-img::after, .jobs, .job-description, .faq-item.active .job-description-short{
   display: none;
 }
 #team-member .active  .vsrk-left-img {
@@ -4371,4 +4359,96 @@ input[type=number] {
 .team-member:hover  .vsrk-left-img::after{
   bottom: 0% !important;
   opacity: 1 !important;
+}
+#md-desk-img{
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 50%);
+    outline: 6px double #f8f9fa;
+    outline-offset: -19px;
+    max-height: 475px;
+}
+#md-desk,#letter{
+  background: url(../img/resource/pattern-1.png) no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+#jobs .job-box {
+    margin: 0px 50px;
+    border-top: 1px solid #c1c1c1;
+    cursor: pointer;
+    align-items: flex-start;
+}
+#jobs .job-title{
+    padding: 15px 0;
+    transition: 0.3s;
+    position: relative;
+}
+.job-role-count {
+  position: absolute;
+  right: 60px;
+  top: 26%;
+  background: #8b8b8b;
+  padding: 5px 25px;
+  border-radius: 35px;
+  color: #fff;
+}
+#jobs .job-title:hover {
+    background: #f6f6f6;
+}
+.spl-headings h4 span{
+  display: inline-block;
+  position: relative;
+  background: #3caad4;
+  color: #fff;
+  height: 50px;
+  padding: 8px;
+}
+.spl-headings h4::before,.spl-headings h4 span::after {
+  content: '';
+  position: absolute;
+}
+.spl-headings h4::before {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+  border-top: 2px dashed #3caad4;
+}
+.spl-headings h4 span::after {
+  width: 20px;
+  right: -0.99em;
+  bottom: 0;
+  border-left: 25px solid #3caad4;
+  border-bottom: 25px solid transparent;
+  border-top: 25px solid transparent;
+}
+.spl-headings-2 h4 {
+  display: inline-block;
+  border-bottom: 3px solid #3caad4;
+  padding: 5px 0;
+  color: #3caad4;
+}
+.alternate-image-section {
+  height: 385px;
+  background: #3cafdc;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alternate-text-section {
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  padding: 0 50px;
+}
+.alternate-image-section:nth-child(even){
+  background: #eaf9ff;
+}
+.alternate-image-section img {
+  height: 65%;
+  width: auto;
 }

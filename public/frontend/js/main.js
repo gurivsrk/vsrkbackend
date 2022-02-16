@@ -354,15 +354,49 @@ jQuery(function($) {
        
     });
    
-    $('.team-outer-box').click(function(){
+    $('.team-outer-box').on('click',function(){
         if(!($(this).hasClass('active'))){
           $(this).addClass('active').siblings().removeClass('active')
         }
     })
+
+    $('.job-box').on('click',function(){
+        const child= $(this).children('.jobs');
+        if(!(child.hasClass('active'))){
+            $('.jobs').removeClass('active').slideUp();
+            child.slideDown(()=>{
+                child.addClass('active')
+            });
+        }
+    })
    
-    
+    $('.faq-item').on('click',function(){
+        const tthis= $(this);
+        if(!(tthis.hasClass('active'))){
+            tthis.children('.job-description').slideDown(()=>{
+                tthis.addClass('active')
+            });
+        }
+    })
+
+    $.each($('.job-box'),function(){
+        if($(this).children().length == 0){ $(this).hide(); }
+        var count = $(this).find('.faq-item').length
+        $(this).find('.job-role-count span').text(count)
+    });
 
 
+    $('.count').each(function () {
+        var $this = $(this);
+        
+        $({ Counter: 0 }).animate({ Counter: $this.text() }, {
+            duration: 4000,
+            easing: 'swing',
+            step: function () {
+                $this.text(Math.ceil(this.Counter));
+            }
+        });
+    });
 
 
 }(jQuery));

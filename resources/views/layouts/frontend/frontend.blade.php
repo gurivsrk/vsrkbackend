@@ -101,25 +101,20 @@
                                             <a href="{{route('frontend.people')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='our_people')?'active':''):''}}"> Expertise: Our People </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="{{route('frontend.mddesk')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='md_desk')?'active':''):''}}">
                                                 MD's Desk
                                             </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                       {{-- <li class="nav-item">
+                                            <a href="{{route('frontend.letter')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='letter')?'active':''):''}}">
                                                 Letter to the Investors
                                             </a>
+                                        </li> --}}
+                                        <li class="nav-item">
+                                            <a href="{{route('frontend.registrars')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='registrars')?'active':''):''}}"> Registrars </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                Vision & Mission
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"> Registrars </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link"> Career at VSRK </a>
+                                            <a href="{{route('frontend.career')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='career')?'active':''):''}}"> Career at VSRK </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">
@@ -137,10 +132,10 @@
                                     <a href="#" class="nav-link dropdown-toggle">Investment Solutions</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">Mutual Fund Investments</a>
+                                            <a href="{{route('frontend.mutual_funds')}}" class="nav-link {{($activeClass=='investment')?(($pageType=='mutual_funds')?'active':''):''}}">Mutual Fund Investments</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">Insurance Consulting</a>
+                                            <a href="{{route('frontend.insurance')}}" class="nav-link {{($activeClass=='investment')?(($pageType=='insurance')?'active':''):''}}">Insurance Consulting</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Stock Market</a>
@@ -283,7 +278,7 @@
         @yield('frontend_content')
 
         <!-- start footer area -->
-        <footer class="footer-area pt-100 pb-70">
+        <footer class="footer-area pt-100 pb-70 bg-thin">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-5 col-sm-6 col-12">
