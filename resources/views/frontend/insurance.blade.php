@@ -4,7 +4,7 @@
    <div class="page-title-area bg-white">
             <div class="container">
                 <div class="page-title-content">
-                    <h1>Mutual Funds Investments</h1>
+                    <h1>Insurance</h1>
                     <ul>
                         <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
                         <li class="item"><a href="javascript:void(0)">Investment Solutions</a></li>
@@ -33,9 +33,9 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-sm-12 pb-30">
-                        <!-- <div class="about-img">
-                            <img src="{{asset('frontend/img/about/abt_1.png')}}" alt="about-image-1">
-                        </div> -->
+                        <div class="about-img">
+                            <img src="{{asset('frontend/img/investment/insurance.png')}}" alt="about-image-1">
+                        </div>
                     </div>
                 </div>
             </div>

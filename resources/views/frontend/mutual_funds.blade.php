@@ -36,9 +36,6 @@
                         </div>
                     </div>
                     <div class="col-xl-6 col-sm-12 pb-30">
-                        <!-- <div class="about-img">
-                            <img src="{{asset('frontend/img/about/abt_1.png')}}" alt="about-image-1">
-                        </div> -->
                     </div>
                 </div>
             </div>
