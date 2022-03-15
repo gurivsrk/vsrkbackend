@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class blogController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *

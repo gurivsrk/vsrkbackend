@@ -50,6 +50,12 @@
           </ul>
         </div>
       </li>
+      <li class="nav-item {{ ($activePage == 'calc') ? ' active' : '' }}">
+        <a class="nav-link " href="{{ route('staticPages.calci') }}">
+          <i><span class="material-icons">calculate</span></i>
+          <p>{{ __('All Caculator') }}</p>
+        </a>
+      </li>
       <li class="nav-item{{@$activePage == 'team' ? ' active' : '' }}">
         <a class="nav-link" href="{{ route('team.index') }}">
           <i class="material-icons">groups</i>

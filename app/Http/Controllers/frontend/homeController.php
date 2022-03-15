@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\staticPages;
+use App\Models\staticPageMeta;
 use App\Models\team;
 use App\Models\blogs;
 use App\Models\category;
@@ -77,5 +78,15 @@ class homeController extends Controller
 
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
         return view('frontend.insurance',compact(['brand_logo']));
+    }
+    
+    public function calci($id,$calci_type){
+        $meta = staticPageMeta::findOrFail($id);
+        if($meta->page_slug != $calci_type){
+            abort(404);
+        }
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        $blogs = blogs::select(['title','blogImage','categories','tags','descritption','created_at'])->reverse()->get()->take(3);
+        return view('frontend.calculator',compact(['brand_logo','blogs','calci_type']));
     }
 }

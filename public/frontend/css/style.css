@@ -1195,7 +1195,6 @@ img {
 }
 
 .about-section .about-img .grid-img .grid-img-inner:nth-child(2) {
-  -ms-flex-item-align: end;
   align-self: flex-end;
   background: url("../img/resource/shape_1.png") no-repeat;
   padding: 0 0 5px 5px;
@@ -1209,12 +1208,7 @@ img {
 
 
 .about-section .about-img .grid-img .grid-img-inner:nth-child(3) {
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  margin-left: auto;
-  background: url(../img/resource/shape_5.png) no-repeat;
-  background-position-y: bottom;
   padding: 5px 5px 0 0;
 }
 
@@ -2006,23 +2000,14 @@ img {
 }
 
 #calC{
-  padding: 60px;
   background: rgba(255,255,255,0.85);
   box-shadow: 0px 0px 50px #00000021;
   position: relative;
 }
-/* #calC::before{
-  content: '';
-  background: url(../img/resource/graph_patten.png) no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  right: 15px;
-  bottom: 12px;
-  background-size: 42vw;
-  background-position: bottom right;
-  filter: hue-rotate(-42deg) saturate(8) opacity(0.1);
-} */
+#calC .col-lg-7{
+    background: #e0f5ff;
+    padding: 50px;
+}
 .graph-section .graph-content {
   max-width: calc(100% - 150px);
   margin: 0 auto;
@@ -2075,7 +2060,7 @@ img {
 }
 
 .type-range {
-  margin-top: 35px;
+  margin-top: 15px;
   -webkit-appearance: none;
   margin-right: 15px;
   width: 100%;
@@ -4452,3 +4437,4 @@ input[type=number] {
   height: 65%;
   width: auto;
 }
+

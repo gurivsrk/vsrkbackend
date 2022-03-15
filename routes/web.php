@@ -29,7 +29,9 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	/// Investment Solution
 	Route::get('/inverstment-solution/mutual-funds', [App\Http\Controllers\frontend\homeController::class, 'mutual_funds'])->name('mutual_funds');
 	Route::get('/inverstment-solution/insurance', [App\Http\Controllers\frontend\homeController::class, 'insurance'])->name('insurance');
-	
+
+	/// Calculators 
+	Route::get('/calculators/{id}/{calci}',[App\Http\Controllers\frontend\homeController::class, 'calci'])->name('calci');	
 });
 
 
@@ -65,9 +67,13 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('vsrk-admin/career', 'App\Http\Controllers\CareerContoller');
 
 	///// Static Pages
+	Route::get('vsrk-admin/calculator', 'App\Http\Controllers\staticPagesContoller@calci')->name('staticPages.calci');
+	Route::post('vsrk-admin/calculator/page', 'App\Http\Controllers\staticPagesContoller@calciPage')->name('staticPages.calci.page');
+	Route::put('vsrk-admin/{page}/update', 'App\Http\Controllers\staticPagesContoller@calciPageUpdate')->name('staticPages.calc.update');
 	Route::resource('vsrk-admin/staticPages', 'App\Http\Controllers\staticPagesContoller')->only([
 		'edit','update'
 	]);
+	
 	
 	///// Faqs
 	Route::resource('vsrk-admin/faqs', 'App\Http\Controllers\faqsController');

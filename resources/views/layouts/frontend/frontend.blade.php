@@ -129,7 +129,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Investment Solutions</a>
+                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='investment')?'active':''):''}}">Investment Solutions</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="{{route('frontend.mutual_funds')}}" class="nav-link {{($activeClass=='investment')?(($pageType=='mutual_funds')?'active':''):''}}">Mutual Fund Investments</a>
@@ -159,35 +159,13 @@
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Plan with Us</a>
+                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='calci')?'active':''):''}}">Plan with Us</a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Life Goals Calculator</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Financial Calculators</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">SIP STEP-UP Calculator</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">SIP+Lumpsum Calculator</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Taxation</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">STP Calculator</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">SWP Calculator</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">SIP Performance</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Sys. Ivmnt. Planner</a>
-                                        </li>
+                                        @foreach($calc_options as $option)
+                                            <li class="nav-item">
+                                                <a href="{{route('frontend.calci',[$option->id,$option->page_slug])}}" class="nav-link {{($activeClass=='calci')?(($pageType == $option->page_slug)?'active':''):''}}">{{ str_replace('-',' ',$option->page_slug)}}</a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -436,11 +414,10 @@
         <!-- ajaxchimp JS -->
         <script src="{{asset('frontend/js/jquery.ajaxchimp.min.js')}}"></script>
         <!--chart Js-->
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
         
         <!-- main JS -->
         <script src="{{asset('frontend/js/main.js')}}"></script>
-
+        @stack('js')
     </body>
 </html>

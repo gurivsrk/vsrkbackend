@@ -19,7 +19,7 @@ class staticPages extends Model
         return $data;
     }
 
-    public static function getAllFields($page){
+    public static function getAllFields($page, $meta_id=null){
         $raw_data = self::where('page',$page)->get(); 
         $data = [];
         foreach($raw_data as $raw){
@@ -30,11 +30,11 @@ class staticPages extends Model
         return $data;
     }
 
-    public static function updateFields($page, $request){
+    public static function updateFields($page, $request, $meta_id=null){
 
         foreach($request->all() as $key=>$value){
       
-            if(in_array($key,['_token','_method','submit'])){
+            if(in_array($key,['_token','_method','submit','check_calc'])){
                 continue;
             }
      
