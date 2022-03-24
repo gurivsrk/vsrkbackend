@@ -48,7 +48,7 @@ class staticPagesContoller extends Controller
     }
 
     public function calci(){
-        $options = staticPageMeta::select('id','page_name','page_slug')->where('page_name','calculator')->get();
+        $options = staticPageMeta::select('id','page_name','page_slug','misc')->where('page_name','calculator')->get();
         return view('pages.calculator',compact('options'));
     }
 
@@ -61,7 +61,7 @@ class staticPagesContoller extends Controller
              $data = staticPageMeta::getAllFields($request->id);
         }
        
-          $faqs = faqs::all();
+        $faqs = faqs::all();
         return view('partials.calc',compact(['data','faqs']));
     }
 

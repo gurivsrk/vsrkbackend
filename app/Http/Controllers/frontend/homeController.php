@@ -28,7 +28,8 @@ class homeController extends Controller
         $faq_ids_raw = staticPages::getField('home','faqs');
         $faqs = faqs::select(['question','answer'])->whereIn('id',json_decode($faq_ids_raw->field_value))->get();
 
-        return view('frontend.index',compact(['team','blogs','testimonials','brand_logo','faqs']));
+        $home = staticPages::getAllFields('home');
+        return view('frontend.index',compact(['team','blogs','testimonials','brand_logo','faqs','home']));
     }
 
  ////// ABOUT
@@ -85,8 +86,10 @@ class homeController extends Controller
         if($meta->page_slug != $calci_type){
             abort(404);
         }
+        $page_content = staticPages::getAllFields($id);
+
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
         $blogs = blogs::select(['title','blogImage','categories','tags','descritption','created_at'])->reverse()->get()->take(3);
-        return view('frontend.calculator',compact(['brand_logo','blogs','calci_type']));
+        return view('frontend.calculator',compact(['brand_logo','blogs','calci_type','page_content']));
     }
 }

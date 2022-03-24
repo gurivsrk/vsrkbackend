@@ -123,7 +123,6 @@ h6 {
 
 .btn-solid {
   color: #fff;
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
   box-shadow: 0 0 40px 40px #3cafdc inset;
   border: 1px solid transparent;
   border-radius: 5px;
@@ -133,7 +132,6 @@ h6 {
   border: 1px solid #fff;
   background: transparent;
   color: #fff;
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -638,7 +636,7 @@ img {
   margin-top: 4px;
   border-radius: 5px;
   display: block;
-  width: 250px;
+  width: 275px;
   padding: 10px 0;
   margin-left: 15px;
   border: none;
@@ -1263,7 +1261,17 @@ img {
 .about-section .cta-btn {
   margin-top: 15px;
 }
-
+.tab span{
+  border: 1px solid #32b263;
+  color: #32b263;
+  background: transparent;
+  box-shadow: none;
+}
+.tab span:hover, .tab span.active{
+  border: 1px solid #3cafdc;
+  color: #fff;
+  background: #3cafdc;
+}
 .btn-solid:hover {
   border: 1px solid #3cafdc;
   color: #3cafdc;
@@ -1468,15 +1476,17 @@ img {
   font-weight: normal;
   color: #20c997;
 }
+.calculator .graph-section .row{
+  box-shadow: 0px 0px 75px #f3f3f3;
+}
+.tab span {
+  padding: 10px 45px;
+  border-radius: 38px;
+}
 
 .tips-section .btn-solid {
   margin-top: 15px;
   border-radius: 5px;
-}
-
-.tips-section .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
 }
 
 .tips-section .tips-img img {
@@ -1807,9 +1817,13 @@ img {
 .app-section .btn, .app-section i{
   font-size: 18px;
 }
+.app-section .btn:focus{
+  color: #fff;
+}
 .app-section .btn-android{
   background: #a4c639;
   box-shadow: 0 0 40px 40px #a4c639 inset;
+ 
 }
 .app-section .btn-android:hover{
   color: #a4c639;
@@ -1819,6 +1833,7 @@ img {
 }
 .app-section .btn-ios{
   background: #0A84FF;
+  color: #fff;
   box-shadow: 0 0 40px 40px #0A84FF inset;
 }
 .app-section .btn-ios:hover{
@@ -1963,8 +1978,7 @@ img {
   padding-inline-end: 22px;
   color: #20c997;
 }
-
-.pricing-section .pricing-item-single .pricing-item-list .btn-solid:hover {
+.tips-section .btn-solid:hover, .pricing-section .pricing-item-single .pricing-item-list .btn-solid:hover {
   color: #3cafdc;
   border: 1px solid #3cafdc;
 }
@@ -2795,16 +2809,9 @@ input[type=number] {
 }
 
 .blog-grid .cta-btn .btn-solid {
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
   box-shadow: 0 0 40px 40px #3cafdc inset;
 }
 
-.blog-grid .cta-btn .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 
 /*================================================
   Blog Details Area CSS
@@ -2919,11 +2926,6 @@ input[type=number] {
   padding-top: 32px;
 }
 
-.blog-details-section .blog-details-desc .comment-reply .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-}
-
 .blog-details-section .blog-details-desc .comments-area {
   margin-bottom: 20px;
 }
@@ -2988,20 +2990,6 @@ input[type=number] {
   margin-top: -16px;
 }
 
-.blog-details-section .blog-details-desc .comments-area .comment-body .comment-content .comment-metadata .reply .btn-solid {
-  border-radius: 5px;
-  padding: 2px 10px;
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
-  box-shadow: 0 0 40px 40px #3cafdc inset;
-  font-size: 12px;
-}
-
-.blog-details-section .blog-details-desc .comments-area .comment-body .comment-content .comment-metadata .reply .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 
 .blog-details-section .blog-details-desc .comments-area .comment-body .comment-content p {
   margin-top: 5px;
@@ -3233,19 +3221,6 @@ input[type=number] {
 
 .contact-section .contact-widget .contact-info p {
   display: inline;
-}
-
-.contact-section .btn-solid {
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
-  box-shadow: 0 0 40px 40px #3cafdc inset;
-  border-radius: 5px;
-}
-
-.contact-section .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 
 .contact-section .btn.disabled {
@@ -3561,19 +3536,6 @@ input[type=number] {
   text-align: center;
 }
 
-.error-area .cta-btn .btn-solid {
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
-  box-shadow: 0 0 40px 40px #3cafdc inset;
-  border-radius: 5px;
-}
-
-.error-area .cta-btn .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
 .error-area .newsletter-form {
   display: -ms-grid;
   display: grid;
@@ -3829,18 +3791,6 @@ input[type=number] {
 .signinup-section .signin-box .cta-btn {
   margin: 30px 0;
   text-align: center;
-}
-
-.signinup-section .signin-box .cta-btn .btn-solid {
-  -webkit-box-shadow: 0 0 40px 40px #3cafdc inset;
-  box-shadow: 0 0 40px 40px #3cafdc inset;
-}
-
-.signinup-section .signin-box .cta-btn .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-  -webkit-box-shadow: none;
-  box-shadow: none;
 }
 
 

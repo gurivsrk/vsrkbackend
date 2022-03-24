@@ -264,7 +264,25 @@ jQuery(function($) {
     });
    
 //custom
-   
+
+    $('.lumpsum-sip-calc .tab .btn').on('click',function(){
+        let $this= $(this)
+        $this.addClass('active').siblings().removeClass('active')
+            if($this.attr('id') == 'sip'){
+            $('#sip-lumpsum-input label').text('Monthly Investment')
+            $('.lumpsum-sip-calc').find('input').attr('data-id','online-sip-calculator')
+            sipFunction(true);
+        }
+        else if($this.attr('id') == 'lumpsum'){
+            $('#sip-lumpsum-input label').text('Lumpsum Amount')
+            $('.lumpsum-sip-calc').find('input').attr('data-id','lumpsum-sip-calc')
+            lumpsumSipFunction(true)
+        }
+    
+    });
+
+    
+    
     $('.team-outer-box').on('click',function(){
         if(!($(this).hasClass('active'))){
           $(this).addClass('active').siblings().removeClass('active')

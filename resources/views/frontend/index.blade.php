@@ -317,69 +317,9 @@
                     <h2>POWER OF SIP</h2>
                     <p>Here We help you to GROW your MONEY</p>
                 </div>
-               <div id="calC">
-                    <div class="row align-items-center">
-                        <div class="col-lg-7">
-                            <div class="sip-calc">
-                                <div class="input-group">
-                                    <div class="get-range-value">
-                                        <label>Monthly Investment</label>
-                                        <span class="type-span">₹</span>
-                                        <input class="type-input" id="sipAmt" type="number" maxlength="250"  min="500" max="100000" value="25000">
-                                    </div>
-                                    <input class="type-range" type="range" min="500" max="100000" step="500" value="25000" style="background-size: 25% 100%;">
-                                </div>
-                                <div class="input-group mt-5">
-                                    <div class="get-range-value">
-                                        <label>Expected return rate (p.a)</label>
-                                        <input class="type-input" type="number"  maxlength="250" min="1" max="30" value="12">
-                                        <span class="type-span">%</span>
-                                    </div>
-                                    <input class="type-range" type="range" min="1" id="sipRoi"  maxlength="250" max="30" step="0.1" value="12" style="background-size: 38% 100%;">
-                                </div>
-                                <div class="input-group mt-5">
-                                    <div class="get-range-value">
-                                        <label>Time period</label>
-                                        <input class="type-input" type="number"  min="1" max="30" value="10">
-                                        <span class="type-span">Yr</span>
-                                    </div>
-                                    <input class="type-range" type="range" min="1" id="sipTime" max="30" step="1" value="10" style="background-size: 30% 100%;">
-                                </div>
-                            </div>
-                            <div class="col-lg-5 mt-5">
-                            <div class="input-group mt-1">
-                                <div class="get-range-value dynamic-field">
-                                    <label>Invested Amount:</label>
-                                    <span id="sipInvestedAmt"></span>
-                                </div>
-                            </div>
-                            <div class="input-group mt-3 dynamic-field">
-                                <div class="get-range-value">
-                                    <label>Estimated Return:</label>
-                                    <span id="sipEstAmt"></span>
-                                </div>
-                            </div>
-                            <div class="input-group mt-3 dynamic-field">
-                                <div class="get-range-value">
-                                    <label>Total Value:</label>
-                                    <span id="sipTotalAmt"></span>
-                                </div>
-                            </div>
-                            <div class="cta-btn mt-3">
-                                <a href="#" class="btn btn-solid">
-                                    Invest Now
-                                </a>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="offset-md-1 col-lg-4">
-                            <div id="sipChartCanvas" class="position-relative">
-                                <canvas id="sipCalChat" style="width:100%;max-width:350px;max-height:350px"></canvas>
-                            </div>
-                        </div>
-                        
-                    </div>
-               </div>
+                <div id="calC">
+                    @include('partials.frontend.calculator',['calc_type'=>$home->calc_type])
+                </div>
             </div>
         </section>
         <!-- end graph section -->
@@ -397,8 +337,8 @@
         <section class="faq-section ptb-100 bg-thin">
             <div class="container">
                 <div class="section-title">
-                    <h2>FAQ's</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                    <h2>{{$home->faq_title}}</h2>
+                    <p>{{$home->faq_content}}</p>
                 </div>
                 @include('partials.frontend.faq',compact('faqs'))
             </div>
@@ -406,11 +346,5 @@
         <!-- end faq section -->
 @endsection
 @push('js')
- <script>     
-     //////////// Slider Change Calue for calculator
-     $.getScript('/frontend/js/functions.js',()=>{
-         sipFunction(false); 
-    })
-  </script>
  
 @endpush

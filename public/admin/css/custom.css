@@ -133,3 +133,6 @@ td p {
 .card-body p{
     text-align: justify;
 }
+textarea.cke_source{
+    height: 100% !important;  
+}

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\staticPages;
 use Illuminate\Support\Str;
+use PhpParser\Node\Expr\FuncCall;
 
 class staticPageMeta extends Model
 {
@@ -44,5 +45,9 @@ class staticPageMeta extends Model
         $data['meta'] = @self::findOrFail($id);
         $data['table'] =  staticPages::getAllFields($data['meta']->id);
         return $data;
+    }
+
+    public function staticContent(){
+       return $this->belongsTo('App\Models\staticPages','id','page');
     }
 }

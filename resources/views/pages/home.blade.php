@@ -21,9 +21,9 @@
                       <form method="post" action="{{route('staticPages.update','home')}}">
                         @csrf
                         @method('put')
-                         
+                        @include('partials.calcSelector',['calc_type'=>@$data->calc_type])
                         <div class="seotype-section">
-                          <h5 class="card-title mb-3">Testimonials:</h5>
+                          <h5 class="card-title mb-3">Faq Section:</h5>
                           <div class="form-group">
                               <label>{{__('FAQ Heading')}}</label>
                               <input type="text" class="form-control" name="faq_title" placeholder="FAQ Heading" value="{{old('faq_title',@$data->faq_title)}}" require aria-required="true"> 
@@ -34,7 +34,7 @@
                           </div>
                           <div class="row ">
                               <div class="col-md-12 mt-4">
-                                  <label class="" style="color:#2d2d2d">{{ __('Add Testimonials') }}</label>
+                                  <label class="" style="color:#2d2d2d">{{ __('Add FAQ') }}</label>
                                   <select name="faqs[]" class="vsrk-select form-control custom-select" multiple aria-required="true">
                                        @if(!empty($faqs))
                                          @foreach($faqs as $faq)
