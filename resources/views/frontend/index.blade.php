@@ -337,8 +337,8 @@
         <section class="faq-section ptb-100 bg-thin">
             <div class="container">
                 <div class="section-title">
-                    <h2>{{$home->faq_title}}</h2>
-                    <p>{{$home->faq_content}}</p>
+                    <h2>{{@$home->faq_title}}</h2>
+                    <p>{{@$home->faq_content}}</p>
                 </div>
                 @include('partials.frontend.faq',compact('faqs'))
             </div>
