@@ -26,7 +26,7 @@ class homeController extends Controller
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
 
         $faq_ids_raw = staticPages::getField('home','faqs');
-        $faqs = faqs::select(['question','answer'])->whereIn('id',json_decode($faq_ids_raw->field_value))->get();
+        $faqs = !empty($faq_ids_raw) ? faqs::select(['question','answer'])->whereIn('id',json_decode($faq_ids_raw->field_value))->get() : [];
 
         $home = staticPages::getAllFields('home');
         return view('frontend.index',compact(['team','blogs','testimonials','brand_logo','faqs','home']));
