@@ -318,7 +318,7 @@
                     <p>Here We help you to GROW your MONEY</p>
                 </div>
                 <div id="calC">
-                    @include('partials.frontend.calculator',['calc_type'=>$home->calc_type])
+                    @include('partials.frontend.calculator',['calc_type'=>@$home->calc_type])
                 </div>
             </div>
         </section>
