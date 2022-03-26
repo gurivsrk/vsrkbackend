@@ -16,7 +16,7 @@
                                             <span class="type-span">₹</span>
                                             <input class="type-input" data-id="lumpsum-sip-calc" id="sipAmt" type="number" maxlength="250" min="500" max="1000000" value="25000">
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="500" max="1000000" step="500" value="25000" style="background-size: 5% 100%;">
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="500" max="1000000" step="500" value="25000" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
@@ -24,7 +24,7 @@
                                             <input class="type-input" type="number" data-id="lumpsum-sip-calc" maxlength="250" min="1" max="30" value="12">
                                             <span class="type-span">%</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipRoi" maxlength="250" max="30" step="0.1" value="12" style="background-size: 38% 100%;">
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipRoi" maxlength="250" max="30" step="0.1" value="12" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
@@ -32,7 +32,7 @@
                                             <input class="type-input" type="number" data-id="lumpsum-sip-calc" min="1" max="30" value="10">
                                             <span class="type-span">Yr</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipTime" max="30" step="1" value="10" style="background-size: 30% 100%;">
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipTime" max="30" step="1" value="10" >
                                     </div>
                                 </div>
                                 <div class="col-lg-5 mt-5">
@@ -76,7 +76,7 @@
                         <script>
                             $.getScript('/frontend/js/functions.js',()=>{
                                 sipFunction(false);
-                                $('.tab #sip').click();
+                               $('.tab #sip').click();
                             })
                         </script>
                     @else
@@ -99,7 +99,7 @@
                                                     <span class="type-span">yrs</span>
                                                     <input class="type-input" data-id="online-retirement-calculator" id="currentage" type="number" maxlength="2"  min="20" max="60" value="25">
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="20" max="60" step="1" value="25" style="background-size: 15% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="20" max="60" step="1" value="25">
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -107,7 +107,7 @@
                                                     <span class="type-span">yrs</span>
                                                     <input class="type-input" data-id="online-retirement-calculator" id="retireage" type="number" maxlength="2"  min="30" max="80" value="60">
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="30" max="80" step="1" value="60" style="background-size: 60% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="30" max="80" step="1" value="60" >
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -115,7 +115,7 @@
                                                     <span class="type-span">yrs</span>
                                                     <input class="type-input" data-id="online-retirement-calculator" id="lifetill" type="number" maxlength="3"  min="40" max="100" value="85">
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="40" max="100" step="1" value="85" style="background-size: 75% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="40" max="100" step="1" value="85" >
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -123,7 +123,7 @@
                                                     <input class="type-input" type="number" data-id="online-retirement-calculator"  id="currentinflation" maxlength="250" min="1" max="30" value="6">
                                                     <span class="type-span">%</span>
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="6" style="background-size: 19% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="6" >
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -131,7 +131,7 @@
                                                     <input class="type-input" type="number" data-id="online-retirement-calculator" id="currentexpense" maxlength="10" min="5000" max="1000000" value="40000">
                                                     <span class="type-span">₹</span>
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="5000"   maxlength="10" max="1000000" step="5000" value="25000" style="background-size: 3% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="5000"   maxlength="10" max="1000000" step="5000" value="25000" >
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -139,7 +139,7 @@
                                                     <input class="type-input" type="number" data-id="online-retirement-calculator"  id="postinflation" maxlength="250" min="1" max="30" value="8">
                                                     <span class="type-span">%</span>
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="8" style="background-size: 25% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="8" >
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
@@ -147,7 +147,7 @@
                                                     <input class="type-input" type="number" data-id="online-retirement-calculator"  id="roi" maxlength="250" min="1" max="30" value="12">
                                                     <span class="type-span">%</span>
                                                 </div>
-                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="12" style="background-size: 38% 100%;">
+                                                <input class="type-range" type="range" data-id="online-retirement-calculator" min="1"  maxlength="250" max="30" step="0.1" value="12">
                                             </div>
                                         </div>
                                     </div>
@@ -188,7 +188,7 @@
                         })
                     </script>
                     @endpush
-                @elseif($calc_type == "compound-calculator")
+                @elseif($calc_type == "compound-calculator" || $calc_type == "online-rd-calculator")
                   <!-- start graph section -->
                   <div id="">
                         <div class="row align-items-center">
@@ -198,25 +198,25 @@
                                         <div class="get-range-value">
                                             <label>Amount</label>
                                             <span class="type-span">₹</span>
-                                            <input class="type-input" data-id="compound-calc" id="comAmt" type="number" maxlength="250" min="500" max="1000000" value="10000">
+                                            <input class="type-input" data-id="{{ $calc_type }}" id="comAmt" type="number" maxlength="250" min="500" max="1000000" value="10000">
                                         </div>
-                                        <input class="type-range" type="range" data-id="compound-calc" min="500" max="1000000" step="500" value="10000" style="background-size: 1% 100%;">
+                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="500" max="1000000" step="500" value="10000">
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Expected return rate (p.a)</label>
-                                            <input class="type-input" type="number" id="comRoi" data-id="compound-calc" maxlength="250" min="1" max="30" value="6.5">
+                                            <input class="type-input" type="number" id="comRoi" data-id="{{ $calc_type }}" maxlength="250" min="1" max="30" value="6.5">
                                             <span class="type-span">%</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="compound-calc" min="1"  maxlength="250" max="30" step="0.1" value="6.5" style="background-size: 21% 100%;">
+                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="1"  maxlength="250" max="30" step="0.1" value="6.5" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Time period</label>
-                                            <input class="type-input" type="number" id="comTime" data-id="compound-calc" min="1" max="30" value="3">
+                                            <input class="type-input" type="number" id="comTime" data-id="{{ $calc_type }}" min="1" max="30" value="3">
                                             <span class="type-span">Yr</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="compound-calc" min="1"  max="30" step="1" value="3" style="background-size: 9% 100%;">
+                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="1"  max="30" step="1" value="3" >
                                     </div>
                                 </div>
                                 <div class="col-lg-5 mt-5">
@@ -256,12 +256,19 @@
                 
             <!-- end graph section -->
                     @push('js')
-                        <script>
-                            $.getScript('/frontend/js/functions.js',()=>{
-                                compoundFunction(false);
-                                
-                            })
-                        </script>
+                    @if($calc_type == "compound-calculator")
+                    <script>
+                        $.getScript('/frontend/js/functions.js',()=>{
+                         compoundFunction(false);
+                        })
+                    </script>
+                    @else
+                    <script>
+                        $.getScript('/frontend/js/functions.js',()=>{
+                            rdCalculatorFunction(false);
+                        })
+                    </script>
+                    @endif                   
                     @endpush
                 @endif
 

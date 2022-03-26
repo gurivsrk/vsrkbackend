@@ -30,6 +30,12 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
             case 'compound-calc':
                 compoundFunction(true)
                 break;
+            case 'online-rd-calculator':
+                rdCalculatorFunction(true)
+                break;
+            case 'online-ppf-calculator':
+                ppfCalculationFunction(true)
+                break;
         }
     }
 
@@ -75,7 +81,7 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
 
      sipFunction = (check) => {
         pa = parseFloat($('#sipAmt').val()), roi= parseFloat($('#sipRoi').val()), t= parseFloat($('#sipTime').val())
-       let result =  sipCalculator(pa,roi,t,check);
+       let result =  sipCalculator(pa,roi,t);
 
         $('#sipInvestedAmt').text('Rs. '+result.investedAmt.toLocaleString());
         $('#sipEstAmt').text('Rs. '+result.estReturn.toLocaleString());
@@ -112,6 +118,23 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
         pieChart('Invested amount','Est. returns',pa,result.iAmt,check) 
     }
     
+
+    rdCalculatorFunction = (check) =>{
+        pa = parseFloat($('#comAmt').val()), roi= parseFloat($('#comRoi').val()), t= parseFloat($('#comTime').val())
+
+        let {estReturn , investedAmt , estInt} = rdCalculator(pa,roi,t);
+
+        $('#investedAmt').text('Rs. '+investedAmt.toLocaleString());
+        $('#estAmt').text('Rs. '+Math.round(estInt).toLocaleString());
+        $('#TotalAmt').text('Rs. '+Math.round(estReturn).toLocaleString());
+
+        pieChart('Invested amount','Est. returns',investedAmt,estInt,check) 
+    }
+
+    ppfCalculationFunction = (check) =>{
+        pa = parseFloat($('#comAmt').val()), roi= parseFloat($('#comRoi').val()), t= parseFloat($('#comTime').val())
+        let {totalAmt , investedAmt , estReturn} = sipCalculator(pa,roi,t,1,1)
+    }
  ///////// calculations
      retirementCalculator = (c,r,l,i,a,ip,roi)=>{
         let nper = parseFloat(r)-parseFloat(c),
@@ -139,18 +162,21 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
 
     }
 
-     sipCalculator = (sip, roi, year,check) => {
-        var totalAmt = 0, arr = [],
-         months = year*12,
-         addprevious = sip*((roi/12)/100);
+     sipCalculator = (sip, roi, year,n=12,t=12,f=1) => {
+        //// n,t - only for sip calculation
+        /////  
+        var totalAmt = 0,
+         duration = year*t,
+         interest = sip*((roi/n)/100);
+
+
         
-        for(var b=1; b <= months ; b++){
-            totalAmt = totalAmt  +  (sip+addprevious) + (totalAmt*((roi/12)/100)) 
+        for(var b=1; b <= duration ; b++){
+            totalAmt += (sip+interest) + (totalAmt*((roi/n)/100)) 
            // arr.push(FV)
         }
-        let investedAmt = Math.round(sip*months),
+        let investedAmt = Math.round(sip*duration),
         estReturn = Math.round(totalAmt-investedAmt)
-        
         return { totalAmt,investedAmt,estReturn }
     }
 
@@ -163,6 +189,23 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
 
     }
 
+    rdCalculator = (p,r,t) =>{
+        r /= 100;
+        t *=12;
+        estReturn = 0;
+
+        //=5000*(1+0.0825/4)^(4*12/12)
+        for(let a = t; a > 0 ; a-- ){
+                power = 4*a/12
+                
+                estReturn += p*Math.pow((1+r/4),power)
+        }
+
+        investedAmt = p*t
+        estInt = estReturn - investedAmt;
+        
+        return {estReturn,investedAmt,estInt}
+    }
 
 //////// pie charts
      pieChart = (head1,head2,val1,val2,check) => {
@@ -202,9 +245,11 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
             }
             
     }
-
+ 
     $(document).ready(function(){
         
+    
+
         $(document).on('input change','.type-range',function(){
             const minVal = $(this).attr('min');
             const maxVal = $(this).attr('max');

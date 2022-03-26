@@ -136,3 +136,6 @@ td p {
 textarea.cke_source{
     height: 100% !important;  
 }
+.justify-content-space-evenly {
+    justify-content: space-evenly;
+}

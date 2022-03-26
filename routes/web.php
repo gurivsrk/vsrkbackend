@@ -32,8 +32,19 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 
 	/// Calculators 
 	Route::get('/calculators/{id}/{calci}',[App\Http\Controllers\frontend\homeController::class, 'calci'])->name('calci');	
-});
 
+	///mailing list
+	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');
+
+});
+//// for testing mail function
+//  Route::get('/testmail',[App\Http\Controllers\subcriberController::class,'testEmail']);
+Route::get('/testmailview',function(){
+	return view('email.subscribe',[
+		'email'=>'emials@gmial.com',
+		'email_content'=>'email content'
+	]);
+});
 
 //////// Admin group
 

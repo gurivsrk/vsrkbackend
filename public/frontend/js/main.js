@@ -329,3 +329,13 @@ jQuery(function($) {
 
 
 }(jQuery));
+
+    
+for (slide of document.getElementsByClassName('type-range')){
+    let min = slide.getAttribute('min')
+    let max =slide.getAttribute('max')
+    let v = slide.value
+    let bgVal = ( v - min )*100/(max-min);
+
+    slide.style.backgroundSize = bgVal+"% 100%"
+}
