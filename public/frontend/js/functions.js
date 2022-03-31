@@ -27,7 +27,7 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
             case 'online-sip-calculator':
                 sipFunction(true)
                 break;
-            case 'compound-calc':
+            case 'compound-calculator':
                 compoundFunction(true)
                 break;
             case 'online-rd-calculator':
@@ -61,12 +61,8 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
         r = parseFloat(r)
         t = parseFloat(t)
         ri = r/100 
-        if(n!=0){
-
-        }
-        else{
-            return p*ri*t
-        }
+        return p*ri*t
+            console.log(p+'---'+ri+'---'+t)
     }
 
      lumpsumSipFunction = (check) =>{
@@ -109,7 +105,7 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
     compoundFunction = (check)=>{
         pa = parseFloat($('#comAmt').val()), roi= parseFloat($('#comRoi').val()), t= parseFloat($('#comTime').val())
         let result = compoundCalculation(pa,roi,t);
-        console.log(result);    
+        // console.log(result);    
 
         $('#investedAmt').text('Rs. '+pa.toLocaleString());
         $('#estAmt').text('Rs. '+Math.round(result.iAmt).toLocaleString());
@@ -131,9 +127,15 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
         pieChart('Invested amount','Est. returns',investedAmt,estInt,check) 
     }
 
-    ppfCalculationFunction = (check) =>{
+    ppfCalculationFunction = (check, tenure=1) =>{
         pa = parseFloat($('#comAmt').val()), roi= parseFloat($('#comRoi').val()), t= parseFloat($('#comTime').val())
-        let {totalAmt , investedAmt , estReturn} = sipCalculator(pa,roi,t,1,1)
+        let {totalAmt , investedAmt , estReturn} = sipCalculator(pa,roi,t,1,1,tenure)
+
+        $('#investedAmt').text('Rs. '+investedAmt.toLocaleString());
+        $('#estAmt').text('Rs. '+Math.round(estReturn).toLocaleString());
+        $('#TotalAmt').text('Rs. '+Math.round(totalAmt).toLocaleString());
+
+        pieChart('Invested amount','Est. returns',investedAmt,estReturn,check) 
     }
  ///////// calculations
      retirementCalculator = (c,r,l,i,a,ip,roi)=>{
@@ -168,9 +170,8 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
         var totalAmt = 0,
          duration = year*t,
          interest = sip*((roi/n)/100);
-
-
-        
+         sip *=f
+      
         for(var b=1; b <= duration ; b++){
             totalAmt += (sip+interest) + (totalAmt*((roi/n)/100)) 
            // arr.push(FV)
@@ -248,8 +249,6 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
  
     $(document).ready(function(){
         
-    
-
         $(document).on('input change','.type-range',function(){
             const minVal = $(this).attr('min');
             const maxVal = $(this).attr('max');
@@ -276,3 +275,23 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
         });
 
     });
+
+const yearSeletor = document.getElementById('year-selector')
+        yearSeletor.addEventListener("change",function(){
+            const nexts  = this.nextElementSibling
+            const nextRange = document.getElementById("comAmt")
+            if(this.value != 1){
+                nextRange.value = nexts.value = 10000
+            }
+            else{
+                nexts.value = nextRange.value = 100000
+            }
+            let min = nextRange.getAttribute('min')
+            let max =nextRange.getAttribute('max')
+            
+            let bgVal = ( nextRange.value - min )*100/(max-min);
+        
+            nextRange.style.backgroundSize = bgVal+"% 100%"
+
+            ppfCalculationFunction(true,this.value)
+        });

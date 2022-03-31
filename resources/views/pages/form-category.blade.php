@@ -41,13 +41,13 @@
                                     @endif
                                     <label class="mt-4">Category for ?</label>
                                 <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
-                                  <label class="form-check-label text-dark">
+                                  <!-- <label class="form-check-label text-dark">
                                       <input class="form-check-input vsrk-jquery-radio" data-attr="select-parent" type="radio" name="for" id="cateFor1" value="all" {{(@$cateUpdate->for ==='Form' )?"checked" : " "}}  aria-required="true" required>
                                       For All
                                       <span class="circle">
                                           <span class="check"></span>
                                       </span>
-                                  </label>
+                                  </label> -->
                               </div>
                                 <div class="form-check form-check-radio {{ $errors->has('cateFor') ? ' has-danger' : '' }}">
                                   <label class="form-check-label text-dark">
@@ -102,7 +102,7 @@
                                         <label class="">{{ __('Category Logo') }}</label>
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-preview fileinput-exists thumbnail img-raised">
-                                            @if(!empty($cateUpdate))
+                                            @if(!empty($cateUpdate) && !empty($cateUpdate->logo))
                                                 <img src="{{asset(@$cateUpdate->logo)}}">
                                             @endif
                                             </div>

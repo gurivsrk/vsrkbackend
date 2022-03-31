@@ -29,6 +29,6 @@ class AppServiceProvider extends ServiceProvider
         $gd = staticPages::getAllFields('GD');
         $calc_options = staticPageMeta::select('id','page_name','page_slug')->where('page_name','calculator')->get();
 
-        View::share(['gd'=> $gd, 'calc_options' => $calc_options]);
+        View::share(['gd'=> @$gd, 'calc_options' => @$calc_options]);
     }
 }

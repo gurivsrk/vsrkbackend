@@ -4,11 +4,11 @@
 <div class="page-title-area bg-white calculator">
     <div class="container">
         <div class="page-title-content">
-            <h1>{{str_replace('-',' ',$calci_type)}}</h1>
+            <h1>{{$page_content->page_title}}</h1>
             <ul>
                 <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
                 <li class="item"><a href="javascript:void(0)">Calculators</a></li>
-                <li class="item"><a href="javascript:void(0)">{{str_replace('-',' ',$calci_type)}}</a></li>
+                <li class="item"><a href="javascript:void(0)">{{$page_content->page_title}}</a></li>
             </ul>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <section class="graph-section ptb-100">
         <div class="container pt-100">
             <div id="calC">
-                @include('partials.frontend.calculator',['calc_type'=>$page_content->calc_type])
+                @include('partials.frontend.calculator',['calc_type'=>$page_content->calc_type, 'content'=>$page_content])
             </div>
         </div>
     </section>

@@ -1,3 +1,4 @@
+
 @if(!empty($calc_type))
 
         @if($calc_type == 'sip-lumpsum-active-calculator' || $calc_type == 'sip-lumpsum-calculator')
@@ -14,25 +15,25 @@
                                         <div class="get-range-value">
                                             <label>Lumpsum Amount</label>
                                             <span class="type-span">₹</span>
-                                            <input class="type-input" data-id="lumpsum-sip-calc" id="sipAmt" type="number" maxlength="250" min="500" max="1000000" value="25000">
+                                            <input class="type-input" data-id="lumpsum-sip-calc" id="sipAmt" type="number" maxlength="250" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value }}" value="{{ @$content->amt_default_input_value  }}">
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="500" max="1000000" step="500" value="25000" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value }}" step="500" value="{{ @$content->amt_default_input_value  }}" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Expected return rate (p.a)</label>
-                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" maxlength="250" min="1" max="30" value="12">
+                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" maxlength="250" min="{{ @$content->int_min_input_value  }}" max="{{ @$content->int_max_input_value  }}" value="{{ @$content->int_default_input_value  }}">
                                             <span class="type-span">%</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipRoi" maxlength="250" max="30" step="0.1" value="12" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->int_min_input_value  }}" id="sipRoi" maxlength="250" max="{{ @$content->int_max_input_value  }}" step="0.1" value="{{ @$content->int_default_input_value  }}" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Time period</label>
-                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" min="1" max="30" value="10">
+                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value  }}" max="{{ @$content->ten_max_input_value  }}" value="{{ @$content->ten_default_input_value  }}">
                                             <span class="type-span">Yr</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="1" id="sipTime" max="30" step="1" value="10" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value  }}" id="sipTime" max="{{ @$content->ten_max_input_value  }}" step="1" value="{{ @$content->ten_default_input_value  }}" >
                                     </div>
                                 </div>
                                 <div class="col-lg-5 mt-5">
@@ -188,7 +189,7 @@
                         })
                     </script>
                     @endpush
-                @elseif($calc_type == "compound-calculator" || $calc_type == "online-rd-calculator")
+                @elseif($calc_type == "compound-calculator" || $calc_type == "online-rd-calculator" || $calc_type == "online-ppf-calculator")
                   <!-- start graph section -->
                   <div id="">
                         <div class="row align-items-center">
@@ -196,27 +197,35 @@
                                 <div class="compound-calc">
                                     <div id="compound-input" class="input-group mt-5">
                                         <div class="get-range-value">
-                                            <label>Amount</label>
+                                            <label>Amount</label> 
                                             <span class="type-span">₹</span>
-                                            <input class="type-input" data-id="{{ $calc_type }}" id="comAmt" type="number" maxlength="250" min="500" max="1000000" value="10000">
+                                            @if($calc_type == "online-ppf-calculator")
+                                            <select id="year-selector">
+                                                <option value="1">Yearly</option>
+                                                <option value="12">Month</option>
+                                                <option value="2">Half-yearly</option>
+                                                <option value="3">Quaterly</option>
+                                            </select>
+                                            @endif
+                                            <input class="type-input " data-id="{{ $calc_type }}"  type="number" maxlength="250" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value  }}" value="{{ @$content->amt_default_input_value  }}">
                                         </div>
-                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="500" max="1000000" step="500" value="10000">
+                                        <input class="type-range" id="comAmt" type="range" data-id="{{ $calc_type }}" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value  }}" step="500" value="{{ @$content->amt_default_input_value  }}">
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Expected return rate (p.a)</label>
-                                            <input class="type-input" type="number" id="comRoi" data-id="{{ $calc_type }}" maxlength="250" min="1" max="30" value="6.5">
+                                            <input class="type-input" type="number" id="comRoi" data-id="{{ $calc_type }}" maxlength="250" min="{{ @$content->int_min_input_value  }}" max="{{ @$content->int_max_input_value  }}" value="{{ @$content->int_default_input_value  }}"  {{($calc_type == "online-ppf-calculator")?'disabled':''}}>
                                             <span class="type-span">%</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="1"  maxlength="250" max="30" step="0.1" value="6.5" >
+                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="{{ @$content->int_min_input_value  }}"  maxlength="250" max="{{ @$content->int_max_input_value  }}" step="0.1" value="{{ @$content->int_default_input_value  }}" {{($calc_type == "online-ppf-calculator")?'disabled':''}}>
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Time period</label>
-                                            <input class="type-input" type="number" id="comTime" data-id="{{ $calc_type }}" min="1" max="30" value="3">
+                                            <input class="type-input" type="number" id="comTime" data-id="{{ $calc_type }}" min="{{ @$content->ten_min_input_value  }}" max="{{ @$content->ten_max_input_value  }}" value="{{ @$content->ten_default_input_value  }}">
                                             <span class="type-span">Yr</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="1"  max="30" step="1" value="3" >
+                                        <input class="type-range" type="range" data-id="{{ $calc_type }}" min="{{ @$content->ten_min_input_value  }}"  max="{{ @$content->ten_max_input_value  }}" step="1" value="{{ @$content->ten_default_input_value  }}" >
                                     </div>
                                 </div>
                                 <div class="col-lg-5 mt-5">
@@ -260,6 +269,12 @@
                     <script>
                         $.getScript('/frontend/js/functions.js',()=>{
                          compoundFunction(false);
+                        })
+                    </script>
+                    @elseif($calc_type == "online-ppf-calculator")
+                    <script>
+                        $.getScript('/frontend/js/functions.js',()=>{
+                            ppfCalculationFunction(false);
                         })
                     </script>
                     @else

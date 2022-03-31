@@ -17,7 +17,7 @@
             <div class="row justify-content-center">
               <div class="col-md-10">
                   <label>Select Page Or Add Page</label>
-                    <select id="select_calc_page" class="form-control">
+                    <select id="select_calc_page" class="form-control select_calc_page">
                         <option value="" hidden>Please Select One Option</option>
                         <option value="add_page">Add Page</option>
                         @if(!empty($options))
@@ -59,10 +59,17 @@
                         // console.log(result);
                         $('#calpage').html(result);
                         CKEDITOR.replace('ckeditor');
+                        setTimeout(()=>{
+                            changeInp();
+                        },1000)
                     }
                 })
             }
         });
+
+       
+            
+        
     });
 </script>
 @endpush

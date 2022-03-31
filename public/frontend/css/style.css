@@ -1272,7 +1272,7 @@ img {
   color: #fff;
   background: #3cafdc;
 }
-.btn-solid:hover {
+.btn-solid:hover, .btn-solid:active, .btn-solid:focus {
   border: 1px solid #3cafdc;
   color: #3cafdc;
 }
@@ -4388,3 +4388,15 @@ input[type=number] {
   width: auto;
 }
 
+#year-selector{
+  background: transparent;
+  color: #3cb56a;
+  font-weight: 600;
+  border: 0;
+  position: absolute;
+  margin-left: 75px;
+}
+#year-selector:focus-visible{
+  border: none;
+  outline: none;
+}

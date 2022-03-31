@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
         <!-- chart CSS -->
         <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-        
+        @stack('css')
     </head>
     <body>
         <!-- start preloader area
@@ -262,7 +262,7 @@
                     <div class="col-lg-3 col-md-5 col-sm-6 col-12">
                         <div class="footer-widget">
                             <div class="navbar-brand">
-                                <a href="index.html">
+                                <a href="{{route('frontend.index')}}">
                                     <img src="{{asset(@$gd->website_logo)}}" alt="image" />
                                 </a>
                             </div>
@@ -328,10 +328,10 @@
                             <h5>Other Resources</h5>
                             <ul class="footer-quick-links">
                                 <li>
-                                    <a href="about.html">About Us</a>
+                                    <a href="{{route('frontend.about')}}">About Us</a>
                                 </li>
                                 <li>
-                                    <a href="pricing.html">Mf Forms</a>
+                                    <a href="{{route('frontend.mf_forms')}}">Mf Forms</a>
                                 </li>
                                 <li>
                                     <a href="privacy-policy.html">Privacy Policy</a>
@@ -384,10 +384,10 @@
             <div class="container">
                 <div class="copy-right-content">
                     <p>
-                        Copyright @2022 VSRK Capital. Designed By
+                        Copyright {{ '@'.date('Y') }} VSRK Capital. Designed By
 
-                        <a href="#" target="_blank">
-                            VSRK Capital
+                        <a href="{{ route('frontend.index')}}">
+                            {{ @$gd->website_title }}
                         </a>
                     </p>
                 </div>
@@ -418,6 +418,7 @@
         
         <!-- main JS -->
         <script src="{{asset('frontend/js/main.js')}}"></script>
+
         @stack('js')
     </body>
 </html>

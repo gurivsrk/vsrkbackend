@@ -8,12 +8,13 @@ use App\Models\team;
 use App\Models\blogs;
 use App\Models\category;
 use App\Models\faqs;
+use App\Models\forms;
 use App\Models\career;
 use App\Models\testimonials;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
 class homeController extends Controller
 {
      
@@ -79,6 +80,25 @@ class homeController extends Controller
 
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
         return view('frontend.insurance',compact(['brand_logo']));
+    }
+    
+    public function forms(){
+
+       // $forms = forms::select('id','form_name','form','category_id','form_link')->with('categoryName')->get();
+        $form_cate = category::select('name','id')->where('type','category')->where('for','form')->get();
+        return view('frontend.mf_forms',compact(['form_cate']));
+    }
+
+    public function forms_ajax(Request $request){
+        $cat_id = $request->post('id');
+        $forms = forms::select('id','form_name','category_id','form_link')->with('categoryName')->where('category_id',$cat_id)->get();
+        return $forms;
+    }
+    
+    public function forms_download($id){
+        $forms = forms::findOrFail($id);
+        $files = str_replace('/storage','',$forms->form); 
+        return Storage::download('public'.$files)  ;  
     }
     
     public function calci($id,$calci_type){

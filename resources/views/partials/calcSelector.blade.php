@@ -1,14 +1,20 @@
+
 <div class="form-group">
     <label class="">{{ __('Calculator Type') }}</label>
-    <select name="calc_type" class="vsrk-select form-control custom-select dynamic-content" aria-required="true">
+    <select name="calc_type" id="select_calculator_type" class="vsrk-select form-control select_calc_page custom-select dynamic-content" aria-required="true">
     <option value="">Please Select One</option>
-        <option value="sip-lumpsum-calculator" {{@$calc_type == 'sip-lumpsum-calculator'? 'selected': '' }}>sip lumpsum calculator</option>  
-        <option value="sip-lumpsum-active-calculator" {{@$calc_type == 'sip-lumpsum-active-calculator'? 'selected': '' }}>sip lumpsum calculator with active on lumpsum tab</option>  
-        <option value="retirement-type-calculator"  {{@$calc_type == 'retirement-type-calculator'? 'selected': '' }}>retirement type calculator</option>  
-        <option value="compound-calculator"  {{@$calc_type == 'compound-calculator'? 'selected': '' }}>compound-calculator</option>  
-        <option value="online-rd-calculator"  {{@$calc_type == 'online-rd-calculator'? 'selected': '' }}>RD calculator</option>  
+        <option value="sip-lumpsum-calculator" data-id="{{ @$calc_type->page }}" {{@$calc_type == 'sip-lumpsum-calculator'? 'selected': '' }}>sip lumpsum calculator</option>  
+        <option value="sip-lumpsum-active-calculator" data-id="{{ @$calc_type->page }}" {{@$calc_type == 'sip-lumpsum-active-calculator'? 'selected': '' }}>sip lumpsum calculator with active on lumpsum tab</option>  
+        <option value="retirement-type-calculator" data-id="{{ @$calc_type->page }}"  {{@$calc_type == 'retirement-type-calculator'? 'selected': '' }}>retirement type calculator</option>  
+        <option value="compound-calculator" data-id="{{ @$calc_type->page }}"  {{@$calc_type == 'compound-calculator'? 'selected': '' }}>compound-calculator</option>  
+        <option value="online-rd-calculator"  data-id="{{ @$calc_type->page }}" {{@$calc_type == 'online-rd-calculator'? 'selected': '' }}>RD calculator</option>  
+        <option value="online-ppf-calculator"  data-id="{{ @$calc_type->page }}" {{@$calc_type == 'online-ppf-calculator'? 'selected': '' }}>PPF calculator</option>  
     </select>
 </div>
+
+@if(@$calc_type == 'retirement-type-calculator' || empty($calc_type))
+@else
+<div id="input-typ-data-fields" >
 <div class="row mt-4 mb-4 justify-content-space-evenly">
     <div class="form-group col-md-12">
         <label class="">{{ __('Amount Field') }}</label>
@@ -60,3 +66,23 @@
         <input class="form-control" name="ten_default_input_value" id="input-name" type="text" placeholder="{{ __('default_input_value') }}" value="{{ old('ten_default_input_value', @$data['table']->ten_default_input_value) }}" required="true" aria-required="true"/>
     </div>
 </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        changeInp = function(){
+            console.log('dass') 
+             $('#select_calculator_type').on('change',function(){
+                 console.log($(this).val())
+                if($(this).val() == "retirement-type-calculator"){
+                    $('#input-typ-data-fields').slideUp();
+                }
+                else{
+                    $('#input-typ-data-fields').slideDown();
+                }
+            })
+        }
+    })
+</script>
+@endif

@@ -33,6 +33,11 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	/// Calculators 
 	Route::get('/calculators/{id}/{calci}',[App\Http\Controllers\frontend\homeController::class, 'calci'])->name('calci');	
 
+	/// Mf Forms
+	Route::get('/MF-Forms',[App\Http\Controllers\frontend\homeController::class, 'forms'])->name('mf_forms');
+	Route::post('/MF-Forms',[App\Http\Controllers\frontend\homeController::class, 'forms_ajax'])->name('mf_forms');
+	Route::get('/MF-Forms/{id}/download',[App\Http\Controllers\frontend\homeController::class, 'forms_download'])->name('mf_forms.download');
+
 	///mailing list
 	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');
 
