@@ -64,7 +64,7 @@ class testimonialController extends Controller
     public function update(Request $request,testimonials $testimonial)
     {
         if($request->hasFile('profileImgT')){
-            $imgname =  updateMedia($testimonial->profileImg, $request->file('profileImgT'),'testimonials');
+            $imgname =  !empty($testimonial->profileImg) ? updateMedia($testimonial->profileImg, $request->file('profileImgT'),'testimonials') : addMedia($request->file('profileImgT'),'testimonials');
             $request->merge(['profileImg'=>$imgname]);
         }
         $data = $request->all();

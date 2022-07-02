@@ -62,7 +62,7 @@ class TeamController extends Controller
     public function update(UpdateteamRequest $request, team $team)
     {
         if($request->hasFile('profileImgT')){
-            $imgname =  updateMedia($team->profileImg, $request->file('profileImgT'),'profile_photos');
+            $imgname =  !empty($team->profileImg) ? updateMedia($team->profileImg, $request->file('profileImgT'),'profile_photos') : addMedia($request->file('profileImgT'),'profile_photos');
             $request->merge(['profileImg'=>$imgname]);
         }
         $data = $request->all();
