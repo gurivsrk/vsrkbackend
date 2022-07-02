@@ -277,6 +277,7 @@ let ca,ra,le,ir,pa,pir,roi,t,sfv,pv,pmt;
     });
 
 const yearSeletor = document.getElementById('year-selector')
+if(yearSeletor){
         yearSeletor.addEventListener("change",function(){
             const nexts  = this.nextElementSibling
             const nextRange = document.getElementById("comAmt")
@@ -295,3 +296,4 @@ const yearSeletor = document.getElementById('year-selector')
 
             ppfCalculationFunction(true,this.value)
         });
+    }

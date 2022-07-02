@@ -39,23 +39,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     @foreach($team as $key => $member)
-                    @if($loop->first)
-                    <div id="{{++$key}}" class="team-outer-box active">
-                        <a href="#{{$key}}">
-                            <div class="faq-item team-member">
-                                <div class="vsrk-left-img">
-                                    <img src="{{asset($member->profileImg)}}" alt="vsrk Service excellence" >
-                                </div>
-                                <div class="vsrk-right-text">
-                                    <h4>{{$member->name}}</h4>
-                                    <span>{{$member->designation}}</span>
-                                    <div class="spacer"></div>
-                                    <p>{!! $member->descritption  !!}</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    @else
+                 
                     <div id="{{++$key}}" class="team-outer-box">
                         <a href="#{{$key}}">
                             <div class="faq-item team-member ">
@@ -71,7 +55,7 @@
                             </div>
                         </a>
                     </div>
-                    @endif
+                   
                    @endforeach
                 </div>
             </div>
@@ -80,7 +64,7 @@
         <!-- end team title area -->
 
         @include('partials.frontend.app-section')
-        @include('partials.frontend.client',compact('brand_logo'))
+        {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
        
 
 @endsection

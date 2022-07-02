@@ -75,7 +75,7 @@
             </div>
             <!-- menu for mobile device -->
             <div class="mobile-nav">
-                <a href="index.html" class="logo">
+                <a href="{{route('frontend.index')}}" class="logo">
                     <img src="{{asset(@$gd->website_logo)}}" alt="logo_light" />
                 </a>
             </div>
@@ -89,7 +89,7 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto">
                                 <li class="nav-item">
-                                    <a href="{{route('frontend.index')}}" class="nav-link {{!empty($activeClass)?(($activeClass=='index')?'active':''):''}}">Home</a>
+                                    <a href="{{route('frontend.index')}}" class="nav-link {{!empty($activeClass)?(($activeClass=='index')?'active':''):''}}"><i class="fa fa-home" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void(0)" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='about_us')?'active':''):''}}">About us</a>
@@ -114,14 +114,6 @@
                                             <a href="{{route('frontend.registrars')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='registrars')?'active':''):''}}"> Registrars </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{route('frontend.career')}}" class="nav-link {{($activeClass=='about_us')?(($pageType=='career')?'active':''):''}}"> Career at VSRK </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-                                                Fund Houses
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
                                             <a href="#" class="nav-link">
                                                 Media
                                             </a>
@@ -129,7 +121,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='investment')?'active':''):''}}">Investment Solutions</a>
+                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='investment')?'active':''):''}}">Financial Services</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="{{route('frontend.mutual_funds')}}" class="nav-link {{($activeClass=='investment')?(($pageType=='mutual_funds')?'active':''):''}}">Mutual Fund Investments</a>
@@ -144,10 +136,10 @@
                                             <a href="#" class="nav-link">Corporate Deposites</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">PMS</a>
+                                            <a href="#" class="nav-link">Portfolio Management Services</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">AIF</a>
+                                            <a href="#" class="nav-link">Alternative Investment Fund</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Structured Products</a>
@@ -159,7 +151,7 @@
                                 </li>
                               
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='calci')?'active':''):''}}">Plan with Us</a>
+                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='calci')?'active':''):''}}">Calculators</a>
                                     <ul class="dropdown-menu">
                                         @foreach($calc_options as $option)
                                             <li class="nav-item">
@@ -169,33 +161,10 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle">Ways to Invest</a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Online</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Offline</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Mobile Application</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Web Portal</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Whatsapp</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
                                     <a href="#" class="nav-link dropdown-toggle">Learn with Expert</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">MF Tools</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">SIP Calculator Online</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">MF Guide (myths)</a>
@@ -212,19 +181,22 @@
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Tips & Articles</a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">Learning Videos</a>
+                                        </li>
+                                        <li class="nav-item"> 
+                                            <a href="#" class="nav-link">MF Factsheet</a>
+                                        </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item {{!empty($activeClass)?(($activeClass=='index')?'active':''):''}}N">
                                     <a href="#" class="nav-link dropdown-toggle">Investor Corner</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Customer Services</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">New Login/ SignIn</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">Invest Online</a>
+                                            <a href="#" class="nav-link">Invest Online/Offline</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Email Subscription</a>
@@ -233,7 +205,7 @@
                                             <a href="#" class="nav-link">Know Your Customer</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">Downloadable Forms</a>
+                                            <a href="{{route('frontend.mf_forms')}}" class="nav-link {{!empty($activeClass)?(($activeClass=='mf_forms')?'active':''):''}}">Downloadable Forms</a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#" class="nav-link">Complaint Redressel Form</a>
@@ -331,13 +303,13 @@
                                     <a href="{{route('frontend.about')}}">About Us</a>
                                 </li>
                                 <li>
+                                    <a href="{{route('frontend.career')}}">Career at VSRK</a>
+                                </li>
+                                <li>
                                     <a href="{{route('frontend.mf_forms')}}">Mf Forms</a>
                                 </li>
                                 <li>
                                     <a href="privacy-policy.html">Privacy Policy</a>
-                                </li>
-                                <li>
-                                    <a href="services.html">Services</a>
                                 </li>
                                 <li>
                                     <a href="contact.html">Contact Us</a>
@@ -371,8 +343,8 @@
                         </div>
                     </div>
                     <div class="col-m-12">
-                        <p>*Whether you are a first-time investor or a seasoned campaigner, planning is always the first step towards your investment journey. By using our smart tools such as – Retirement Tool, Systematic Investment Planner, SWP Calculator and Return Value Calculator. You can plan your investments well and create wealth in the long-run.</p>
-                        <p><b>Disclaimer</b>: Mutual Fund Investment Planning - This content is for information purposes only and is not an offer to sell or a solicitation to buy any mutual fund units/securities.These views alone are not sufficient and should not be used for the development or implementation of an investment strategy. It should not be construed as investment advice to any party. All opinions and estimates included here constitute our view as of this date and are subject to change without notice. Neither SBI Mutual Fund / SBI Funds Management Private Limited / SBI Mutual Fund Trustee Company Private Limited, nor any person connected with it, accepts any liability arising from the use of this information. The recipient of this material should rely on their investigations and unlike the traditional investment avenues like PPF, NSC, Bank Fixed Deposit, investment in mutual funds is subject to market risks. Hence, the performance of these asset classes is not strictly comparable. In view of the individual circumstances and risk profile, each investor is advised to consult their investment/tax adviser(s) before any investment decision.</p>
+                        <p class="text-justify">*Whether you are a first-time investor or a seasoned campaigner, planning is always the first step towards your investment journey. By using our smart tools such as – Retirement Tool, Systematic Investment Planner, SWP Calculator and Return Value Calculator. You can plan your investments well and create wealth in the long-run.</p>
+                        <p class="text-justify"><b>Disclaimer</b>: Mutual Fund Investment Planning - This content is for information purposes only and is not an offer to sell or a solicitation to buy any mutual fund units/securities.These views alone are not sufficient and should not be used for the development or implementation of an investment strategy. It should not be construed as investment advice to any party. All opinions and estimates included here constitute our view as of this date and are subject to change without notice. Neither SBI Mutual Fund / SBI Funds Management Private Limited / SBI Mutual Fund Trustee Company Private Limited, nor any person connected with it, accepts any liability arising from the use of this information. The recipient of this material should rely on their investigations and unlike the traditional investment avenues like PPF, NSC, Bank Fixed Deposit, investment in mutual funds is subject to market risks. Hence, the performance of these asset classes is not strictly comparable. In view of the individual circumstances and risk profile, each investor is advised to consult their investment/tax adviser(s) before any investment decision.</p>
                     </div>
                 </div>
             </div>

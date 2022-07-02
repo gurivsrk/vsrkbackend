@@ -217,42 +217,42 @@
                         <div class="featured-service-content">
                             <div class="section-title">
                                 <span class="subtitle">OUR SERVICES</span>
-                                <h2>Main Heading for our services</h2>
-                                <p>small description.</p>
+                                <h2>Our range of Financial Services</h2>
+                                <p>Our goal is to create solutions for Clients spanning the entire gamut of their Personal Financial Assistance that is Value Driven, Customized and Long Term.</p>
                             </div>
                             <div class="row">
                                 <div class="content-inner col-lg-6 col-md-6 col-sm-6">
+                                <i class="envy envy-alarm"></i>
+                                    <h5>Mutual Funds</h5>
+                                    <p>A mutual fund is a financial tool made up of a pool of money collected from different investors to invest in securities like stocks, bonds, etc.</p>
+                                    <a href="{{route('frontend.mutual_funds')}}" target="_blank" class="btn btn-text-only">
+                                        read more
+                                        <i class="envy envy-right-arrow"></i>
+                                    </a>
+                                </div>
+                                <div class="content-inner col-lg-6 col-md-6 col-sm-6">
                                     <i class="envy envy-shield"></i>
-                                    <h5>Service 1</h5>
-                                    <p>There are many variations of passages of Lorem Ipsum available</p>
-                                    <a href="service-details.html" target="_blank" class="btn btn-text-only">
+                                    <h5>Life Insurance</h5>
+                                    <p>We'll give you a complete understanding on how it works and what you need to choose the products that suits you the best</p>
+                                    <a href="{{route('frontend.insurance')}}" target="_blank" class="btn btn-text-only">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
                                 </div>
                                 <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                    <i class="envy envy-cpu"></i>
-                                    <h5>Service 2</h5>
-                                    <p>There are many variations of passages of Lorem Ipsum available</p>
-                                    <a href="service-details.html" target="_blank" class="btn btn-text-only">
+                                    <i class="envy envy-padlock"></i>
+                                    <h5>General Insurance</h5>
+                                    <p>General Insurance or Non-life Insurance policies is a practical option for every person who would like to live a risk-free life.</p>
+                                    <a href="#" target="_blank" class="btn btn-text-only">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
                                 </div>
                                 <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                    <i class="envy envy-code"></i>
-                                    <h5>Service 3</h5>
-                                    <p>There are many variations of passages of Lorem Ipsum available</p>
-                                    <a href="service-details.html" target="_blank" class="btn btn-text-only">
-                                        read more
-                                        <i class="envy envy-right-arrow"></i>
-                                    </a>
-                                </div>
-                                <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                    <i class="envy envy-global"></i>
-                                    <h5>Service 4</h5>
-                                    <p>There are many variations of passages of Lorem Ipsum available</p>
-                                    <a href="service-details.html" target="_blank" class="btn btn-text-only">
+                                    <i class="envy envy-attachment"></i>
+                                    <h5>Corporate Deposites</h5>
+                                    <p>These types of deposits are offered by corporate companies. Generally, banks are the issuers of fixed deposits services or products in India.</p>
+                                    <a href="#" target="_blank" class="btn btn-text-only">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -281,7 +281,7 @@
                 <div class="row align-items-center justify-content-center">
                     @foreach($team as $key => $member)
                     <div id="{{++$key}}" class="team-outer-box">
-                        <a href="#{{$key}}">
+                        <!-- <a href="#{{$key}}"> -->
                             <div class="faq-item team-member ">
                                 <div class="vsrk-left-img">
                                     <img src="{{asset($member->profileImg)}}" alt="vsrk Service excellence" >
@@ -293,7 +293,7 @@
                                     <p>{!! $member->descritption  !!}</p>
                                 </div>
                             </div>
-                        </a>
+                        <!-- </a> -->
                      </div>
                    @endforeach
                 </div>
@@ -326,8 +326,6 @@
 
 
         @include('partials.frontend.testimonial',compact('testimonials'))
-
-        @include('partials.frontend.client',compact('brand_logo'))
 
         @include('partials.frontend.blog',compact('blogs'))
 

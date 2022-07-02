@@ -15,28 +15,28 @@
                                         <div class="get-range-value">
                                             <label>Lumpsum Amount</label>
                                             <span class="type-span">₹</span>
-                                            <input class="type-input" data-id="lumpsum-sip-calc" id="sipAmt" type="number" maxlength="250" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value }}" value="{{ @$content->amt_default_input_value  }}">
+                                            <input class="type-input" data-id="lumpsum-sip-calc" id="sipAmt" type="number" maxlength="250" min="{{ @$content->amt_min_input_value??'500'  }}" max="{{ @$content->amt_max_input_value??'100000' }}" value="{{ @$content->amt_default_input_value??'25000'  }}">
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->amt_min_input_value  }}" max="{{ @$content->amt_max_input_value }}" step="500" value="{{ @$content->amt_default_input_value  }}" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->amt_min_input_value??'500'  }}" max="{{ @$content->amt_max_input_value??'100000' }}" step="500" value="{{ @$content->amt_default_input_value??'25000'  }}" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Expected return rate (p.a)</label>
-                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" maxlength="250" min="{{ @$content->int_min_input_value  }}" max="{{ @$content->int_max_input_value  }}" value="{{ @$content->int_default_input_value  }}">
+                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" maxlength="250" min="{{ @$content->int_min_input_value??'1'  }}" max="{{ @$content->int_max_input_value??'30'  }}" value="{{ @$content->int_default_input_value??'12'  }}">
                                             <span class="type-span">%</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->int_min_input_value  }}" id="sipRoi" maxlength="250" max="{{ @$content->int_max_input_value  }}" step="0.1" value="{{ @$content->int_default_input_value  }}" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->int_min_input_value??'1'  }}" id="sipRoi" maxlength="250" max="{{ @$content->int_max_input_value??'30'  }}" step="0.1" value="{{ @$content->int_default_input_value??'12'  }}" >
                                     </div>
                                     <div class="input-group mt-5">
                                         <div class="get-range-value">
                                             <label>Time period</label>
-                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value  }}" max="{{ @$content->ten_max_input_value  }}" value="{{ @$content->ten_default_input_value  }}">
+                                            <input class="type-input" type="number" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value??'1'  }}" max="{{ @$content->ten_max_input_value??'30'  }}" value="{{ @$content->ten_default_input_value??'10'  }}">
                                             <span class="type-span">Yr</span>
                                         </div>
-                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value  }}" id="sipTime" max="{{ @$content->ten_max_input_value  }}" step="1" value="{{ @$content->ten_default_input_value  }}" >
+                                        <input class="type-range" type="range" data-id="lumpsum-sip-calc" min="{{ @$content->ten_min_input_value??'1'  }}" id="sipTime" max="{{ @$content->ten_max_input_value??'30'  }}" step="1" value="{{ @$content->ten_default_input_value??'10'  }}" >
                                     </div>
                                 </div>
-                                <div class="col-lg-5 mt-5">
+                                <div class="col-lg-8 mt-5">
                                 <div class="input-group mt-1">
                                     <div class="get-range-value dynamic-field">
                                         <label>Invested Amount:</label>
@@ -228,7 +228,7 @@
                                         <input class="type-range" type="range" data-id="{{ $calc_type }}" min="{{ @$content->ten_min_input_value  }}"  max="{{ @$content->ten_max_input_value  }}" step="1" value="{{ @$content->ten_default_input_value  }}" >
                                     </div>
                                 </div>
-                                <div class="col-lg-5 mt-5">
+                                <div class="col-lg-8 mt-5">
                                 <div class="input-group mt-1">
                                     <div class="get-range-value dynamic-field">
                                         <label>Invested Amount:</label>

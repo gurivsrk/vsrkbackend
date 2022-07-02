@@ -330,7 +330,7 @@
         </div>
         <!-- end page title area -->
 
-        @include('partials.frontend.client',compact('brand_logo'))
+       {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
         <!--end about section-->
 
 @endsection

@@ -68,7 +68,7 @@
         
 
         @include('partials.frontend.app-section')
-        @include('partials.frontend.client',compact('brand_logo'))
+        {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
         <!-- end page title area -->
 
 @endsection

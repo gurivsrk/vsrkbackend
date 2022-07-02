@@ -20,7 +20,7 @@
             </div>
             
         <!--start Investments section-->
-        <section id="mutual_funds" class="about-section ptb-50 bg-white" style = "background:url({{asset('frontend/img/investment/mutual-funds.png')}}) no-repeat; background-position: bottom right">
+        <section id="mutual_funds" class="about-section ptb-50 bg-white" style = "background:url({{asset('frontend/img/investment/mutual-funds.png')}}) no-repeat; background-position: bottom right; background-size: 65vw;">
             <div class="container pt-100">
                 <div class="row align-items-center">
                     <div class="col-xl-6 pb-30">
@@ -181,7 +181,7 @@
         </div>
         <!-- end page title area -->
 
-        @include('partials.frontend.app-section',compact('brand_logo'))
+        {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
         <!--end about section-->
 
 @endsection

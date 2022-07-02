@@ -736,6 +736,10 @@
 }
 
 @media screen and (max-width: 991px) {
+  #sipChartCanvas{
+    margin-left: 13vw;
+    padding: 50px 0;
+  }
   ol {
     padding-left: 10px;
   }

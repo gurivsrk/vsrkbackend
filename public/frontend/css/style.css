@@ -2052,6 +2052,7 @@ img {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  min-width: 285px;
 }
 
 .type-input {
@@ -3919,23 +3920,39 @@ input[type=number] {
   width: 40px;
   border-radius: 30px;
 }
+.alternate-content h4{
+  text-align: left;
+  margin-top: 15px;
+}
 
 @media (max-width: 991.98px) {
+  .alternate-text-section:nth-child(odd) {
+    margin-top: 25px;
+  }
+  .alternate-image-section:nth-child(odd){
+    margin-top: 25px;
+  }
+ 
+    #sipChartCanvas{
+      margin-left: 13vw;
+      padding: 50px 0;
+    }
+    .faq-item{
+      display:block
+    }
   .navbar-area .top-nav {
     display: none;
-  }
-  .navbar-area .mobile-nav .logo {
-    top: 15px;
   }
   .navbar-area .cta-btn {
     display: none;
   }
   .navbar-area .mobile-nav.mean-container {
     margin: 0 auto;
+    padding: 10px 0;
   }
   .navbar-area .mobile-nav.mean-container .mean-bar {
-    padding: 20px 0 0;
-    position: relative;
+    padding: 15px 0;
+    position: absolute;
     background: transparent;
   }
   .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav {
@@ -3948,9 +3965,6 @@ input[type=number] {
   }
   .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav ul li a {
     text-transform: capitalize;
-  }
-  .navbar-area .mobile-nav.mean-container a.meanmenu-reveal {
-    padding-top: 5px;
   }
   .navbar-area .mobile-nav.mean-container a.meanmenu-reveal span {
     height: 3px;
@@ -3986,10 +4000,10 @@ input[type=number] {
     animation: slideInDown 500ms ease-in-out 0s normal none 1 running;
     background: #fff;
   }
-  .navbar-area.stickyadd .mobile-nav.mean-container a.meanmenu-reveal {
+  .navbar-area .mobile-nav.mean-container a.meanmenu-reveal {
     color: #332f3b;
   }
-  .navbar-area.stickyadd .mobile-nav.mean-container a.meanmenu-reveal span {
+  .navbar-area .mobile-nav.mean-container a.meanmenu-reveal span {
     background: #332f3b;
   }
   .navbar-area.stickyadd .mobile-nav.mean-container a.logo img:first-child {
@@ -4016,6 +4030,7 @@ input[type=number] {
   .featured-service-section .featured-service-image img {
     display: block;
   }
+ 
 }
 
 /*================================================
@@ -4250,6 +4265,15 @@ input[type=number] {
 }
 .team-outer-box.active{
   width: 100%;
+  position: fixed;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6vw;
 }
 .team-outer-box{
   flex: 0 0 auto;
@@ -4399,4 +4423,33 @@ input[type=number] {
 #year-selector:focus-visible{
   border: none;
   outline: none;
+}
+@media(max-width: 1199px) and  (min-width: 991.98px) {
+  .alternate-image-section {
+    height: 503px;
+}
+.alternate-image-section img {
+  height: 65%;
+  object-fit: contain;
+}
+
+}
+@media(max-width: 1199px){
+
+#mutual_funds{
+  background-position: bottom center !important;
+  background-size: contain !important;
+  padding-bottom: 50%;
+}
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: red;
+  color: #fff;
+  padding: 0 5px;
+  font-weight: 500;
+  cursor: pointer;
 }

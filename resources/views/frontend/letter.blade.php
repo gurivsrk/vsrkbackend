@@ -51,6 +51,6 @@
 
        
       
-        @include('partials.frontend.client',compact('brand_logo'))
+        {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
        
 @endsection

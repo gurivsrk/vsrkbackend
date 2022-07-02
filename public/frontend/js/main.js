@@ -7,6 +7,13 @@ jQuery(function($) {
         meanScreenWidth: '991',
     });
 
+    const close = () => {
+        $('.close').on('click',function(){
+            $('.team-outer-box').removeClass('active')
+            $(this).remove()
+        })
+    }
+
     // Sticky Nav
     $(window).on('scroll', function() {
         $(window).scrollTop() >= 100 ?
@@ -286,8 +293,13 @@ jQuery(function($) {
     $('.team-outer-box').on('click',function(){
         if(!($(this).hasClass('active'))){
           $(this).addClass('active').siblings().removeClass('active')
+          $(this).append('<div class="close" data-attr="class">X</div>')
         }
+        close()
     })
+ 
+    close()
+
 
     $('.job-box').on('click',function(){
         const child= $(this).children('.jobs');

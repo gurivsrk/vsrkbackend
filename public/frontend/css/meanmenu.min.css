@@ -260,8 +260,7 @@
     }
     .mobile-nav .logo {
         text-decoration: none;
-        position: absolute;
-        top: 11px;
+        position: relative;
         z-index: 999;
         left: 15px;
         color: #fff;

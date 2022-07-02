@@ -20,7 +20,7 @@
             </div>
             
         <!--start Investments section-->
-        <section id="mutual_funds" class="about-section ptb-50 bg-white">
+        <section id="Insurance" class="about-section ptb-50 bg-white">
             <div class="container pt-100">
                 <div class="row align-items-center">
                     <div class="col-xl-6 pb-30">
@@ -179,8 +179,7 @@
         <!--end Benefits section-->
         </div>
         <!-- end page title area -->
-
-        @include('partials.frontend.app-section',compact('brand_logo'))
+        {{-- @include('partials.frontend.client',compact('brand_logo'))--}}
         <!--end about section-->
 
 @endsection
