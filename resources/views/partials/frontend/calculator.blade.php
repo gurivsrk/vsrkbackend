@@ -104,7 +104,7 @@
                                             </div>
                                             <div class="input-group mt-4">
                                                 <div class="get-range-value">
-                                                    <label>Retirement age</label>
+                                                    <label>Maturity age</label>
                                                     <span class="type-span">yrs</span>
                                                     <input class="type-input" data-id="online-retirement-calculator" id="retireage" type="number" maxlength="2"  min="30" max="80" value="60">
                                                 </div>
