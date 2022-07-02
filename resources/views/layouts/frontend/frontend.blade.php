@@ -84,7 +84,7 @@
                 <nav class="navbar navbar-expand-md navbar-light">
                     <div class="container">
                         <a class="navbar-brand" href="{{route('frontend.index')}}">
-                            <img src="{{asset(@$gd->website_logo)}}" alt="logo" width="300"/>
+                            <img src="{{asset(@$gd->website_logo)}}" alt="logo" width="250"/>
                         </a>
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto">

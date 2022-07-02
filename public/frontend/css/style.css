@@ -4449,7 +4449,7 @@ input[type=number] {
   top: 0;
   background: red;
   color: #fff;
-  padding: 0 5px;
-  font-weight: 500;
+  padding: 5px 10px;
+  font-weight: 700;
   cursor: pointer;
 }

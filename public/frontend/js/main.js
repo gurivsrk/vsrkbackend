@@ -11,7 +11,7 @@ jQuery(function($) {
         $('.close').on('click',function(){
             $('.team-outer-box').removeClass('active')
             $(this).remove()
-        })
+          })
     }
 
     // Sticky Nav
@@ -290,10 +290,10 @@ jQuery(function($) {
 
     
     
-    $('.team-outer-box').on('click',function(){
+    $('.vsrk-left-img').on('click',function(){
         if(!($(this).hasClass('active'))){
-          $(this).addClass('active').siblings().removeClass('active')
-          $(this).append('<div class="close" data-attr="class">X</div>')
+          $(this).parent().parent().addClass('active');
+          $(this).parent().append('<div class="close" data-attr="class">X</div>')
         }
         close()
     })

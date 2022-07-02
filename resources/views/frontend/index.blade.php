@@ -280,7 +280,7 @@
                 </div>
                 <div class="row align-items-center justify-content-center">
                     @foreach($team as $key => $member)
-                    <div id="{{++$key}}" class="team-outer-box">
+                    <div id="teamM_{{++$key}}" class="team-outer-box">
                         <!-- <a href="#{{$key}}"> -->
                             <div class="faq-item team-member ">
                                 <div class="vsrk-left-img">
