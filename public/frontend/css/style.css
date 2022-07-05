@@ -379,7 +379,9 @@ img {
   padding-top: 70px;
   padding-bottom: 70px;
 }
-
+.pt-150{
+  padding-top: 150px;
+}
 .ptb-100 {
   padding-top: 100px;
   padding-bottom: 100px;

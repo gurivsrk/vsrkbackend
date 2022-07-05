@@ -2,24 +2,24 @@
 @extends('layouts.frontend.frontend', ['activeClass' => 'blog','pageType'=>'blog'])
 @section('meta_data')
 <meta property="og:locale" content="en_US" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="{{$blog->title}}" />
-	<meta property="og:description" content="{!!Str::limit(strip_tags($blog->descritption),150) !!}" />
-	<meta property="og:url" content="{{url()->current()}}" />
-	<meta property="og:site_name" content="VSRK CAPITAL PVT. LTD." />
-	<meta property="article:publisher" content="https://www.facebook.com/vsrk.capital" />
-	<meta property="article:published_time" content="{{ $blog->created_at }}" />
-	<meta property="og:image" content="{{asset($blog->blogImage)}}" />
-	<meta property="og:image:width" content="2500" />
-	<meta property="og:image:height" content="1347" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:creator" content="@vsrkcapital" />
-	<meta name="twitter:site" content="@vsrkcapital" />
-	<meta name="twitter:label1" content="Written by" />
-	<meta name="twitter:data1" content="vsrk" />
-	<meta name="twitter:label2" content="Est. reading time" />
-	<meta name="twitter:data2" content="2 minutes" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{$blog->title}}" />
+<meta property="og:description" content="{!!Str::limit(strip_tags($blog->descritption),150) !!}" />
+<meta property="og:url" content="{{url()->current()}}" />
+<meta property="og:site_name" content="VSRK CAPITAL PVT. LTD." />
+<meta property="article:publisher" content="https://www.facebook.com/vsrk.capital" />
+<meta property="article:published_time" content="{{ $blog->created_at }}" />
+<meta property="og:image" content="{{asset($blog->blogImage)}}" />
+<meta property="og:image:width" content="2500" />
+<meta property="og:image:height" content="1347" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@vsrkcapital" />
+<meta name="twitter:site" content="@vsrkcapital" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="vsrk" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="2 minutes" />
 @endsection
 @section('frontend_content')
    <!-- start page title area-->
@@ -42,7 +42,7 @@
             </div>
             
        <!-- Start Blog Details section -->
-       <section class="blog-details-section ptb-100 bg-thin">
+       <section class="blog-details-section pt-150 pb-100 bg-thin">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 col-md-12">
@@ -53,11 +53,6 @@
                             <ul class="post-meta">
                                 <li><i class="envy envy-calendar"></i><a href="#">{{$blog->BlogDate}}</a></li>
                             </ul>
-                            <div class="content">
-                                <h1 class="blog_title_vsrk">{{$blog->title}}</h1>
-                                {!! $blog->descritption !!}
-                            </div>
-                           
                             <div class="article-share">
                                 <div class="tags pb-3">
                                     <span>tags:</span>
@@ -71,6 +66,12 @@
                                     <a href="https://www.linkedin.com/shareArticle?url={{url()->current()}}&title={{$blog->title}}+{{$blog->shareTags}}" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> 
                                 </div>
                             </div>
+                            <div class="content">
+                                <h1 class="blog_title_vsrk">{{$blog->title}}</h1>
+                                {!! $blog->descritption !!}
+                            </div>
+                           
+                           
                             <hr />
                             <div class="related-post ptb-30">
                                 <h2>related post</h2>
