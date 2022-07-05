@@ -53,7 +53,12 @@
                             <ul class="post-meta">
                                 <li><i class="envy envy-calendar"></i><a href="#">{{$blog->BlogDate}}</a></li>
                             </ul>
-                            <div class="article-share">
+                            <div class="content">
+                                <h1 class="blog_title_vsrk">{{$blog->title}}</h1>
+                                {!! $blog->descritption !!}
+                            </div>
+                           
+                            <div class="article-share-vsrk">
                                 <div class="tags pb-3">
                                     <span>tags:</span>
                                     <a href="#">Design</a>
@@ -66,12 +71,6 @@
                                     <a href="https://www.linkedin.com/shareArticle?url={{url()->current()}}&title={{$blog->title}}+{{$blog->shareTags}}" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> 
                                 </div>
                             </div>
-                            <div class="content">
-                                <h1 class="blog_title_vsrk">{{$blog->title}}</h1>
-                                {!! $blog->descritption !!}
-                            </div>
-                           
-                           
                             <hr />
                             <div class="related-post ptb-30">
                                 <h2>related post</h2>
