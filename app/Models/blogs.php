@@ -39,4 +39,10 @@ class blogs extends Model
             return Str::slug($this->title);
         }
 
+        public function gettwitterShareUrlAttribute(){
+            foreach (json_decode($this->tags) as $tag){
+                echo $tag,', ';
+            }
+           //return 'https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+www.yourname.com+#Topic+via%40my_twitter_name&url=https%3A%2F%2Fwww.vsrkwealthcreator.com%2Femudhra-limited-ipo-snapshot%2F%3Fheader_preset%3D-1';
+        }
 }

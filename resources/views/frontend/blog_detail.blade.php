@@ -1,5 +1,26 @@
 
 @extends('layouts.frontend.frontend', ['activeClass' => 'blog','pageType'=>'blog'])
+@section('meta_data')
+<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="{{$blog->title}}" />
+	<meta property="og:description" content="{{Str::limit($blog->descritption,100) }}" />
+	<meta property="og:url" content="{{url()->current()}}" />
+	<meta property="og:site_name" content="VSRK CAPITAL PVT. LTD." />
+	<meta property="article:publisher" content="https://www.facebook.com/vsrk.capital" />
+	<meta property="article:published_time" content="{{ $blog->created_at }}" />
+	<meta property="og:image" content="{{asset($blog->blogImage)}}" />
+	<meta property="og:image:width" content="2500" />
+	<meta property="og:image:height" content="1347" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@vsrkcapital" />
+	<meta name="twitter:site" content="@vsrkcapital" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="vsrk" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="2 minutes" />
+@endsection
 @section('frontend_content')
    <!-- start page title area-->
    <div class="page-title-area bg-white">
@@ -9,7 +30,7 @@
                     <ul>
                         <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
                         <li class="item"><a href="{{route('frontend.all_blogs')}}">All Blogs</a></li>
-                        <li class="item"><a href="javascript:void(0)">Blog Deatail</a></li>
+                        <li class="item"><a href="javascript:void(0)">Blog Detail</a></li>
                     </ul>
                 </div>
             </div>
@@ -44,9 +65,10 @@
                                     <a href="#">Development</a>
                                     <a href="#">Technique</a>
                                 </div>
+                                {{$blog->twitterShareUrl}}
                                 <div class="social-link">
                                     <a href="#" class="bg-tertiary" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://twitter.com/intent/tweet?url={{url($blog->slug)}}&text={{asset($blog->blogImage).' '.$blog->title}}" class="bg-info" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="" class="bg-info" target="_blank"><i class="fab fa-twitter"></i></a>
                                     <!-- <a href="#" class="bg-danger" target="_blank"><i class="fab fa-youtube"></i></a>
                                     <a href="#" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
                                     <a href="#" class="bg-pink" target="_blank"><i class="fab fa-instagram"></i></a>
