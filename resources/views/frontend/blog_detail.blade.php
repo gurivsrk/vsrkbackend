@@ -4,7 +4,7 @@
 <meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="{{$blog->title}}" />
-	<meta property="og:description" content="{{Str::limit($blog->descritption,100) }}" />
+	<meta property="og:description" content="{!!Str::limit($blog->descritption,100) !!}" />
 	<meta property="og:url" content="{{url()->current()}}" />
 	<meta property="og:site_name" content="VSRK CAPITAL PVT. LTD." />
 	<meta property="article:publisher" content="https://www.facebook.com/vsrk.capital" />
