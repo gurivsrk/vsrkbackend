@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Str;
+use App\Models\category;
 
 class blogs extends Model
 {
@@ -41,9 +42,9 @@ class blogs extends Model
 
         public function getshareTagsAttribute(){
             foreach (json_decode($this->tags) as $tag){
-                $tags[] = '%23'.str_replace(' ','_',$tag);
+                $tag_name = category::find($tag);
+                $tags[] = '%23'.str_replace(' ','_',$tag_name->name);
             }
             echo implode(' ',$tags);
-           //return 'https://twitter.com/intent/tweet?text=Hey%2C+check+out+this+cool+site+I+found%3A+www.yourname.com+#Topic+via%40my_twitter_name&url=https%3A%2F%2Fwww.vsrkwealthcreator.com%2Femudhra-limited-ipo-snapshot%2F%3Fheader_preset%3D-1';
         }
 }
