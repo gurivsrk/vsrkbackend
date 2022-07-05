@@ -14,7 +14,9 @@ use App\Models\testimonials;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 class homeController extends Controller
 {
      
@@ -22,7 +24,7 @@ class homeController extends Controller
     public function index(){
 
         $team = team::select(['name','profileImg','designation','descritption'])->orderBy('order_id')->get()->take(4);
-        $blogs = blogs::select(['title','blogImage','categories','tags','descritption','created_at'])->reverse()->get()->take(3);
+        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->get()->take(3);
         $testimonials = testimonials::select(['name','profileImg','designation','descritption'])->reverse()->get();
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
 
@@ -109,7 +111,22 @@ class homeController extends Controller
         $page_content = staticPages::getAllFields($id);
 
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
-        $blogs = blogs::select(['title','blogImage','categories','tags','descritption','created_at'])->reverse()->get()->take(3);
+        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->get()->take(3);
         return view('frontend.calculator',compact(['brand_logo','blogs','calci_type','page_content']));
+    }
+
+
+    ///// BLogs
+
+    public function allBLogs(){
+        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->paginate(10);
+        return view('frontend.all_blogs',compact(['blogs']));
+    }
+
+    public function blogDetail($id,$slug){
+        $blog = blogs::FindOrFail($id);
+         if (Str::slug($blog->title) !== $slug) return redirect()->route('frontend.all_blogs')->with('error','404 Not Found');
+        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->get();
+        return view('frontend.blog_detail',compact(['blogs','blog']));
     }
 }

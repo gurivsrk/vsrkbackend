@@ -309,7 +309,16 @@
 
         @include('partials.frontend.testimonial',compact('testimonials'))
 
-        @include('partials.frontend.blog',compact('blogs'))
+        <section id="blog" class="blog-section pt-100 pb-70">
+            <div class="container">
+                <div class="section-title">
+                    <span class="subtitle">our blog</span>
+                    <h2>Our Latest Article To Help You</h2>
+                </div>
+                     @include('partials.frontend.blog')
+                </div>
+            </section>
+<!--end blog section-->
 
         @include('partials.frontend.app-section')
 

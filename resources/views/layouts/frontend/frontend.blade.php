@@ -60,7 +60,7 @@
                             <a href="#" target="_blank">
                                 KYC Update
                             </a>
-                            <a href="#" target="_blank">
+                            <a href="{{route('frontend.all_blogs')}}" target="_blank">
                                 Blogs
                             </a>
                             <a href="#" target="_blank">

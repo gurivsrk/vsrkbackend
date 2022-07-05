@@ -6,7 +6,7 @@ use App\Models\staticPages;
 use App\Models\staticPageMeta;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
 
         View::share(['gd'=> @$gd, 'calc_options' => @$calc_options]);
         //Debugbar::disable();
+
+        Paginator::useBootstrap();
     }
 }

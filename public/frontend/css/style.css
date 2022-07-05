@@ -26,12 +26,12 @@ h6 {
   line-height: 1.4;
 }
 
-h1 {
+h1, .header_title {
   font-weight: 700;
   font-size: 50px;
 }
 
-h2 {
+h2, .blog_title_vsrk {
   font-weight: 700;
   font-size: 35px;
 }
@@ -946,7 +946,7 @@ img {
   z-index: 2;
 }
 
-.page-title-area .page-title-content h1 {
+.page-title-area .page-title-content h1, .header_title {
   margin-bottom: 0;
   color: #fff;
 }
@@ -1876,133 +1876,6 @@ img {
   z-index: -1;
 }
 
-/*================================================
-  Pricing Area CSS
-=================================================*/
-.pricing-section {
-  position: relative;
-  overflow: hidden;
-  background: -webkit-gradient(linear, left bottom, left top, from(#5f09ea), to(#823be8));
-  background: linear-gradient(0deg, #5f09ea 0%, #823be8 100%);
-  z-index: 1;
-}
-
-.pricing-section::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: url(../img/resource/abstract_shape_1.png) no-repeat;
-  z-index: -1;
-  left: -10%;
-  top: 10%;
-}
-
-.pricing-section::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: url(../img/resource/abstract_shape_1.png) no-repeat;
-  z-index: -1;
-  right: -10%;
-  bottom: 0;
-  background-position: 100% 100%;
-}
-
-.pricing-section .pricing-item-single {
-  position: relative;
-  background: #fff;
-  border-radius: 1em;
-  padding: 0 3em 2em;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 0 2px 25px 0 rgba(106, 99, 119, 0.1);
-  box-shadow: 0 2px 25px 0 rgba(106, 99, 119, 0.1);
-}
-
-.pricing-section .pricing-item-single .pricing-item-content {
-  position: relative;
-  width: 100%;
-  -webkit-transform: translateY(-22%);
-  transform: translateY(-22%);
-  text-align: center;
-  text-transform: capitalize;
-}
-
-.pricing-section .pricing-item-single .pricing-item-content .content-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: 1em;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.pricing-section .pricing-item-single .pricing-item-content .content-text h2,
-.pricing-section .pricing-item-single .pricing-item-content .content-text span  {
-  color: #fff;
-}
-
-.pricing-section .pricing-item-single .pricing-item-content .content-text p {
-  color: #fff;
-  font-size: 14px;
-}
-
-.pricing-section .pricing-item-single .pricing-item-content .content-text span.label {
-  font-family: "Roboto", sans-serif;
-  font-size: 22px;
-}
-
-.pricing-section .pricing-item-single .pricing-item-list {
-  text-align: center;
-}
-
-.pricing-section .pricing-item-single .pricing-item-list ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 16px;
-  text-align: left;
-}
-
-.pricing-section .pricing-item-single .pricing-item-list ul li {
-  margin-bottom: 14px;
-  font-size: 15px;
-  color: #6a6377;
-}
-
-.pricing-section .pricing-item-single .pricing-item-list ul li i {
-  font-size: 12px;
-  font-weight: normal;
-  -webkit-padding-end: 22px;
-  padding-inline-end: 22px;
-  color: #20c997;
-}
-.tips-section .btn-solid:hover, .pricing-section .pricing-item-single .pricing-item-list .btn-solid:hover {
-  color: #3cafdc;
-  border: 1px solid #3cafdc;
-}
-
-.pricing-section [class*="col-"]:nth-child(2) {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.pricing-section.pricing-single {
-  background: none;
-}
-
-.pricing-section.pricing-single::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: url("../img/background/feature_bg.png") no-repeat center;
-  background-size: contain;
-  z-index: -1;
-}
 
 /*================================================
   graph Area CSS
@@ -4411,6 +4284,10 @@ input[type=number] {
   height: 65%;
   width: auto;
 }
+.blog-details-section p{
+  text-align:justify ;
+}
+
 
 #year-selector{
   background: transparent;

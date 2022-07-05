@@ -38,6 +38,10 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::post('/MF-Forms',[App\Http\Controllers\frontend\homeController::class, 'forms_ajax'])->name('mf_forms');
 	Route::get('/MF-Forms/{id}/download',[App\Http\Controllers\frontend\homeController::class, 'forms_download'])->name('mf_forms.download');
 
+	/// Blogs
+	Route::get('/all-blogs',[App\Http\Controllers\frontend\homeController::class, 'allBLogs'])->name('all_blogs');
+	Route::get('/blog/{id}/{slug}',[App\Http\Controllers\frontend\homeController::class, 'blogDetail'])->name('blog_detail');
+
 	///mailing list
 	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');
 
