@@ -66,11 +66,9 @@
                                     <a href="#">Technique</a>
                                 </div>
                                 <div class="social-link">
-                                    <a href="#" class="bg-tertiary" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" class="bg-tertiary" target="_blank"><i class="fab fa-facebook-f"></i></a>
                                     <a href="https://twitter.com/intent/tweet?text={{$blog->title}}+{{$blog->shareTags}}+&url={{url()->current()}}%2F%3Fheader_preset%3D-1" class="bg-info" target="_blank"><i class="fab fa-twitter"></i></a>
-                                    <!-- <a href="#" class="bg-danger" target="_blank"><i class="fab fa-youtube"></i></a>
-                                    <a href="#" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> -->
-                                    <a href="#" class="bg-pink" target="_blank"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/shareArticle?url={{url()->current()}}&title={{$blog->title}}+{{$blog->shareTags}}" class="bg-info" target="_blank"><i class="fab fa-linkedin-in"></i></a> 
                                 </div>
                             </div>
                             <hr />
