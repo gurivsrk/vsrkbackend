@@ -1,7 +1,7 @@
   <!--start blog section-->
 
         <div class="row justify-content-center">
-            @if(count($blogs) !== 0)
+            @if(!empty($blogs))
                 @foreach($blogs as $blog)
                 <div class="{{empty($class) ? 'col-lg-4' : $class}} col-md-6 col-sm-12">
                     <div class="blog-item-single">
