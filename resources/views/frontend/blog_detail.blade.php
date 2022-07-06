@@ -72,10 +72,12 @@
                                 </div>
                             </div>
                             <hr />
-                            <div class="related-post ptb-30">
-                                <h2>related post</h2>
-                                   @include('partials.frontend.blog',['class'=>'col-lg-6'])
-                            </div>
+                            @if(!empty($blogs))
+                                <div class="related-post ptb-30">
+                                    <h2>related post</h2>
+                                    @include('partials.frontend.blog',['class'=>'col-lg-6'])
+                                </div>
+                            @endif
                         </div>
                     </div>
 
