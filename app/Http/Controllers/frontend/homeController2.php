@@ -48,7 +48,7 @@ class homeController2 extends Controller
 
          $tags = category::select('name','id')->where('type','tag')->where('for','other')->inRandomOrder()->take(14)->get();
 
-         $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->inRandomOrder()->whereIn('id',(array_unique($rawPostIds)))->take(2)->get();
+         $blogs =$rawPostIds ? blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->inRandomOrder()->whereIn('id',(array_unique($rawPostIds)))->take(2)->get() : Null;
 
          $latestBlogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->where('id','!=',$blog->id)->reverse()->Enable()->get(3);
         
