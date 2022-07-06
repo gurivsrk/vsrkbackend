@@ -50,6 +50,8 @@ class homeController2 extends Controller
 
          $blogs = !empty($rawPostIds) ? blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->inRandomOrder()->whereIn('id',(array_unique($rawPostIds)))->take(2)->get() : Null;
 
+         $$blogs = $blogs ?? [];
+
          $latestBlogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->where('id','!=',$blog->id)->reverse()->Enable()->get(3);
         
         return view('frontend.blog_detail',compact(['blogs','blog','latestBlogs', 'catCount', 'categories', 'tags']));
