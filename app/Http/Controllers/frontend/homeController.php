@@ -116,17 +116,5 @@ class homeController extends Controller
     }
 
 
-    ///// BLogs
-
-    public function allBLogs(){
-        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->paginate(10);
-        return view('frontend.all_blogs',compact(['blogs']));
-    }
-
-    public function blogDetail($id,$slug){
-        $blog = blogs::FindOrFail($id);
-         if (Str::slug($blog->title) !== $slug) return redirect()->route('frontend.all_blogs')->with('error','404 Not Found');
-        $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->get();
-        return view('frontend.blog_detail',compact(['blogs','blog']));
-    }
+  
 }

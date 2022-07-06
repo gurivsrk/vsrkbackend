@@ -61,14 +61,14 @@
                             <div class="row">
                                 <div class="col-md-6{{ $errors->has('categories') ? ' has-danger' : '' }}">
                                     <label class="">{{ __('Categories') }}</label>
-                                   <select name="categories[]" class="vsrk-select form-control custom-select" multiple aria-required="true">
+                                   <select name="categories[]" class="vsrk-select form-control  custom-select" multiple aria-required="true">
                                        @if(!empty($catetag))
                                         @foreach($catetag as $cat)
                                           @if($cat->type == "category")
                                             @if(!empty($decoded_cat))
-                                              <option value="{{$cat->name}}" {{(in_array($cat->name,$decoded_cat)?'selected':'')}}>{{$cat->name}}</option>
+                                              <option value="{{$cat->id}}" {{(in_array($cat->id,$decoded_cat)?'selected':'')}}>{{$cat->name}}</option>
                                             @else
-                                              <option value="{{$cat->name}}">{{$cat->name}}</option>  
+                                              <option value="{{$cat->id}}">{{$cat->name}}</option>  
                                             @endif
                                           @endif
                                         @endforeach

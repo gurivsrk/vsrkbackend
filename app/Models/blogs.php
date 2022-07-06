@@ -33,7 +33,7 @@ class blogs extends Model
         }
 
         public function getBlogDateAttribute(){
-            return date('d-M-Y h:i:sa', strtotime($this->created_at));
+            return date('F d, Y', strtotime($this->created_at));
         }
 
         public function getslugAttribute(){
@@ -47,4 +47,23 @@ class blogs extends Model
             }
             echo implode(' ',$tags);
         }
-}
+
+        public function gettagNameAttribute(){
+            foreach (json_decode($this->tags) as $t){
+                $tag_n = category::find($t);
+                $tagName[] = $tag_n->name; 
+            }
+            return $tagName;
+        }
+
+        public function getcategoryNameAttribute(){
+            foreach (json_decode($this->categories) as $cat){
+                $c = category::find($cat);
+                $cat = $c->name;
+            }
+            return $cat;
+        }
+
+}       
+
+
