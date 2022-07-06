@@ -58,8 +58,7 @@ class blogs extends Model
 
         public function getcategoryNameAttribute(){
             foreach (json_decode($this->categories) as $cat){
-                $c = category::find($cat);
-                $cat = $c->name;
+                $cat = category::find($cat);
             }
             return $cat;
         }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
+use App\Http\Controllers\Controller;
 
 use App\Models\staticPages;
 use App\Models\staticPageMeta;
@@ -12,11 +13,8 @@ use App\Models\forms;
 use App\Models\career;
 use App\Models\testimonials;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 class homeController extends Controller
 {
      

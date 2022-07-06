@@ -5,10 +5,13 @@
    <div class="page-title-area bg-white">
             <div class="container">
                 <div class="page-title-content">
-                    <h1>All Blogs</h1>
+                    <h1>VSRK Blogs</h1>
                     <ul>
                         <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
-                        <li class="item"><a href="javascript:void(0)">All Blogs</a></li>
+                        <li class="item"><a href="{{ (!empty($pType) && $pType == 'caTag') ? route('frontend.all_blogs') : 'javascript:void(0)'}}">All Blogs</a></li>
+                        @if(!empty($pType) && $pType == 'caTag')
+                            <li class="item"><a href="javascript:void(0)">{{$type}}</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

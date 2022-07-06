@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +41,8 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	/// Blogs
 	Route::get('/all-blogs',[App\Http\Controllers\frontend\homeController2::class, 'allBLogs'])->name('all_blogs');
 	Route::get('/blog/{id}/{slug}',[App\Http\Controllers\frontend\homeController2::class, 'blogDetail'])->name('blog_detail');
+	Route::get('/{type}/{id}/{name}',[App\Http\Controllers\frontend\homeController2::class, 'blogByCaTag'])->name('blog_by_catag');
+	
 
 	///mailing list
 	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');

@@ -29,8 +29,9 @@
                     <h2 class="header_title">Blog</h2>
                     <ul>
                         <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
-                        <li class="item"><a href="{{route('frontend.all_blogs')}}">All Blogs</a></li>
-                        <li class="item"><a href="javascript:void(0)">Blog Detail</a></li>
+                        <li class="item"><a href="{{route('frontend.all_blogs')}}">Blogs</a></li>
+                        <li class="item"><a href="{{route('frontend.blog_by_catag', ['category',$blog->categoryName->id, Illuminate\Support\Str::slug($blog->categoryName->name)])}}">{{$blog->categoryName->name}}</a></li>
+                        <li class="item"><a href="javascript:void(0)">{{$blog->title}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -112,7 +113,7 @@
                                 <ul class="categorie-list">
                                     @foreach($categories as $category)
                                         <li>
-                                            <a href="#">{{ $category->name}}</a>
+                                            <a href="{{route('frontend.blog_by_catag', ['category',$category->id,$category->caTagSlug])}}">{{ $category->name}}</a>
                                             <span class="total">{{ $catCount[$category->id] }}</span>
                                         </li>
                                     @endforeach
@@ -122,7 +123,7 @@
                                 <h5 class="widget-title">Tags</h5>
                                 <div class="tags">
                                     @foreach($tags as $t)
-                                        <a href="#"> {{$t->name}} </a>
+                                        <a href="{{route('frontend.blog_by_catag',['tag', $t->id, $t->caTagSlug])}}"> {{$t->name}} </a>
                                     @endforeach
                                 </div>
                             </section>
