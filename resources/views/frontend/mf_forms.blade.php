@@ -122,7 +122,7 @@
                     data +=  '<div class="mt-3">'
                     data +=  '<h5 id="file_name" class="mt-2">File Name: '+ name +'</h5>'
                     if(link != null && link != "null"){
-                        data +=  '<h6 id="file_link" class="mt-2">File link: <a href="'+ link +'">View Kim</a></h6>'
+                        data +=  '<h6 id="file_link" class="mt-2">File link: <a href="'+ link +'" target="_blank">View Kim</a></h6>'
                     }
                     data +=  '<a href="/MF-Forms/'+id+'/download"><button id="download_form" data-id='+id+' class="btn btn-solid mt-2">Download Now</button></a>'
                     data += '</div>'
