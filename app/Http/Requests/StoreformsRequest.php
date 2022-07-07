@@ -25,7 +25,6 @@ class StoreformsRequest extends FormRequest
     {
         return [
             'form'=>'required|mimes:jpg,pdf,jpeg',
-            'form_name'=>'required|unique:form,form_name',
             'category_id'=>'required'
         ];
     }
