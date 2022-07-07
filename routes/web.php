@@ -43,6 +43,8 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::get('/blog/{id}/{slug}',[App\Http\Controllers\frontend\homeController2::class, 'blogDetail'])->name('blog_detail');
 	Route::get('/{type}/{id}/{name}',[App\Http\Controllers\frontend\homeController2::class, 'blogByCaTag'])->name('blog_by_catag');
 	
+	/// Contact Us
+	Route::get('/contact-us',[App\Http\Controllers\frontend\homeController2::class, 'contact'])->name('contact_us');
 
 	///mailing list
 	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');

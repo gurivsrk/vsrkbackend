@@ -79,9 +79,13 @@
                                   <label class="">{{ __('Contact Number') }}</label>
                                   <input type="phone"  maxlength="15" name="website_phone_primary" placeholder="011256846" value="{{old('website_phone_primary',@$data->website_phone_primary)}}" class="form-control">
                               </div>
-                              <div class="col-md-12 mt-4">
+                              <div class="col-md-6 mt-4">
                                   <label class="" style="color:#2d2d2d">{{ __('Primary Address') }}</label>
                                   <textarea class="form-control" name="office_location" >{{old('office_location',@$data->office_location)}}</textarea>
+                              </div>
+                              <div class="col-md-6 mt-4">
+                                  <label class="" style="color:#2d2d2d">{{ __('Google Share Link') }}</label>
+                                  <textarea class="form-control" name="google_location" placeholder="Google Map -> Share -> Send a link">{{old('google_location',@$data->google_location)}}</textarea>
                               </div>
                             </div>
                         </div>

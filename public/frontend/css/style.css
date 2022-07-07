@@ -78,13 +78,9 @@ h6 {
   letter-spacing: 0.5px;
   text-transform: capitalize;
   overflow: hidden;
-  -webkit-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 250ms;
   transition-duration: 250ms;
-  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
-  -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
 
@@ -135,6 +131,7 @@ h6 {
   box-shadow: none;
 }
 
+
 .btn-outline {
   background: transparent;
   border: 1px solid #3cafdc;
@@ -157,7 +154,9 @@ button:focus {
   box-shadow: none;
   outline: none;
 }
-
+.btn-white-bg:hover, .btn-white-bg:active, .btn-white-bg:focus  {
+  background: #fff;
+}
 .vsrk-li li{
   margin: 10px 0 0 30px;
   list-style: none;

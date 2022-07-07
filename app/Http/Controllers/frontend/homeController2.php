@@ -11,8 +11,14 @@ use Illuminate\Support\Str;
 
 class homeController2 extends Controller
 {
-      ///// BLogs
 
+    ////// Contact us
+    public function contact(){
+        return view('frontend.contact');
+    }
+
+
+    ///// BLogs
     public function allBLogs(){
         $blogs = blogs::select(['id','title','blogImage','categories','tags','descritption','created_at'])->Enable()->reverse()->paginate(10);
         
@@ -58,6 +64,7 @@ class homeController2 extends Controller
         
          return view('frontend.blog_detail',compact(['blogs','blog','latestBlogs', 'catCount', 'categories', 'tags']));
     }
+
 
 
 }

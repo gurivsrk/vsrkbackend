@@ -309,10 +309,10 @@
                                     <a href="{{route('frontend.mf_forms')}}">Mf Forms</a>
                                 </li>
                                 <li>
-                                    <a href="privacy-policy.html">Privacy Policy</a>
+                                    <a href="#">Privacy Policy</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html">Contact Us</a>
+                                    <a href="{{route('frontend.contact_us')}}">Contact Us</a>
                                 </li>
                             </ul>
                         </div>
@@ -322,7 +322,7 @@
                             <h5>Contact info</h5>
                             <div class="contact-info">
                                 <i class="envy envy-pin"></i>
-                                <p>{{@$gd->office_location}}</p>
+                                <p><a href="{{@$gd->google_location}}" target="_blank">{{@$gd->office_location}}</a></p>   
                             </div>
                             <div class="contact-info">
                                 <i class="envy envy-call"></i>
@@ -355,13 +355,7 @@
         <div class="copy-right-area">
             <div class="container">
                 <div class="copy-right-content">
-                    <p>
-                        Copyright {{ '@'.date('Y') }} VSRK Capital. Designed By
-
-                        <a href="{{ route('frontend.index')}}">
-                            {{ @$gd->website_title }}
-                        </a>
-                    </p>
+                    <p>All rights reserves &copy; {{date('Y')}} <a href="{{ route('frontend.index')}}" style="text-transform:uppercase;">{{ @$gd->website_title }}</a></p>
                 </div>
             </div>
         </div>

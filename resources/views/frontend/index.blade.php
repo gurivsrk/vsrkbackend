@@ -11,7 +11,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse
                             </p>
                             <div class="cta-btn">
-                                <a href="#" class="btn btn-solid">Try for free</a>
+                                <a href="#" class="btn btn-solid btn-white-bg">Try for free</a>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum.
                             </p>
                             <div class="cta-btn">
-                                <a href="#" class="btn btn-solid">Try for free</a>
+                                <a href="#" class="btn btn-solid btn-white-bg">Try for free</a>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                                 Lorem ipsum dolor sit amet, consecteturdo eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
                             </p>
                             <div class="cta-btn">
-                                <a href="#" class="btn btn-solid">Try free</a>
+                                <a href="#" class="btn btn-solid btn-white-bg">Try free</a>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 Lorem ipsum dolor sit amet, consecteturdo eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
                             </p>
                             <div class="cta-btn">
-                                <a href="#" class="btn btn-solid">Try free</a>
+                                <a href="#" class="btn btn-solid btn-white-bg">Try free</a>
                             </div>
                         </div>
                     </div>
