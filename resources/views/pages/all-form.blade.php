@@ -90,7 +90,7 @@
                   <th> Sno.</th>
                   <th> Form Name</th>
                   <th> Category</th>
-                  <th> link (if any) </th>
+                  {{--<th> link (if any) </th>--}}
                   <th class="text-center"> Actions </th>
                 </thead>
                 <tbody>
@@ -99,7 +99,7 @@
                       <td>{{++$key}}</td>
                       <td> {{$form->form_name}}</td>
                       <td> {{$form->categoryName->name}}</td>
-                      <td> {{ !empty($form->form_link) ? $form->form_link : '-' }} </td>
+                     {{-- <td> {{ !empty($form->form_link) ? $form->form_link : '-' }} </td> --}}
                       <td class="td-actions text-center">
                           <a rel="tooltip" class="btn btn-Muted  btn-link" href="{{asset($form->form)}}" target="_blank"> <i class="material-icons">file_download</i> </a>
                           <a rel="tooltip" class="btn btn-success btn-link" href="{{route('forms.edit',$form->id)}}"> <i class="material-icons">edit</i> </a>
