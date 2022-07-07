@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 pb-30">
-                        <div class="about-img">
+                        <div class="about-img   position-relative">
                             <div class="grid-img">
                                 <div class="grid-img-inner">
                                     <img src="{{asset('frontend/img/about/about_1.png')}}" class="image-responsive" alt="office_image" />
@@ -210,12 +210,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-sm-12 col-md-12 pb-30">
                         <div class="featured-service-image">
-                            <img src="{{asset('frontend/img/resource/service_Illustration.png')}}" alt="service_illustration" />
+                            <img class="d-none" src="{{asset('frontend/img/resource/service_Illustration.png')}}" alt="service_illustration" />
                         </div>
                     </div>
                     <div class="col-lg-6 col-sm-12 col-md-12">
                         <div class="featured-service-content">
-                            <div class="section-title">
+                            <div class="section-title pb-30">
                                 <span class="subtitle">OUR SERVICES</span>
                                 <h2>Our range of Financial Services</h2>
                                 <p>Our goal is to create solutions for Clients spanning the entire gamut of their Personal Financial Assistance that is Value Driven, Customized and Long Term.</p>
@@ -225,7 +225,7 @@
                                 <i class="envy envy-alarm"></i>
                                     <h5>Mutual Funds</h5>
                                     <p>A mutual fund is a financial tool made up of a pool of money collected from different investors to invest in securities like stocks, bonds, etc.</p>
-                                    <a href="{{route('frontend.mutual_funds')}}" target="_blank" class="btn btn-text-only">
+                                    <a href="{{route('frontend.mutual_funds')}}" target="_blank" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -234,7 +234,7 @@
                                     <i class="envy envy-shield"></i>
                                     <h5>Life Insurance</h5>
                                     <p>We'll give you a complete understanding on how it works and what you need to choose the products that suits you the best</p>
-                                    <a href="{{route('frontend.insurance')}}" target="_blank" class="btn btn-text-only">
+                                    <a href="{{route('frontend.insurance')}}" target="_blank" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -243,7 +243,7 @@
                                     <i class="envy envy-padlock"></i>
                                     <h5>General Insurance</h5>
                                     <p>General Insurance or Non-life Insurance policies is a practical option for every person who would like to live a risk-free life.</p>
-                                    <a href="#" target="_blank" class="btn btn-text-only">
+                                    <a href="#" target="_blank" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -252,7 +252,7 @@
                                     <i class="envy envy-attachment"></i>
                                     <h5>Corporate Deposites</h5>
                                     <p>These types of deposits are offered by corporate companies. Generally, banks are the issuers of fixed deposits services or products in India.</p>
-                                    <a href="#" target="_blank" class="btn btn-text-only">
+                                    <a href="#" target="_blank" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -309,7 +309,7 @@
 
         @include('partials.frontend.testimonial',compact('testimonials'))
 
-        <section id="blog" class="blog-section pt-100 pb-70">
+        <section id="blog" class="blog-section ptb-100">
             <div class="container">
                 <div class="section-title">
                     <span class="subtitle">our blog</span>

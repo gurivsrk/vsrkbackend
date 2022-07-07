@@ -23,17 +23,7 @@
         <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
         @stack('css')
     </head>
-    <body>
-        <!-- start preloader area
-        <div class="preloader-main">
-            <div class="loader">
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-                <div class="loader-dot"></div>
-            </div>
-        </div>
-        end preloader area -->
-        
+    <body>        
         <!-- start header area -->
         <header class="navbar-area">
             <div class="top-nav">

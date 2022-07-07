@@ -60,7 +60,7 @@
                     <div class="col-lg-4 col-sm-12">
                         <div class="contact-widget">
                             <div class="info-title">
-                                <h5>contact info</h5>
+                                <h5>Contact info</h5>
                             </div>
                             <div class="contact-info">
                                 <i class="envy envy-pin"></i>
