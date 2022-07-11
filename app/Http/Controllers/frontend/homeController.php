@@ -70,6 +70,8 @@ class homeController extends Controller
         return view('frontend.career',compact(['category','vacany','brand_logo']));
     }
 
+
+    //// services
     public function mutual_funds(){
 
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
@@ -113,6 +115,7 @@ class homeController extends Controller
         return view('frontend.calculator',compact(['brand_logo','blogs','calci_type','page_content']));
     }
 
+    
 
   
 }

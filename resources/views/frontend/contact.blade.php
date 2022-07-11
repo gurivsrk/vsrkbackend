@@ -24,7 +24,9 @@
             <div class="container pt-100">
                 <div class="row">
                     <div class="col-lg-8 col-sm-12">
-                        <form id="contactForm">
+                     <form id="contactForm" > 
+                     {{-- <form method="POST" action="{{route('frontend.form_process')}}">
+                            @csrf--}}
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">

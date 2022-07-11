@@ -53,7 +53,7 @@
                             <a href="{{route('frontend.all_blogs')}}" target="_blank">
                                 Blogs
                             </a>
-                            <a href="#" target="_blank">
+                            <a href="{{route('frontend.contact_us')}}">
                                Contact us
                             </a>
                             <a href="#" target="_blank">
@@ -350,7 +350,7 @@
             </div>
         </div>
         <!-- end copy right area-->
-        
+
         <!-- jequery JS -->
         <script src="{{asset('frontend/js/jquery.min.js')}}"></script>
         <!-- bootstrap JS -->
@@ -363,15 +363,65 @@
         <script src="{{asset('frontend/js/owl.carousel.min.js')}}"></script>
         <!-- meanmenu JS -->
         <script src="{{asset('frontend/js/meanmenu.min.js')}}"></script>
+        <!--chart Js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+       
         <!-- form validator -->
         <script src="{{asset('frontend/js/form-validator.min.js')}}"></script>
         <!-- contact form JS -->
         <script src="{{asset('frontend/js/contact-form-script.js')}}"></script>
         <!-- ajaxchimp JS -->
         <script src="{{asset('frontend/js/jquery.ajaxchimp.min.js')}}"></script>
-        <!--chart Js-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-        
+        <!--form submission Js-->
+        <script>
+                function submitForm(formId){
+                    console.log(formId);
+                    ///Initiate Variables With Form Content
+                    var name = $("#name").val();
+                    var email = $("#email").val();
+                    var msg_subject = $("#msg_subject").val();
+                    var phone_number = $("#phone_number").val();
+                    var message = $("#message").val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "{{route('frontend.form_process')}}",
+                        headers: { 'X-CSRF-TOKEN': "{{ csrf_token() }}" },
+                        data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&phone_number=" + phone_number + "&message=" + message,
+                        success : function(text){
+                            console.log(text)
+                            if (text == "success"){
+                                formSuccess(formId);
+                            } else {
+                                formError(formId);
+                                submitMSG(false,text);
+                            }
+                        }
+                    });
+                }
+                
+
+                function formSuccess($this){
+                    $('#'+$this)[0].reset();
+                    submitMSG(true, "Message Submitted!")
+                }
+
+                function formError($this){
+                    $('#'+$this).removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                        $(this).removeClass();
+                    });
+                }
+
+                function submitMSG(valid, msg){
+                    if(valid){
+                        var msgClasses = "h4 tada animated text-success";
+                    } else {
+                        var msgClasses = "h4 text-danger";
+                    }
+                    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+                }
+        </script>
+
         <!-- main JS -->
         <script src="{{asset('frontend/js/main.js')}}"></script>
 

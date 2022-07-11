@@ -47,13 +47,20 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::get('/contact-us',[App\Http\Controllers\frontend\homeController2::class, 'contact'])->name('contact_us');
 
 	///mailing list
-	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\homeController::class, 'unsubscribe'])->name('email.unsubscribe');
+	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\emialServicesController::class, 'unsubscribe'])->name('email.unsubscribe');
+	Route::post('/contact/form/submit',[App\Http\Controllers\frontend\emialServicesController::class, 'formProcess'])->name('form_process');
 
 });
 //// for testing mail function
 //  Route::get('/testmail',[App\Http\Controllers\subcriberController::class,'testEmail']);
 Route::get('/testmailview',function(){
 	return view('email.subscribe',[
+		'email'=>'emials@gmial.com',
+		'email_content'=>'email content'
+	]);
+});
+Route::get('/testmailview2',function(){
+	return view('email.contact',[
 		'email'=>'emials@gmial.com',
 		'email_content'=>'email content'
 	]);
