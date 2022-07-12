@@ -25,8 +25,6 @@
                 <div class="row">
                     <div class="col-lg-8 col-sm-12">
                      <form id="contactForm" > 
-                     {{-- <form method="POST" action="{{route('frontend.form_process')}}">
-                            @csrf--}}
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">
@@ -40,9 +38,15 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12 col-md-12">
+                                <div class="col-lg-6 col-md-12">
                                     <div class="form-group">
-                                        <input type="text" name="subject" class="form-control" id="subject" required="" data-error="Please enter your phone number" placeholder="Subject" />
+                                        <input type="text" name="phone" class="form-control" id="phone" required="" data-error="Please enter your phone number" placeholder="phone" />
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" name="subject" class="form-control" id="subject" required="" data-error="Please enter subject" placeholder="Subject" />
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -54,7 +58,7 @@
                                 </div>
                                 <div class="col-lg-12 col-md-12">
                                     <button type="submit" class="btn btn-solid">send message</button>
-                                    <div id="msgSubmit" class="h5 text-center hidden"></div>
+                                    <div id="msgSubmit" class="h5 text-center hidden mt-3"></div>
                                 </div>
                             </div>
                         </form>

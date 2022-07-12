@@ -10,15 +10,26 @@ use Illuminate\Support\Facades\Mail;
 
 class emialServicesController extends Controller
 {
-   public function formProcess(){
 
+   public function formProcess(Request $request){
+      if($request->file('cv')){
+          $fileName = $request->file('cv')->getClientOriginalName();
+          $fileMime = $request->file('cv')->getClientMimeType();
+          $fileDetails = [$fileName, $fileMime];
+      }
+
+      $fileDetails = $fileDetails ?? null;
+      $this->sendMail($request,$request->all(),$fileDetails);
+
+      return $request->file('cv') ? redirect()->back()->with('form_messsage','success') : 'success';
+   }
+
+
+   private function sendMail($rawData,$data,$fileDetails){
       $main_email = "contact@vsrkcapital.com";
       $email = 'gursharan@vsrkcapital.com';
-      $subject = "test email from local sever";
-      $email_content = "Welcome to mail Function";
-
-      Mail::to($email)->send(new contactForm(  $email ,$subject, $email_content ));
-       echo 'done';
-       
+      $subject = "$rawData->subject";
+      $email_content = [$data, $fileDetails];
+       Mail::to($email)->send(new contactForm( $email ,$subject, $email_content ));
    }
 }

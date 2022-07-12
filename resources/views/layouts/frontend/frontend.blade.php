@@ -375,21 +375,15 @@
         <!--form submission Js-->
         <script>
                 function submitForm(formId){
-                    console.log(formId);
-                    ///Initiate Variables With Form Content
-                    var name = $("#name").val();
-                    var email = $("#email").val();
-                    var msg_subject = $("#msg_subject").val();
-                    var phone_number = $("#phone_number").val();
-                    var message = $("#message").val();
-
+                   const data = $('#'+formId).serialize();
+                   
                     $.ajax({
                         type: "POST",
                         url: "{{route('frontend.form_process')}}",
                         headers: { 'X-CSRF-TOKEN': "{{ csrf_token() }}" },
-                        data: "name=" + name + "&email=" + email + "&msg_subject=" + msg_subject + "&phone_number=" + phone_number + "&message=" + message,
+                        data: data,
                         success : function(text){
-                            console.log(text)
+                            //console.log(text)
                             if (text == "success"){
                                 formSuccess(formId);
                             } else {
@@ -414,11 +408,11 @@
 
                 function submitMSG(valid, msg){
                     if(valid){
-                        var msgClasses = "h4 tada animated text-success";
+                        var msgClasses = "alert alert-success vsrk-alert";
                     } else {
-                        var msgClasses = "h4 text-danger";
+                        var msgClasses = "alert alert-danger vsrk-alert";
                     }
-                    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+                    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg).delay(3000).fadeOut(1000);
                 }
         </script>
 
@@ -426,6 +420,13 @@
         <script src="{{asset('frontend/js/main.js')}}"></script>
 
         @stack('js')
-       
+                
+        @if (Session::has('form_messsage'))
+            <div class="alert alert-success vsrk-alert">Form Submit Successfully</div> 
+            <script>
+                $('.vsrk-alert').delay(3000).fadeOut(1000);
+            </script>
+        @endif
+
     </body>
 </html>

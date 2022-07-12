@@ -161,7 +161,9 @@
                     </div>
                     <div class="col-md-7 col-sm-12 ">
                         <h4>Please post us with your resume so that as and when we find a fitting opportunity, we will contact you.</h4>
-                        <form id="jobPost" novalidate="true">
+                       {{-- <form id="jobPost" novalidate="true"> --}}
+                       <form  action="{{route('frontend.form_process')}}" method="post" enctype="multipart/form-data"> 
+                        @csrf
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <div class="form-group">

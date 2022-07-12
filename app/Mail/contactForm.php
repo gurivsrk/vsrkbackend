@@ -30,10 +30,18 @@ class contactForm extends Mailable
      */
     public function build()
     {
-        return $this->view('email.contact',[
-            'email' => $this->email,
-		    'subject' => $this->subject,
-		    'email_content' => $this->email_content,
-        ]);
+        if($this->email_content[1] != null){
+            return $this->view('email.contact',[
+                'data' => $this->email_content[0],
+            ])->attach($this->email_content[0]['cv'],[
+                    'as' => $this->email_content[1][0],
+                    'mime' => $this->email_content[1][1]
+            ]);
+        }
+        else{
+            return $this->view('email.contact',[
+                'data' => $this->email_content[0],
+            ]); 
+        }
     }
 }
