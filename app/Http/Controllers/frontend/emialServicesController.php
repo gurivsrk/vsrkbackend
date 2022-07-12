@@ -27,7 +27,7 @@ class emialServicesController extends Controller
 
    private function sendMail($rawData,$data,$fileDetails){
       $main_email = "contact@vsrkcapital.com";
-      $email = 'gursharan@vsrkcapital.com';
+      $email = 'gursharan@vsrkcapital.com, contact@vsrkcapital.com';
       $subject = "$rawData->subject";
       $email_content = [$data, $fileDetails];
        Mail::to($email)->send(new contactForm( $email ,$subject, $email_content ));
