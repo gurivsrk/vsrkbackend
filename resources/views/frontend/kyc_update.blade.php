@@ -4,7 +4,7 @@
    <div class="page-title-area bg-white">
             <div class="container">
                 <div class="page-title-content">
-                    <h1>Kyc Update</h1>
+                    <h1>KYC Update</h1>
                     <ul>
                         <li class="item"><a href="{{route('frontend.index')}}">Home</a></li>
                         <li class="item"><a href="javascript:void(0)">Kyc Update</a></li>
@@ -34,7 +34,7 @@
           
 
          <!--start Benefits section-->
-         <section id="kyc_ways" class="page-section pb-50 bg-white gallery-section">
+         <section id="kyc_ways" class="page-section pb-2 bg-white gallery-section">
             <div class="container">
                 <div class="gallery-slider owl-carousel">
                     <div class="gallery-item">
@@ -71,6 +71,44 @@
                 </div>
             </div>
         </section>
+
+          <!--start Investments section-->
+          <section id="kyc_update   " class="about-section pb-50 bg-white">
+            <div class="container pt-50">
+                <div class="row align-items-center">
+                    <div class="col-xl-12 pb-30">
+                        <div class="about-text-blc text-center">
+                            <table width="100%" cellspacing="1" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="kyc_table kyc_table_head" colspan="4" ><span class="headtext">Update FATCA</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kyc_table " width="20%" >&nbsp;</td>
+                                        <td class="kyc_table " width="22%" ><strong>Online </strong></td>
+                                        <td class="kyc_table " width="26%" ><strong>Offline</strong></td>
+                                        <td class="kyc_table " width="32%" ><strong>Offline</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kyc_table "><img src="{{asset('frontend/img/karvy-fatca.jpg')}}" alt="" width="75" height="15"></td>
+                                        <td class="kyc_table "><a href="https://mfs.kfintech.com/MFS/fatca-kyc.aspx" target="_blank">Click Here</a></td>
+                                        <td class="kyc_table "><a href="https://www.karvymfs.com/karvy/FATCA_CRS_Declaration_form_Individual.pdf" target="_blank">Individual Form</a></td>
+                                        <td class="kyc_table "><a href="https://www.karvymfs.com/karvy/FATCA_CRS_Declaration_form_Entities.pdf" target="_blank">Non Individual</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="kyc_table " height="25" ><img src="{{asset('frontend/img/cams-fatca.jpg')}}" alt="" width="46" height="15"></td>
+                                        <td class="kyc_table "><a href="https://www.camsonline.com/Investors/Service-requests/FATCA&amp;CRS" target="_blank">Click Here</a></td>
+                                        <td class="kyc_table " height="25" ><a href="https://www.camsonline.com/FATCA/Downloads/FATCA-Individuals.pdf" target="_blank">Individual Form</a></td>
+                                        <td class="kyc_table "><a href="https://www.camsonline.com/FATCA/Downloads/UBO-V1.0-Oct%202015.pdf" target="_blank">Non Individual</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--end Investments section-->
         <!-- end gallery section -->
         <!--end Benefits section-->
         </div>

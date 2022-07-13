@@ -3,7 +3,7 @@
     <div id="teamM_{{++$key}}" class="team-outer-box">
         <!-- <a href="#{{$key}}"> -->
             <div class="faq-item team-member ">
-                <div class="vsrk-left-img">
+                <div class="vsrk-left-img" data-name="{{$member->name}}">
                     <img src="{{asset($member->profileImg)}}" alt="vsrk Service excellence" >
                 </div>
                 <div class="vsrk-right-text">
