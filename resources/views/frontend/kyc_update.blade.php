@@ -78,16 +78,15 @@
                 <div class="row align-items-center">
                     <div class="col-xl-12 pb-30">
                         <div class="about-text-blc text-center">
-                            <table width="100%" cellspacing="1" cellpadding="0" border="0">
+                            <table id="kyc_table" width="100%" cellspacing="1" cellpadding="0" border="0">
                                 <tbody>
                                     <tr>
                                         <td class="kyc_table kyc_table_head" colspan="4" ><span class="headtext">Update FATCA</span></td>
                                     </tr>
                                     <tr>
-                                        <td class="kyc_table " width="20%" >&nbsp;</td>
-                                        <td class="kyc_table " width="22%" ><strong>Online </strong></td>
-                                        <td class="kyc_table " width="26%" ><strong>Offline</strong></td>
-                                        <td class="kyc_table " width="32%" ><strong>Offline</strong></td>
+                                        <td class="kyc_table" width="20%" >&nbsp;</td>
+                                        <td class="kyc_table" width="22%" ><strong>Online </strong></td>
+                                        <td class="kyc_table" colspan="2" ><strong>Offline</strong></td>
                                     </tr>
                                     <tr>
                                         <td class="kyc_table "><img src="{{asset('frontend/img/karvy-fatca.jpg')}}" alt="" width="75" height="15"></td>

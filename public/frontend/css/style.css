@@ -2608,9 +2608,11 @@ Team type FAQ CSS
   font-weight: 700;
   cursor: pointer;
 }
+#kyc_table tr,#kyc_table td{
+  border: 1px solid #f0f8ff;
+}
 .kyc_table{
   padding: 10px;
-  border: 1px solid #f0f8ff;
 }
 .kyc_table_head{
   text-align: left;
