@@ -9,6 +9,7 @@ use App\Models\forms;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use phpDocumentor\Reflection\Types\Null_;
 
 class homeController2 extends Controller
 {
@@ -17,7 +18,7 @@ class homeController2 extends Controller
     public function kyc_forms(){
 
         $catetag = category::whereIn('name',['kyc_forms'])->where('for','Form')->get();
-        $forms = forms::whereIn('category_id',[$catetag[0]->id])->get();
+        $forms = sizeof($catetag) > 0 ? forms::whereIn('category_id',[$catetag[0]->id])->get() : Null;
 
         return view('frontend.kyc_update',compact(['forms']));
     }

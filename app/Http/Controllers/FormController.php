@@ -21,7 +21,7 @@ class FormController extends Controller
         $form_type="MF Forms";
         $page_class = "mfForm";
         $cate= category::where('name','kyc_forms')->where('for','Form')->get();
-        $form = forms::where('category_id','!=', $cate[0]->id)->get();
+        $form = sizeof($cate) > 0 ? forms::where('category_id','!=', $cate[0]->id)->get() : Null;
         $catetag = category::where('for','Form')->orwhere('for','all')->get();
         return view('pages.all-form',compact(['catetag','form','form_type','page_class']));
     }
@@ -30,8 +30,9 @@ class FormController extends Controller
 
         $form_type="Other Forms";
         $page_class = "otherForm";
+        
         $catetag = category::whereIn('name',['kyc_forms'])->where('for','Form')->get();
-        $form = forms::whereIn('category_id',[$catetag[0]->id])->get();
+        $form = sizeof($catetag) > 0 ? forms::whereIn('category_id',[$catetag[0]->id])->get() : Null;
 
         return view('pages.all-form',compact(['catetag','form','form_type','page_class']));
     }
