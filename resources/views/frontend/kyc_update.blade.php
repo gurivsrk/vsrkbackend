@@ -52,9 +52,11 @@
                         <div class="gallery-image"> 
                             <h4>Download CKYC Forms</h4>
                             <ul>
+                            @if(!empty($forms))
                                 @foreach($forms as $form)
                                     <li><a href="{{route('frontend.mf_forms.download',[$form->id])}}" target="_blank">{{$form->form_name}}</a></li>
                                 @endforeach
+                            @endif    
                             </ul>
                         </div>
                     </div>
