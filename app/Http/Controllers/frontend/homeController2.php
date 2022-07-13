@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\blogs;
 use App\Models\category;
+use App\Models\forms;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -13,10 +14,13 @@ class homeController2 extends Controller
 {
 
     ////// Contact us
-    public function contact(){
-        return view('frontend.contact');
-    }
+    public function kyc_forms(){
 
+        $catetag = category::whereIn('name',['kyc_forms'])->where('for','Form')->get();
+        $forms = forms::whereIn('category_id',[$catetag[0]->id])->get();
+
+        return view('frontend.kyc_update',compact(['forms']));
+    }
 
     ///// BLogs
     public function allBLogs(){

@@ -52,12 +52,9 @@
                         <div class="gallery-image"> 
                             <h4>Download CKYC Forms</h4>
                             <ul>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/CKYC-KRA-KYC-Individuals.pdf" target="_blank">CKYC Individual Form</a></li>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/kyc-ind-change-new.pdf" target="_blank">KYC Individual Change Form</a></li>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/Supplementary-CKYC-Application-Form.pdf" target="_blank">Supplementary CKYC Form [For upgrade from KYC to CKYC]</a></li>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/KYC-NonIndividual-new.pdf" target="_blank">KYC Non Individual Form</a></li>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/KYC-Nonind-change-new.pdf" target="_blank">KYC Non-Individual Change Form</a></li>
-                                <li><a href="http://www.investwell.in/updation/parameter/ckyc/KYC-NonIndividual-Annexure-new.pdf" target="_blank">KYC Non Individual-Annexure</a></li>
+                                @foreach($forms as $form)
+                                    <li><a href="{{route('frontend.mf_forms.download',[$form->id])}}" target="_blank">{{$form->form_name}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

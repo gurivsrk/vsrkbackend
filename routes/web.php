@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 
 	 Route::get('/', [App\Http\Controllers\frontend\homeController::class, 'index'])->name('index');
-	 Route::get('kyc-update',function(){
-		return view('frontend.kyc_update');
-	 })->name('kycUpdate');
+	 Route::get('kyc-update', [App\Http\Controllers\frontend\homeController2::class, 'kyc_forms'])->name('kycUpdate');
 	 	
 	 /// about us
 	Route::get('/about-us/corporate-profile', [App\Http\Controllers\frontend\homeController::class, 'about'])->name('about');
@@ -47,7 +45,7 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::get('/{type}/{id}/{name}',[App\Http\Controllers\frontend\homeController2::class, 'blogByCaTag'])->name('blog_by_catag');
 	
 	/// Contact Us
-	Route::get('/contact-us',[App\Http\Controllers\frontend\homeController2::class, 'contact'])->name('contact_us');
+	Route::get('/contact-us',function(){ return view('frontend.contact'); })->name('contact_us');
 
 	///mailing list
 	Route::get('/email/{email}/unsubscribe',[App\Http\Controllers\frontend\emialServicesController::class, 'unsubscribe'])->name('email.unsubscribe');
