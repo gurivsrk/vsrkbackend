@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-         <title>{{@$gd->website_title}}</title>
+         <title>{{@$gd->website_title .' - '. $pageType}}</title>
         @yield('meta_data')   
         <!-- favicon -->
         <link rel="icon" href="{{asset(@$gd->favicon)}}" type="image/png" sizes="16x16" />    
@@ -47,7 +47,7 @@
                             <a href="#" target="_blank">
                                 Quick Invest
                             </a>
-                            <a href="#" target="_blank">
+                            <a href="{{route('frontend.kycUpdate')}}" target="_blank">
                                 KYC Update
                             </a>
                             <a href="{{route('frontend.all_blogs')}}" target="_blank">
@@ -56,7 +56,7 @@
                             <a href="{{route('frontend.contact_us')}}">
                                Contact us
                             </a>
-                            <a href="#" target="_blank">
+                            <a href="https://vsrkcapital.my-portfolio.in/" target="_blank">
                                 Log in
                             </a>
                         </div>

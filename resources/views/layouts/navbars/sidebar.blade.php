@@ -33,16 +33,16 @@
             <b class="caret"></b>
           </p>
         </a>
-        <div class="collapse  {{ ($activePage == 'FormTable' ||@$activePage == 'allForm') ? 'show' : '' }}" id="MFForms">
+        <div class="collapse  {{ ($activePage == 'mfForm' || @$activePage == 'otherForm') ? 'show' : '' }}" id="MFForms">
           <ul class="nav">
-            <li class="nav-item{{@$activePage == 'FormTable' ? ' active' : '' }}">
+            <li class="nav-item{{@$activePage == 'mfForm' ? ' active' : '' }}">
             <a class="nav-link" href="{{ route('forms.index') }}">
               <i class="material-icons">content_paste</i>
               <span class="sidebar-normal">{{ __('MF Forms') }}</span>
               </a>
             </li>
-            <li class="nav-item{{@$activePage == 'allForm' ? ' active' : '' }}">
-            <a class="nav-link" href="{{ route('forms.index') }}">
+            <li class="nav-item{{@$activePage == 'otherForm' ? ' active' : '' }}">
+            <a class="nav-link" href="{{ route('forms.other') }}">
               <i class="material-icons">content_paste</i>
               <span class="sidebar-normal">{{ __('All Other Forms') }}</span>
               </a>

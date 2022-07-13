@@ -2587,7 +2587,9 @@ Team type FAQ CSS
   padding-bottom: 50%;
 }
 }
-
+#kyc_ways .gallery-image {
+  height: 285px;
+}
 .vsrk-alert{
   position: fixed;
   top: 100px;

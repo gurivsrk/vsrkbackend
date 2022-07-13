@@ -18,9 +18,22 @@ class FormController extends Controller
      */
     public function index()
     {
-        $form = forms::all();
+        $form_type="MF Forms";
+        $page_class = "mfForm";
+        $cate= category::where('name','kyc_forms')->where('for','Form')->get();
+        $form = forms::where('category_id','!=', $cate[0]->id)->get();
         $catetag = category::where('for','Form')->orwhere('for','all')->get();
-        return view('pages.all-form',compact(['catetag','form']));
+        return view('pages.all-form',compact(['catetag','form','form_type','page_class']));
+    }
+
+    public function otherForms(){
+
+        $form_type="Other Forms";
+        $page_class = "otherForm";
+        $catetag = category::whereIn('name',['kyc_forms'])->where('for','Form')->get();
+        $form = forms::whereIn('category_id',[$catetag[0]->id])->get();
+
+        return view('pages.all-form',compact(['catetag','form','form_type','page_class']));
     }
 
     /**

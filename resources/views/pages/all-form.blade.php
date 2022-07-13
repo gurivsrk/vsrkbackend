@@ -1,4 +1,5 @@
-@extends('layouts.app', ['activePage' => 'FormTable', 'titlePage' => __('Forms')])
+
+@extends('layouts.app', ['activePage' => $page_class, 'titlePage' => __($form_type)])
 
 @section('content')
 <div class="content">

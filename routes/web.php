@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Auth;
 Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 
 	 Route::get('/', [App\Http\Controllers\frontend\homeController::class, 'index'])->name('index');
+	 Route::get('kyc-update',function(){
+		return view('frontend.kyc_update');
+	 })->name('kycUpdate');
 	 	
 	 /// about us
 	Route::get('/about-us/corporate-profile', [App\Http\Controllers\frontend\homeController::class, 'about'])->name('about');
@@ -93,7 +96,7 @@ Route::group(['middleware' => 'auth'], function () {
 	
 	///// Form
 	Route::resource('vsrk-admin/forms', 'App\Http\Controllers\FormController');
-	
+	Route::get('vsrk-admin/other-forms','App\Http\Controllers\FormController@otherForms')->name('forms.other');
 	///// Career
 	Route::resource('vsrk-admin/career', 'App\Http\Controllers\CareerContoller');
 
