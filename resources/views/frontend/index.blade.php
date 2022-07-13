@@ -1,4 +1,4 @@
-@extends('layouts.frontend.frontend',['activeClass' => 'index',])
+@extends('layouts.frontend.frontend',['activeClass' => 'index','pageType' => 'Home'])
 @section('frontend_content')
         <!-- start home banner area -->
         <div id="home" class="home-banner-area banner">
