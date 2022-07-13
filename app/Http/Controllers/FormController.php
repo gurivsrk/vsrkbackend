@@ -21,7 +21,7 @@ class FormController extends Controller
         $form_type="MF Forms";
         $page_class = "mfForm";
         $cate= category::where('name','kyc_forms')->where('for','Form')->get();
-        $form = sizeof($cate) > 0 ? forms::where('category_id','!=', $cate[0]->id)->get() : Null;
+        $form = sizeof($cate) > 0 ? forms::where('category_id','!=', $cate[0]->id)->get() : forms::all();
         $catetag = category::where('for','Form')->orwhere('for','all')->get();
         return view('pages.all-form',compact(['catetag','form','form_type','page_class']));
     }

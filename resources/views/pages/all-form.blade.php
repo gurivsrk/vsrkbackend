@@ -95,6 +95,7 @@
                   <th class="text-center"> Actions </th>
                 </thead>
                 <tbody>
+                 @if(!empty($form)) 
                   @foreach($form as $key=>$form)
                     <tr>
                       <td>{{++$key}}</td>
@@ -112,6 +113,7 @@
                           </td>
                     </tr>
                   @endforeach
+                  @endif
                 </tbody>
               </table>
             </div>
