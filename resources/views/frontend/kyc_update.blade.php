@@ -44,7 +44,7 @@
                                 <li><a href="https://www.cvlkra.com/kycpaninquiry.aspx" target="_blank">CVL KRA</a></li>
                                 <li><a href="https://camskra.com/" target="_blank">CAMS KRA</a></li>
                                 <li><a href="https://kra.ndml.in/" target="_blank">NSDL KRA</a></li>
-                                <li><a href="NSE KRA" target="_blank">NSE KRA</a></li>
+                                <li><a href="https://www.nsekra.com/" target="_blank">NSE KRA</a></li>
                             </ul>
                         </div>
                     </div>
