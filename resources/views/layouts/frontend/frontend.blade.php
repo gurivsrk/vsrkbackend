@@ -12,15 +12,16 @@
         <!-- icon CSS -->
         <link rel="stylesheet" href="{{asset('frontend/css/icon.min.css')}}" />
          <!-- magnific popup CSS -->
-        <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.min.css')}}" />
+        <!-- <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.min.css')}}" /> -->
         <!-- owl-carousel CSS -->
          <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}" />
         <!---MENU CSS-->
         <link rel="stylesheet" href="{{asset('frontend/css/meanmenu.min.css')}}" />
         <!-- main style CSS -->
         <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
+        <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}" />
         <!-- chart CSS -->
-        <link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
         @stack('css')
     </head>
     <body>        

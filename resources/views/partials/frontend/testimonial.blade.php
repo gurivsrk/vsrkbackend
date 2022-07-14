@@ -7,26 +7,7 @@
                     <p>Does any industry face a more complex audience journey and marketing sales process than B2B technology. Does any industry face a more complex audience.</p>
                 </div>
                 <div class="tesimonial-grid">
-                    
-                <div class="dot active">
-                        <img src="{{asset('frontend/img/clients/client_1.png')}}" alt="client-1" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_2.png')}}" alt="client-2" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_3.png')}}" alt="client-3" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_4.png')}}" alt="client-4" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_5.png')}}" alt="client-5" />
-                    </div>
-                    <div class="dot">
-                        <img src="{{asset('frontend/img/clients/client_6.png')}}" alt="client-6" />
-                    </div>
-                  
+                  <div id="vsrk-testimonial" class="position-relative">
                     <div class="testimonial-slider owl-carousel">
                         @foreach($testimonials as $testimonial)
                             <div class="slider-item">
@@ -38,7 +19,7 @@
                                 </div>
                                 <div class="client">
                                     <div class="client-img">
-                                        <img src="{{asset($testimonial->profileImg)}}" alt="{{$testimonial->name}}" />
+                                        <img src="{{!empty($testimonial->profileImg) ? asset($testimonial->profileImg) : asset('frontend/img/client.png')}}" alt="{{$testimonial->name}}" />
                                     </div>
                                     <div class="client-info">
                                         <h6>{{$testimonial->name}}</h6>
@@ -49,7 +30,8 @@
                         @endforeach
                     </div>
                     <div class="overlay-img">
-                        <img src="{{asset('frontend/img/background/Testimonial_bg.png')}}" alt="Testimonial_bg" />
+                        <img src="{{asset('frontend/img/background/Testimonial_bg.png')}}" width="617" height="589" alt="Testimonial_bg" />
+                    </div>
                     </div>
                 </div>
                 <!-- tesimonial-grid -->

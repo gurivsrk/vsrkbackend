@@ -62,7 +62,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="offset-md-1 col-lg-4">
+                            <div class="col-lg-5 d-flex justify-content-center">
                                 <div id="sipChartCanvas" class="position-relative">
                                     <canvas id="sipCalChat" style="width: 349.6px; max-width: 350px; max-height: 350px; display: block; box-sizing: border-box; height: 349.6px;" width="437" height="437"></canvas>
                                 </div>
@@ -152,7 +152,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 m-4">
+                                    <div class="col-lg-5 m-4  d-flex justify-content-center">
                                     <div class="input-group mt-1">
                                             <div class="dynamic-field">
                                                 <label>Annual Income Required Immediately After Retirement:</label>
@@ -254,7 +254,7 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="offset-md-1 col-lg-4">
+                            <div class="col-lg-5  d-flex justify-content-center">
                                 <div id="sipChartCanvas" class="position-relative">
                                     <canvas id="sipCalChat" style="width: 349.6px; max-width: 350px; max-height: 350px; display: block; box-sizing: border-box; height: 349.6px;" width="437" height="437"></canvas>
                                 </div>
