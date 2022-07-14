@@ -259,6 +259,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="cta-btn float-right">
+                            <a href="{{route('frontend.services')}}" class="btn btn-solid">
+                                Other services
+                                <i class="envy envy-right-arrow"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

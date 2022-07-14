@@ -27,9 +27,12 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::get('/about-us/registrars', [App\Http\Controllers\frontend\homeController::class, 'registrars'])->name('registrars');
 	Route::get('/about-us/career', [App\Http\Controllers\frontend\homeController::class, 'career'])->name('career');
 
-	/// Investment Solution
-	Route::get('/inverstment-solution/mutual-funds', [App\Http\Controllers\frontend\homeController::class, 'mutual_funds'])->name('mutual_funds');
-	Route::get('/inverstment-solution/insurance', [App\Http\Controllers\frontend\homeController::class, 'insurance'])->name('insurance');
+
+
+	/// Our Services
+	Route::get('/financial-services-companies',[App\Http\Controllers\frontend\homeController::class, 'our_services'])->name('services');
+	Route::get('/financial-services-companies/mutual-funds', [App\Http\Controllers\frontend\homeController::class, 'mutual_funds'])->name('mutual_funds');
+	Route::get('/financial-services-companies/insurance', [App\Http\Controllers\frontend\homeController::class, 'insurance'])->name('insurance');
 
 	/// Calculators 
 	Route::get('/calculators/{id}/{calci}',[App\Http\Controllers\frontend\homeController::class, 'calci'])->name('calci');	

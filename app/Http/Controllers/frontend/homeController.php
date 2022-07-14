@@ -72,6 +72,11 @@ class homeController extends Controller
 
 
     //// services
+    public function our_services(){
+        $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();
+        return view('frontend.service',compact(['brand_logo']));
+    }
+
     public function mutual_funds(){
 
         $brand_logo = category::select('name','logo')->whereNotNull('logo')->get();

@@ -311,7 +311,7 @@ jQuery(function($) {
         }
     })
    
-    $('.faq-item').on('click',function(){
+    $('#team-member .faq-item').on('click',function(){
         const tthis= $(this);
         if(!(tthis.hasClass('active'))){
             tthis.children('.job-description').slideDown(()=>{

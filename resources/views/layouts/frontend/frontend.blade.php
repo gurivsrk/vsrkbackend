@@ -112,7 +112,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='investment')?'active':''):''}}">Financial Services</a>
+                                    <a href="{{ route('frontend.services') }}" class="nav-link dropdown-toggle {{!empty($activeClass)?(($activeClass=='investment')?'active':''):''}}">Financial Services</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="{{route('frontend.mutual_funds')}}" class="nav-link {{($activeClass=='investment')?(($pageType=='mutual_funds')?'active':''):''}}">Mutual Fund Investments</a>
