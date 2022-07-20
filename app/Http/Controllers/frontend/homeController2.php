@@ -64,7 +64,7 @@ class homeController2 extends Controller
              }
          }
         
-         $categories = category::select('name','id')->where('type','category')->inRandomOrder()->where('for','other')->take(6)->get();
+         $categories = category::select('name','id')->where('type','category')->where('name','!=','blog')->inRandomOrder()->where('for','other')->take(6)->get();
          foreach($categories as $category){
             $catId[] = $category->id;
             $blogCount[] = blogs::select('id')->where('categories','LIKE','%'.$category->id.'%')->count();

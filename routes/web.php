@@ -58,9 +58,9 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 //// for testing mail function
 //  Route::get('/testmail',[App\Http\Controllers\subcriberController::class,'testEmail']);
 
-Route::get('/get-api-data',[App\Http\Controllers\wpMigration::class, 'get_api_data']);
-Route::get('/get-api-data-2',[App\Http\Controllers\wpMigration::class, 'wpGetImageCat']);
-Route::get('/wp-to-blog',[App\Http\Controllers\wpMigration::class, 'wpToBlog']);
+// Route::get('/get-api-data',[App\Http\Controllers\wpMigration::class, 'get_api_data']);
+// Route::get('/get-api-data-2',[App\Http\Controllers\wpMigration::class, 'wpGetImageCat']);
+// Route::get('/wp-to-blog',[App\Http\Controllers\wpMigration::class, 'wpToBlog']);
 
 Route::get('/testmailview',function(){
 	return view('email.subscribe',[
