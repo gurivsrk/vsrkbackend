@@ -27,7 +27,7 @@
         @endif
            
         </div>
-        <h4 class="card-title">{{($type == 'edit-team' || $type == 'index-team')?$item->name:(($type == 'edit-testimonial' || $type =='index-testimonial')?$item->name:$item->title)}}</h4>
+        <h4 class="card-title">{!! ($type == 'edit-team' || $type == 'index-team')?$item->name:(($type == 'edit-testimonial' || $type =='index-testimonial')?$item->name:$item->title)!!}</h4>
         @if($item->designation)
         <p class="card-category">{{$item->designation}}</p>
         @else
