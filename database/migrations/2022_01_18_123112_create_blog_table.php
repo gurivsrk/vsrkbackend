@@ -20,6 +20,7 @@ class CreateBlogTable extends Migration
             $table->text('categories');
             $table->text('tags');
             $table->longText('descritption');
+            $table->string('author',50);
             $table->enum('post_status',['enabled','disabled']);
             $table->timestamps();
             $table->softDeletes();

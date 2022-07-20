@@ -102,7 +102,7 @@
                                     <div class="info">
                                         <span class="time"><i class="envy envy-calendar"></i>{{$lBlog->BlogDate}}</span>
                                         <h6 class="title">
-                                            <a href="{{route('frontend.blog_detail',[$lBlog->id,$lBlog->slug])}}">{{$lBlog->title}}</a>
+                                            <a href="{{route('frontend.blog_detail',[$lBlog->id,$lBlog->slug])}}">{!! $lBlog->title !!}</a>
                                         </h6>
                                     </div>
                                 </article>
@@ -113,7 +113,7 @@
                                 <ul class="categorie-list">
                                     @foreach($categories as $category)
                                         <li>
-                                            <a href="{{route('frontend.blog_by_catag', ['category',$category->id,$category->caTagSlug])}}">{{ $category->name}}</a>
+                                            <a href="{{route('frontend.blog_by_catag', ['category',$category->id,$category->caTagSlug])}}">{!! $category->name !!}</a>
                                             <span class="total">{{ $catCount[$category->id] }}</span>
                                         </li>
                                     @endforeach
@@ -123,7 +123,7 @@
                                 <h5 class="widget-title">Tags</h5>
                                 <div class="tags">
                                     @foreach($tags as $t)
-                                        <a href="{{route('frontend.blog_by_catag',['tag', $t->id, $t->caTagSlug])}}"> {{$t->name}} </a>
+                                        <a href="{{route('frontend.blog_by_catag',['tag', $t->id, $t->caTagSlug])}}"> {!! $t->name !!} </a>
                                     @endforeach
                                 </div>
                             </section>

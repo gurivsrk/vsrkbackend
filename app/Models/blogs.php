@@ -21,7 +21,8 @@ class blogs extends Model
             'categories',
             'tags',
             'post_status',
-            'descritption'
+            'descritption',
+            'author'
         ];
 
         public function scopeReverse($query){
@@ -42,23 +43,30 @@ class blogs extends Model
 
         public function getshareTagsAttribute(){
             foreach (json_decode($this->tags) as $tag){
-                $tag_name = category::find($tag);
+                $tag_name = category::find(str_replace('"','',$tag));
                 $tags[] = '%23'.str_replace(' ','_',$tag_name->name);
             }
             echo implode(' ',$tags);
         }
 
         public function gettagNameAttribute(){
-            foreach (json_decode($this->tags) as $t){
-                $tag_n = category::find($t);
-                $tagName[] = $tag_n->name; 
+            if(strlen($this->tags) > 3){
+                foreach (json_decode($this->tags) as $t){
+                    $tag_n = category::find(str_replace('"','',$t));
+                    $tagName[] = $tag_n->name; 
+                }
+            }
+            else{
+                $tagName[] = 'vsrk';
             }
             return $tagName;
         }
 
         public function getcategoryNameAttribute(){
-            foreach (json_decode($this->categories) as $cat){
-                $cat = category::find($cat);
+            if(strlen($this->tags) > 3){
+                foreach (json_decode($this->categories) as $cat){
+                    $cat = category::find(str_replace('"','',$cat));
+                }
             }
             return $cat;
         }

@@ -38,7 +38,7 @@ class staticPages extends Model
                 continue;
             }
      
-           $value = is_string($value)?$value:\json_encode($value);
+           $value = is_string($value)?$value:json_encode($value);
 
             $staticPage = self::where('page',$page)
                                 ->Where('field_name',$key)
