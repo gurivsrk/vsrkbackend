@@ -62,6 +62,19 @@ class blogs extends Model
             return $tagName;
         }
 
+        public function gettagDetailAttribute(){
+            if(strlen($this->tags) > 3){
+                foreach (json_decode($this->tags) as $t){
+                    $tag_n = category::find(str_replace('"','',$t));
+                    $tagName[] = $tag_n; 
+                }
+            }
+            else{
+                $tagName[] = 'vsrk';
+            }
+            return $tagName;
+        }
+
         public function getcategoryNameAttribute(){
             if(strlen($this->tags) > 3){
                 foreach (json_decode($this->categories) as $cat){

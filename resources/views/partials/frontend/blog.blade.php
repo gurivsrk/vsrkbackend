@@ -7,7 +7,7 @@
                     <div class="blog-item-single">
                         <div class="blog-item-img">
                             <a href="{{route('frontend.blog_detail',[$blog->id,$blog->slug])}}">
-                                <img src="{{asset($blog->blogImage)}}" alt="{{$blog->slug}}-image" />
+                                <img src="{{!empty($blog->blogImage)?(($blog->blogImage != 'no-media') ? asset($blog->blogImage): asset('frontend/img/blog_template.jpg') ) : asset('frontend/img/blog_template.jpg') }} " alt="{{$blog->slug}}-image" />
                             </a>
                             <p class="tag">{{$blog->tagName[0]}}</p>
                         </div>
@@ -18,7 +18,7 @@
                             </a>
                             @if(empty($class))
                             <p>
-                                {!! Str::limit($blog->descritption,200) !!}
+                                {!! Str::limit($blog->descritption,185) !!}
                             </p>
                             <a href="{{route('frontend.blog_detail',[$blog->id,$blog->slug])}}" target="_self" class="btn btn-text-only">
                                 read more

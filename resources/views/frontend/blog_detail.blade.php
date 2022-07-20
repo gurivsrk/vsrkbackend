@@ -62,8 +62,8 @@
                             <div class="article-share-vsrk">
                                 <div class="tags pb-3">
                                     <span>tags:</span>
-                                    @foreach($blog->tagName as $tName)
-                                        <a href="#">{{$tName}}</a>
+                                    @foreach($blog->tagDetail as $btag)
+                                        <a href="{{route('frontend.blog_by_catag',['tag', $btag->id, $btag->caTagSlug])}}">{{$btag->name}}</a>
                                     @endforeach 
                                 </div>
                                 <div class="social-link">
