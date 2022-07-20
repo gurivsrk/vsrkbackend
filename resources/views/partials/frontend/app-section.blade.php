@@ -21,10 +21,10 @@
                                 <p>There are many variations of passages of Lorem Ipsum available</p>
                             </div>
                             <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <a href="#" target="_blank" class="btn btn-android btn-solid"><i class="fab fa-google-play"></i> Android App <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://play.google.com/store/apps/details?id=com.iw.vsrkwealth" target="_blank" class="btn btn-android btn-solid"><i class="fab fa-google-play"></i> Android App <i class="fas fa-arrow-right"></i></a>
                             </div>
                             <div class="content-inner col-lg-6 col-md-6 col-sm-6">
-                                <a href="#" target="_blank" class="btn btn-ios btn-solid"><i class="fab fa-app-store-ios"></i> iOS App <i class="fas fa-arrow-right"></i></a>
+                                <a href="https://itunes.apple.com/us/app/vsrk-wealth/id1435474598?mt=8&app=itunes&ign-mpt=uo%3D4" target="_blank" class="btn btn-ios btn-solid"><i class="fab fa-app-store-ios"></i> iOS App <i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
