@@ -42,11 +42,16 @@ class blogs extends Model
         }
 
         public function getshareTagsAttribute(){
-            foreach (json_decode($this->tags) as $tag){
-                $tag_name = category::find(str_replace('"','',$tag));
-                $tags[] = '%23'.str_replace(' ','_',$tag_name->name);
+            if(strlen($this->tags) > 3){
+                foreach (json_decode($this->tags) as $tag){
+                    $tag_name = category::find(str_replace('"','',$tag));
+                    $tags[] = '%23'.str_replace(' ','_',$tag_name->name);
+                }
+                echo implode(' ',$tags);
             }
-            echo implode(' ',$tags);
+            else{
+                echo '%23vsrk';
+            }
         }
 
         public function gettagNameAttribute(){
@@ -76,7 +81,7 @@ class blogs extends Model
         }
 
         public function getcategoryNameAttribute(){
-            if(strlen($this->tags) > 3){
+            if(strlen($this->categories) > 3){
                 foreach (json_decode($this->categories) as $cat){
                     $cat = category::find(str_replace('"','',$cat));
                 }

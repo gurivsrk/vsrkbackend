@@ -1,6 +1,7 @@
 
 @extends('layouts.frontend.frontend', ['activeClass' => 'blog','pageType'=>'blog'])
 @section('meta_data')
+<title>VSRK Capital - {{$blog->title}}</title>
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{$blog->title}}" />
@@ -63,8 +64,10 @@
                                 <div class="tags pb-3">
                                     <span>tags:</span>
                                     @foreach($blog->tagDetail as $btag)
-                                        <a href="{{route('frontend.blog_by_catag',['tag', $btag->id, $btag->caTagSlug])}}">{{$btag->name}}</a>
-                                    @endforeach 
+                                        @if($btag != "vsrk")
+                                            <a href="{{route('frontend.blog_by_catag',['tag', $btag->id, $btag->caTagSlug])}}">{{$btag->name}}</a>
+                                        @endif    
+                                    @endforeach  
                                 </div>
                                 <div class="social-link">
                                     <a href="https://www.facebook.com/sharer/sharer.php?u={{url()->current()}}" class="bg-tertiary" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -84,13 +87,16 @@
 
                     <div class="col-lg-4 col-md-12">
                         <aside class="widget-area">
-                            <div class="widget widget-search">
+                            <div class="widget widget-search position-relative">
                                 <form class="search-form search-top">
                                     <input type="search" class="search-field" placeholder="Search article" />
                                     <button type="submit" class="btn-text-only">
                                         <i class="envy envy-magnify-glass"></i>
                                     </button>
                                 </form>
+                                <div id="ajax-search-result">
+                                    <span>dadas</span>
+                                </div>
                             </div>
                             <section class="widget widget-article">
                                 <h5 class="widget-title">Recent articles</h5>
@@ -135,5 +141,9 @@
         <!-- End Blog Details Area -->
    </div>
  
-
+@endsection
+@section('js')
+    <script>
+        test
+    </script>
 @endsection

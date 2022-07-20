@@ -2418,7 +2418,13 @@ Team type FAQ CSS
   text-align:justify ;
 }
 
-
+#ajax-search-result{
+    background: aliceblue;
+    padding: 20px;
+    display: block;
+    width: 100%;
+    position: absolute;
+}
 #year-selector{
   background: transparent;
   color: #3cb56a;

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-         <title>{{@$gd->website_title .' - '. @$pageType}}</title>
         @yield('meta_data')   
+        <title>{{@$gd->website_title .' - '. @$pageType}}</title>
         <!-- favicon -->
         <link rel="icon" href="{{asset(@$gd->favicon)}}" type="image/png" sizes="16x16" />    
         <!-- bootstrap CSS -->
