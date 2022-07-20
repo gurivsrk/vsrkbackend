@@ -14,9 +14,9 @@ use function PHPSTORM_META\type;
 class wpMigration extends Controller
 {
     
-    public function get_api_data(){
-        if(file_get_contents('https://www.vsrkwealthcreator.com/wp-json/wp/v2/posts?per_page=10&page=12')){
-            $res = json_decode(file_get_contents('https://www.vsrkwealthcreator.com/wp-json/wp/v2/posts?per_page=10&page=12'),true);
+    public function get_api_data($pageno){
+        if(file_get_contents('https://www.vsrkwealthcreator.com/wp-json/wp/v2/posts?per_page=10&page=1')){
+            $res = json_decode(file_get_contents('https://www.vsrkwealthcreator.com/wp-json/wp/v2/posts?per_page=10&page='.$pageno),true);
 
             foreach($res as $r)
             {   
@@ -34,7 +34,7 @@ class wpMigration extends Controller
             }
             $this->wpGetImageCat();
         }
-        return response()->json(wp_migration::all());
+        echo 'Migrate to wp Table';
     }
 
     public function wpGetImageCat(){
@@ -110,7 +110,7 @@ class wpMigration extends Controller
                 }
             }
         }
-        echo 'Done';
+        echo ' Done';
     }
 
     private function getTag($tags){

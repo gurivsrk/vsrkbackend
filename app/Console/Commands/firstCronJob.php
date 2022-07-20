@@ -38,7 +38,9 @@ class firstCronJob extends Command
      */
     public function handle()
     {
-        (new wpMigration)->get_api_data();
-        (new wpMigration)->wpToBlog();
+        for($i=1;$i<=11;$i++){
+            (new wpMigration)->get_api_data($i);
+            (new wpMigration)->wpToBlog();
+        }
     }
 }

@@ -19,7 +19,7 @@ class blogController extends Controller
     public function index()
     {
         $type = "index-blog";
-        $item = blogs::reverse()->paginate(10);
+        $item = blogs::reverse()->paginate(9);
         $catetag = category::inRandomOrder()->where('for','other')->orwhere('for','all')->get();
         return view('pages.all-blogs',compact(['catetag','item','type']));
     }
