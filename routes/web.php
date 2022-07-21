@@ -46,6 +46,7 @@ Route::group(['as' => 'frontend.', 'namespace' => 'frontend'], function () {
 	Route::get('/all-blogs',[App\Http\Controllers\frontend\homeController2::class, 'allBLogs'])->name('all_blogs');
 	Route::get('/blog/{id}/{slug}',[App\Http\Controllers\frontend\homeController2::class, 'blogDetail'])->name('blog_detail');
 	Route::get('/{type}/{id}/{name}',[App\Http\Controllers\frontend\homeController2::class, 'blogByCaTag'])->name('blog_by_catag');
+	Route::post('/ajax-blog-search',[App\Http\Controllers\frontend\processRequestController::class, 'ajaxBlogSearch'])->name('ajax_blog_seacrch');
 	
 	/// Contact Us
 	Route::get('/contact-us',function(){ return view('frontend.contact'); })->name('contact_us');

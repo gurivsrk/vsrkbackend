@@ -10,8 +10,6 @@ use App\Models\forms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-use GuzzleHttp\Client;
-use PhpParser\Node\Expr\Empty_;
 
 class homeController2 extends Controller
 {

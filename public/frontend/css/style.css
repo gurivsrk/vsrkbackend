@@ -1767,11 +1767,7 @@ input[type=number] {
   padding-bottom: 20px;
 }
 
-.blog-details-section .widget-area .widget-search .search-form {
-  position: relative;
-}
-
-.blog-details-section .widget-area .widget-search .search-form .search-field {
+.blog-details-section .widget-area .widget-search .search-field {
   background-color: #fff;
   display: block;
   width: 100%;
@@ -1783,7 +1779,7 @@ input[type=number] {
   box-shadow: 0 0 20px -2px rgba(106, 99, 119, 0.1);
 }
 
-.blog-details-section .widget-area .widget-search .search-form button {
+.blog-details-section .widget-area .widget-search button {
   border: none;
   color: #3cafdc;
   position: absolute;
@@ -1802,9 +1798,11 @@ input[type=number] {
   justify-content: center;
   flex-direction: row;
 }
-
+.blog-details-section .widget-area .widget-article .article-item img{
+  width: 100%;
+}
 .blog-details-section .widget-area .widget-article .article-item .info {
-  min-width: 250px;
+  min-width: 300px;
   padding-left: 16px;
 }
 
@@ -2424,6 +2422,27 @@ Team type FAQ CSS
     display: block;
     width: 100%;
     position: absolute;
+    z-index: 111;
+    height: 300px;
+    overflow-y: scroll;
+    display: none;
+}
+#ajax-search-result a {
+  display: block;
+  padding: 5px 0;
+  font-size: 14px;
+  color: #4a6db3;
+}
+.widget-search .envy-close{
+  font-size: 16px;
+  display: none;
+}
+#ajax-search-result a:hover {
+  color: #332f3b;
+}
+#ajax-search-result a::before{
+  content: '->';
+  margin-right: 10px;
 }
 #year-selector{
   background: transparent;

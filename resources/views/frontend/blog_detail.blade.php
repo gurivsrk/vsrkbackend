@@ -88,12 +88,11 @@
                     <div class="col-lg-4 col-md-12">
                         <aside class="widget-area">
                             <div class="widget widget-search position-relative">
-                                <form class="search-form search-top">
-                                    <input type="search" class="search-field" placeholder="Search article" />
-                                    <button type="submit" class="btn-text-only">
-                                        <i class="envy envy-magnify-glass"></i>
-                                    </button>
-                                </form>
+                                <input id="ajax-search-blog" type="text" class="search-field" placeholder="Search article" />
+                                <button type="submit" class="btn-text-only">
+                                    <i class="envy envy-magnify-glass"></i>
+                                    <i class="envy envy-close"></i>
+                                </button>
                                 <div id="ajax-search-result">
                                     <span>dadas</span>
                                 </div>
@@ -103,7 +102,7 @@
                                 @foreach($latestBlogs as $lBlog)
                                 <article class="article-item">
                                     <a href="{{route('frontend.blog_detail',[$lBlog->id,$lBlog->slug])}}" class="article-img">
-                                        <img src="{{asset($lBlog->blogImage)}}" width="200px" alt="{{$lBlog->slug}}-image" />
+                                        <img src="{{asset($lBlog->blogImage)}}" width="150px" alt="{{$lBlog->slug}}-image" />
                                     </a>
                                     <div class="info">
                                         <span class="time"><i class="envy envy-calendar"></i>{{$lBlog->BlogDate}}</span>
@@ -142,8 +141,47 @@
    </div>
  
 @endsection
-@section('js')
+@push('js')
     <script>
-        test
+        const searchGroupShow = () =>{
+                $('.widget-search .envy-close').show();
+                $('#ajax-search-result').show();
+                $('.widget-search .envy-magnify-glass').hide();
+            }
+        const searchGroupHide = () =>{
+            $('#ajax-search-result').hide();
+            $('.widget-search .envy-close').hide();
+            $('.widget-search .envy-magnify-glass').show();
+        }
+            
+        $('#ajax-search-blog').on('keyup',function(){
+            let $this =$(this) ,
+            data = $this.val(),
+            title = [];
+            if(data.length > 2){
+                searchGroupShow()
+                $.ajax({
+                        type:'POST',
+                        url : "{{route('frontend.ajax_blog_seacrch')}}",
+                        headers: {
+                            'X-CSRF-TOKEN': "{{csrf_token()}}"
+                        },
+                        data: {input : data},
+                        success: function(result){
+                            console.log(result.search);
+                            $('#ajax-search-result').html(result.search)
+                        }
+                })
+            }
+            else{
+                searchGroupHide()
+            }
+
+            $('.widget-search .envy-close').on('click',()=>{
+                searchGroupHide()
+            })
+
+            
+        })
     </script>
-@endsection
+@endpush
