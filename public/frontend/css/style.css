@@ -2402,7 +2402,7 @@ Team type FAQ CSS
   justify-content: center;
   text-align: justify;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border: 1px solid #f1f1f1;
   padding: 0 50px;
 }
 .alternate-image-section:nth-child(even){
@@ -2415,7 +2415,10 @@ Team type FAQ CSS
 .blog-details-section .content p{
   text-align:justify ;
 }
-
+.navbar-area .mobile-nav.mean-container {
+  margin: 0 auto;
+  padding: 10px 0;
+}
 #ajax-search-result{
     background: aliceblue;
     padding: 20px;

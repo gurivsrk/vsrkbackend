@@ -3,6 +3,7 @@
     <head>
         @yield('meta_data')   
         <title>{{@$gd->website_title .' - '. @$pageType}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- favicon -->
         <link rel="icon" href="{{asset(@$gd->favicon)}}" type="image/png" sizes="16x16" />    
         <!-- bootstrap CSS -->
@@ -67,7 +68,7 @@
             <!-- menu for mobile device -->
             <div class="mobile-nav">
                 <a href="{{route('frontend.index')}}" class="logo">
-                    <img src="{{asset(@$gd->website_logo)}}" alt="logo_light" />
+                    <img src="{{asset(@$gd->website_logo)}}" width="200" height="46" alt="vsrk logo" />
                 </a>
             </div>
             <!-- menu for desktop device-->
@@ -269,19 +270,19 @@
                             <h5>Our Services</h5>
                             <ul class="footer-quick-links">
                                 <li>
-                                    <a href="service-details.html">service 1</a>
+                                    <a href="{{route('frontend.mutual_funds')}}">Mutual Fund</a>
                                 </li>
                                 <li>
-                                    <a href="service-details.html">service 2</a>
+                                    <a href="{{route('frontend.insurance')}}">Insurance Consulting</a>
                                 </li>
                                 <li>
-                                    <a href="service-details.html">service 3</a>
+                                    <a href="#">Stock Market</a>
                                 </li>
                                 <li>
-                                    <a href="service-details.html">service 4</a>
+                                    <a href="#">Retirement Planning</a>
                                 </li>
                                 <li>
-                                    <a href="service-details.html">service 5</a>
+                                    <a href="#">Tax Planning</a>
                                 </li>
                             </ul>
                         </div>

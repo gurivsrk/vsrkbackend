@@ -62,15 +62,6 @@
     .navbar-area.stickyadd .mobile-nav.mean-container a.logo img:first-child, .navbar-area .top-nav, .navbar-area .cta-btn  {
         display: none;
       }
-    .navbar-area .mobile-nav.mean-container {
-      margin: 0 auto;
-      padding: 10px 0;
-    }
-    .navbar-area .mobile-nav.mean-container .mean-bar {
-      padding: 15px 0;
-      position: absolute;
-      background: transparent;
-    }
     .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav {
       float: none;
       width: 90%;
@@ -93,6 +84,7 @@
     }
     .navbar-area .mobile-nav.mean-container a.logo img:first-child {
       display: inline-block;
+      width: 200px;
     }
     .navbar-area .search-item {
       position: absolute !important;
