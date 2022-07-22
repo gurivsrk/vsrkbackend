@@ -615,10 +615,10 @@ img {
 }
 
 .home-banner-area.banner {
-  padding: 230px 0;
+  padding: 200px 0;
   background: linear-gradient(180deg,  #449ccd 45%, #00b232 179%);
   height: auto;
-  min-height: 40.8vw;
+  min-height: 47vw;
 }
 
 .home-banner-area.banner::before, .home-banner-area.banner::after {

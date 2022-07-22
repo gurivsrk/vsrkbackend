@@ -219,7 +219,7 @@
       margin: 10px 0;
     }
     .home-banner-area.banner{
-      min-height: 500px;
+      min-height: 610px;
     }
     .featured-service-section .content-inner{
       text-align: center;
@@ -232,6 +232,12 @@
       overflow-y: scroll;
       height: 410px;
     }
-
+    #team-member .vsrk-left-img::after {
+      padding: 5% 0 0;
+      font-size: 16px;
+      font-weight: 400;
+      bottom: -84%;
+      opacity: 1;
+  }
   }
   
