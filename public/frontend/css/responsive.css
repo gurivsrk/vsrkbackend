@@ -217,5 +217,8 @@
     .home-banner-area.banner{
       min-height: 500px;
     }
+    .featured-service-section .content-inner{
+      text-align: center;
+    }
   }
   
