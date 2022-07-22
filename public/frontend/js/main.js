@@ -290,7 +290,7 @@ jQuery(function($) {
 
     
     
-    $('.vsrk-left-img').on('click',function(){
+    $('#team-member .vsrk-left-img').on('click',function(){
         if(!($(this).hasClass('active'))){
           $(this).parent().parent().addClass('active');
           $(this).parent().append('<div class="close" data-attr="class">X</div>')

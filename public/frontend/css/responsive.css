@@ -28,6 +28,14 @@
 
 
 @media (max-width: 991.98px) {
+  .mobile-nav, .mean-container .mean-bar{
+      height: 65px;
+  }
+  .mobile-nav .logo{
+    display: block;
+    padding: 10px 0px;
+    width: 205px;
+  }
     .home-banner-area.banner {
         min-height: 70vw;
     }
@@ -59,7 +67,7 @@
     .faq-item{
         display:block
     }
-    .navbar-area.stickyadd .mobile-nav.mean-container a.logo img:first-child, .navbar-area .top-nav, .navbar-area .cta-btn  {
+    .navbar-area.stickyadd .mobile-nav.mean-container a.logo img:first-child,  .navbar-area .cta-btn  {
         display: none;
       }
     .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav {
@@ -122,7 +130,23 @@
     .navbar-area.stickyadd .mobile-nav.mean-container .search-item .close-btn.active {
       color: #332f3b;
     }
-  
+
+    .faq-item{
+      text-align: center;
+    }
+    .vsrk-right-text {
+      width: 100%;
+    }
+    .faq-item h4::before {
+      left: 45%;
+    }
+    .app-section{
+      padding-bottom: 0;
+    }
+    .app-section-image{
+      margin-top: 35px;
+      text-align: center !important;
+    }
   }
   
   @media only screen and (max-width: 767px) {
@@ -132,6 +156,64 @@
     .featured-service-section .featured-service-image img {
       display: block;
     }
-   
+    .team-outer-box{
+      width: 50%;
+    }
+    .home-banner-area .banner-content h2 ,h2{
+      font-size: 24px;
+    }
+    #team-member .active .vsrk-right-text {
+      margin: 0;
+      width: 100%;
+    }
+    #team-member .faq-item.team-member {
+      text-align: center;
+    }
+    .alternate-image-section, .alternate-text-section{
+      margin-left: 25px;
+    }
+    .app-section .btn, .app-section i {
+      padding: 10px 10px;
+    }
+    
+    section .section-title p{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 572px) {
+    .mobile-nav, .mean-container .mean-bar{
+      height: 75px;
+    }
+    .mean-container a.meanmenu-reveal {
+      padding: 25px 15px;
+    }
+    .mobile-nav .logo {
+      padding: 15px 0px;
+    }
+    .team-outer-box {
+      width: 100%;
+    }
+    #team-member .active .vsrk-left-img {
+      height: auto;
+    }
+    #team-member .vsrk-left-img{
+      height: 450px;
+    }
+    .testimonial-section .overlay-img{
+      width: 97vw;
+    }
+    .testimonial-section .slider-item .inner-text p {
+      color: #000000;
+      padding: 0px 70px;
+      text-align: justify;
+      text-shadow: 0px 0px 50px;
+    }
+    .app-section{
+      text-align: center;
+    }
+    .app-section .btn-ios{
+      margin: 10px 0;
+    }
+
   }
   
