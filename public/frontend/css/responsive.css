@@ -183,6 +183,9 @@
     .mobile-nav, .mean-container .mean-bar{
       height: 75px;
     }
+    .mean-container .mean-nav{
+      margin-top: 75px;
+    }
     .mean-container a.meanmenu-reveal {
       padding: 25px 15px;
     }
