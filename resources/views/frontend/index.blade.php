@@ -225,7 +225,7 @@
                                 <i class="envy envy-alarm"></i>
                                     <h5>Mutual Funds</h5>
                                     <p>A mutual fund is a financial tool made up of a pool of money collected from different investors to invest in securities like stocks, bonds, etc.</p>
-                                    <a href="{{route('frontend.mutual_funds')}}" target="_blank" class="btn btn-text-only pt-2">
+                                    <a href="{{route('frontend.mutual_funds')}}" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -234,7 +234,7 @@
                                     <i class="envy envy-shield"></i>
                                     <h5>Life Insurance</h5>
                                     <p>We'll give you a complete understanding on how it works and what you need to choose the products that suits you the best</p>
-                                    <a href="{{route('frontend.insurance')}}" target="_blank" class="btn btn-text-only pt-2">
+                                    <a href="{{route('frontend.insurance')}}"  class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -243,7 +243,7 @@
                                     <i class="envy envy-padlock"></i>
                                     <h5>General Insurance</h5>
                                     <p>General Insurance or Non-life Insurance policies is a practical option for every person who would like to live a risk-free life.</p>
-                                    <a href="#" target="_blank" class="btn btn-text-only pt-2">
+                                    <a href="#"  class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
@@ -252,7 +252,7 @@
                                     <i class="envy envy-attachment"></i>
                                     <h5>Corporate Deposites</h5>
                                     <p>These types of deposits are offered by corporate companies. Generally, banks are the issuers of fixed deposits services or products in India.</p>
-                                    <a href="#" target="_blank" class="btn btn-text-only pt-2">
+                                    <a href="#" class="btn btn-text-only pt-2">
                                         read more
                                         <i class="envy envy-right-arrow"></i>
                                     </a>
