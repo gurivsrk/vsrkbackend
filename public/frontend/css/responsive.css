@@ -249,5 +249,8 @@
       bottom: -84%;
       opacity: 1;
   }
+  .tab span{
+    padding: 10px 9vw;
+  }
   }
   
