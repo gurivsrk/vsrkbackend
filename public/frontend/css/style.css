@@ -993,8 +993,9 @@ img {
   z-index: -1;
 }
 div#shape2 {
+  width: 75px;
   margin-top: -70px;
-  animation:  movebounce-x 4s linear infinite;
+  animation:  movebounce-x 5s linear infinite;
 }
 .about-section .about-img .shape .shape-inner:first-child {
   right: 0;
