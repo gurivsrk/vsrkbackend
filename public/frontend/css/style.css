@@ -992,7 +992,10 @@ img {
   width: auto;
   z-index: -1;
 }
-
+div#shape2 {
+  margin-top: -70px;
+  animation:  movebounce-x 4s linear infinite;
+}
 .about-section .about-img .shape .shape-inner:first-child {
   right: 0;
   top: 10%;
@@ -2143,17 +2146,7 @@ Team type FAQ CSS
 /*================================================
   Custom Animation CSS
 =================================================*/
-@-webkit-keyframes movebounce {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
+
 
 @keyframes movebounce {
   0% {
@@ -2164,6 +2157,17 @@ Team type FAQ CSS
   }
   100% {
     transform: translateY(0px);
+  }
+}
+@keyframes movebounce-x {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(15vw);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 

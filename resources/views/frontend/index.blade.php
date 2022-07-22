@@ -104,7 +104,7 @@
         <!-- end feature section -->
         
         <!--start about section-->
-        <section id="about" class="about-section ptb-70">
+        <section id="about" class="about-section pt-70">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-sm-12 pb-30">
@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="cta-btn">
+                        <div class="cta-btn mt-4">
                             <a href="{{route('frontend.about')}}" class="btn btn-solid">
                                 Read more
                                 <i class="envy envy-right-arrow"></i>
@@ -170,6 +170,9 @@
                                 </div>
                             </div>
                             <div class="shape">
+                                <img src="{{asset('frontend/img/resource/shape_4.png')}}" alt="shape" class="shape-inner" />
+                            </div>
+                            <div id="shape2" class="shape2">
                                 <img src="{{asset('frontend/img/resource/shape_4.png')}}" alt="shape" class="shape-inner" />
                             </div>
                         </div>
