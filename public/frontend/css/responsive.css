@@ -194,8 +194,10 @@
       width: 100%;
     }
     #team-member .active .vsrk-left-img {
-      height: auto;
-    }
+      height: 100px;
+      border-radius: 50%;
+      width: 100px;
+  }
     #team-member .vsrk-left-img{
       height: 75vw;
     }
