@@ -35,11 +35,14 @@
                     <div class="top-left">
                         <ul class="info-list">
                             <li>
+                                <a href="mailTo:{{@$gd->website_email_primary}}">
                                 <i class="envy envy-email"></i>
-                                <a href="mailTo:{{@$gd->website_email_primary}}">{{@$gd->website_email_primary}}</a>
+                                    <span>{{@$gd->website_email_primary}}</span></a>
                             </li>
-                            <li><i class="envy envy-call"></i>
-                                <a href="tel:{{@$gd->website_phone_primary}}">{{@$gd->website_phone_primary}}</a>
+                            <li>
+                                <a href="tel:{{@$gd->website_phone_primary}}">
+                                <i class="envy envy-call"></i>    
+                               <span> {{@$gd->website_phone_primary}}</span></a>
                             </li>
                         </ul>
                     </div>
