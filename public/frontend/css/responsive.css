@@ -156,8 +156,10 @@
     .blog-details-section .blog-details-desc {
       padding: 0 20px;
   }
-    
+  .blog-details-section .blog-details-desc .article-share-vsrk{
+    display: inline-block;
   }
+}
   
   @media only screen and (max-width: 767px) {
     .featured-service-section .featured-service-image {
