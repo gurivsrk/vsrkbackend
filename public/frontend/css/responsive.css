@@ -72,10 +72,9 @@
       }
     .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav {
       float: none;
-      width: 90%;
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
-      -webkit-box-shadow: 0 10px 15px rgba(51, 47, 59, 0.1);
       box-shadow: 0 10px 15px rgba(51, 47, 59, 0.1);
     }
     .navbar-area .mobile-nav.mean-container .mean-bar .mean-nav ul li a {
