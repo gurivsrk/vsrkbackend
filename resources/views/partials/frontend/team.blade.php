@@ -10,7 +10,9 @@
                     <h4>{{$member->name}}</h4>
                     <span>{{$member->designation}}</span>
                     <div class="spacer"></div>
-                    <p>{!! $member->descritption  !!}</p>
+                    <div class="member-description">
+                        {!! $member->descritption  !!}
+                    </div>
                 </div>
             </div>
         <!-- </a> -->

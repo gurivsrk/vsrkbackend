@@ -224,5 +224,10 @@
       text-align: center;
       float: none !important;
     }
+    .member-description{
+      overflow-y: scroll;
+      height: 500px;
+    }
+
   }
   
