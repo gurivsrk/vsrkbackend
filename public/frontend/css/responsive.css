@@ -214,6 +214,8 @@
     .app-section .btn-ios{
       margin: 10px 0;
     }
-
+    .home-banner-area.banner{
+      min-height: 500px;
+    }
   }
   
